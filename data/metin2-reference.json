@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 11,
+    "version": 12,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -50,7 +50,8 @@
     },
     "lastUpdated": "2026-10-26",
     "changeLog": [
-      "v11: added VNUM-to-name lookup for mob/item IDs in the two separate community drop datasets; provenance and compatibility caveats retained."
+      "v11: added VNUM-to-name lookup for mob/item IDs in the two separate community drop datasets; provenance and compatibility caveats retained.",
+      "v12: attached resolved VNUM name references to each community drop entry and added data-quality/source-policy audit summary; community data remain isolated from official facts."
     ]
   },
   "itemCategories": [
@@ -3083,30 +3084,35 @@
             "itemVnum": 1012,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Cobra Dagger+2"
           },
           {
             "index": 2,
             "itemVnum": 4012,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Nine Blades+2"
           },
           {
             "index": 3,
             "itemVnum": 11402,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Azure Suit+2"
           },
           {
             "index": 4,
             "itemVnum": 16022,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Copper Necklace+2"
           }
-        ]
+        ],
+        "mobNameReference": "Alpha Wolf"
       },
       {
         "groupName": "Blue_Wolf",
@@ -3118,37 +3124,43 @@
             "itemVnum": 32,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Crescent Sword+2"
           },
           {
             "index": 2,
             "itemVnum": 52,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Broad Sword+2"
           },
           {
             "index": 3,
             "itemVnum": 15002,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Leather Shoes+2"
           },
           {
             "index": 4,
             "itemVnum": 2022,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Composite Bow+2"
           },
           {
             "index": 5,
             "itemVnum": 16002,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Wooden Necklace+2"
           }
-        ]
+        ],
+        "mobNameReference": "Blue Wolf"
       },
       {
         "groupName": "Alpha_Blue_Wolf",
@@ -3160,30 +3172,35 @@
             "itemVnum": 11602,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Requiem Plate Armour+2"
           },
           {
             "index": 2,
             "itemVnum": 12482,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Bloody Helmet+2"
           },
           {
             "index": 3,
             "itemVnum": 15022,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Bamboo Skin Shoes+2"
           },
           {
             "index": 4,
             "itemVnum": 16062,
             "quantity": 1,
             "rawRate": 0.2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Golden Necklace+2"
           }
-        ]
+        ],
+        "mobNameReference": "Alpha Blue Wolf"
       },
       {
         "groupName": "Cursed_Wolf",
@@ -3195,9 +3212,11 @@
             "itemVnum": 7160,
             "quantity": 1,
             "rawRate": 25,
-            "extraParameter": 10
+            "extraParameter": 10,
+            "itemNameReference": "Autumn Wind Fan+0"
           }
-        ]
+        ],
+        "mobNameReference": "Cursed Wolf"
       },
       {
         "groupName": "Cursed_Wolf",
@@ -3209,9 +3228,11 @@
             "itemVnum": 50722,
             "quantity": 1,
             "rawRate": 2,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Bellflower"
           }
-        ]
+        ],
+        "mobNameReference": "Cursed Wolf"
       },
       {
         "groupName": "Cursed_Alpha_Wolf",
@@ -3223,9 +3244,11 @@
             "itemVnum": 50723,
             "quantity": 1,
             "rawRate": 1,
-            "extraParameter": null
+            "extraParameter": null,
+            "itemNameReference": "Kaki Blossom"
           }
-        ]
+        ],
+        "mobNameReference": "Cursed Alpha Wolf"
       },
       {
         "groupName": "Cursed_Alpha_Blue_Wolf",
@@ -3237,16 +3260,19 @@
             "itemVnum": 5110,
             "quantity": 1,
             "rawRate": 25,
-            "extraParameter": 10
+            "extraParameter": 10,
+            "itemNameReference": "Antique Bell+0"
           },
           {
             "index": 2,
             "itemVnum": 290,
             "quantity": 1,
             "rawRate": 15,
-            "extraParameter": 10
+            "extraParameter": 10,
+            "itemNameReference": "Full Moon Sword+0"
           }
-        ]
+        ],
+        "mobNameReference": "Cursed Alpha Blue Wolf"
       }
     ]
   },
@@ -3268,16 +3294,19 @@
               "itemVnum": 30069,
               "quantity": 1,
               "rawRate": 3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Claw+"
             },
             {
               "index": 2,
               "itemVnum": 30070,
               "quantity": 1,
               "rawRate": 3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Fur+"
             }
-          ]
+          ],
+          "mobNameReference": "Wolf"
         },
         {
           "groupName": "r",
@@ -3289,16 +3318,19 @@
               "itemVnum": 30069,
               "quantity": 1,
               "rawRate": 3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Claw+"
             },
             {
               "index": 2,
               "itemVnum": 30070,
               "quantity": 1,
               "rawRate": 3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Fur+"
             }
-          ]
+          ],
+          "mobNameReference": "Alpha Wolf"
         },
         {
           "groupName": "r",
@@ -3310,16 +3342,19 @@
               "itemVnum": 30069,
               "quantity": 1,
               "rawRate": 3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Claw+"
             },
             {
               "index": 2,
               "itemVnum": 30070,
               "quantity": 1,
               "rawRate": 3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Fur+"
             }
-          ]
+          ],
+          "mobNameReference": "Blue Wolf"
         },
         {
           "groupName": "r",
@@ -3331,16 +3366,19 @@
               "itemVnum": 30069,
               "quantity": 1,
               "rawRate": 1,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Claw+"
             },
             {
               "index": 2,
               "itemVnum": 30070,
               "quantity": 1,
               "rawRate": 3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Fur+"
             }
-          ]
+          ],
+          "mobNameReference": "Alpha Blue Wolf"
         },
         {
           "groupName": "r_r",
@@ -3352,205 +3390,235 @@
               "itemVnum": 30023,
               "quantity": 2,
               "rawRate": 4,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "White Tiger Hide"
             },
             {
               "index": 2,
               "itemVnum": 27799,
               "quantity": 1,
               "rawRate": 2,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Fishbones"
             },
             {
               "index": 3,
               "itemVnum": 24,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Long Sword+4"
             },
             {
               "index": 4,
               "itemVnum": 34,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Crescent Sword+4"
             },
             {
               "index": 5,
               "itemVnum": 44,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Bamboo Sword+4"
             },
             {
               "index": 6,
               "itemVnum": 54,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Broad Sword+4"
             },
             {
               "index": 7,
               "itemVnum": 64,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Silver Sword+4"
             },
             {
               "index": 8,
               "itemVnum": 1014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Cobra Dagger+4"
             },
             {
               "index": 9,
               "itemVnum": 1024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Scissor Dagger+4"
             },
             {
               "index": 10,
               "itemVnum": 2014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Long Bow+4"
             },
             {
               "index": 11,
               "itemVnum": 2024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Composite Bow+4"
             },
             {
               "index": 12,
               "itemVnum": 2034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Battle Bow+4"
             },
             {
               "index": 13,
               "itemVnum": 2044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Horseback Long Bow+4"
             },
             {
               "index": 14,
               "itemVnum": 2054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Horseback Battle Bow+4"
             },
             {
               "index": 15,
               "itemVnum": 3014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Spear+4"
             },
             {
               "index": 16,
               "itemVnum": 3024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Guillotine Blade+4"
             },
             {
               "index": 17,
               "itemVnum": 3034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Spider Spear+4"
             },
             {
               "index": 18,
               "itemVnum": 3044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Gisarme+4"
             },
             {
               "index": 19,
               "itemVnum": 3054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "War Scythe+4"
             },
             {
               "index": 20,
               "itemVnum": 4004,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Amija+4"
             },
             {
               "index": 21,
               "itemVnum": 4014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Nine Blades+4"
             },
             {
               "index": 22,
               "itemVnum": 4024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Short Knife+4"
             },
             {
               "index": 23,
               "itemVnum": 5014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Silver Bell+4"
             },
             {
               "index": 24,
               "itemVnum": 5024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Golden Bell+4"
             },
             {
               "index": 25,
               "itemVnum": 7014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Iron Fan+4"
             },
             {
               "index": 26,
               "itemVnum": 7024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Black Tiger Fan+4"
             },
             {
               "index": 27,
               "itemVnum": 7034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Crane Wing Fan+4"
             },
             {
               "index": 28,
               "itemVnum": 7044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Peacock Fan+4"
             },
             {
               "index": 29,
               "itemVnum": 7054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Aquatic Fan+4"
             }
-          ]
+          ],
+          "mobNameReference": "Cursed Wolf"
         },
         {
           "groupName": "r",
@@ -3562,205 +3630,235 @@
               "itemVnum": 30069,
               "quantity": 2,
               "rawRate": 4,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Claw+"
             },
             {
               "index": 2,
               "itemVnum": 27799,
               "quantity": 1,
               "rawRate": 2,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Fishbones"
             },
             {
               "index": 3,
               "itemVnum": 24,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Long Sword+4"
             },
             {
               "index": 4,
               "itemVnum": 34,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Crescent Sword+4"
             },
             {
               "index": 5,
               "itemVnum": 44,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Bamboo Sword+4"
             },
             {
               "index": 6,
               "itemVnum": 54,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Broad Sword+4"
             },
             {
               "index": 7,
               "itemVnum": 64,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Silver Sword+4"
             },
             {
               "index": 8,
               "itemVnum": 1014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Cobra Dagger+4"
             },
             {
               "index": 9,
               "itemVnum": 1024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Scissor Dagger+4"
             },
             {
               "index": 10,
               "itemVnum": 2014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Long Bow+4"
             },
             {
               "index": 11,
               "itemVnum": 2024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Composite Bow+4"
             },
             {
               "index": 12,
               "itemVnum": 2034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Battle Bow+4"
             },
             {
               "index": 13,
               "itemVnum": 2044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Horseback Long Bow+4"
             },
             {
               "index": 14,
               "itemVnum": 2054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Horseback Battle Bow+4"
             },
             {
               "index": 15,
               "itemVnum": 3014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Spear+4"
             },
             {
               "index": 16,
               "itemVnum": 3024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Guillotine Blade+4"
             },
             {
               "index": 17,
               "itemVnum": 3034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Spider Spear+4"
             },
             {
               "index": 18,
               "itemVnum": 3044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Gisarme+4"
             },
             {
               "index": 19,
               "itemVnum": 3054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "War Scythe+4"
             },
             {
               "index": 20,
               "itemVnum": 4004,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Amija+4"
             },
             {
               "index": 21,
               "itemVnum": 4014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Nine Blades+4"
             },
             {
               "index": 22,
               "itemVnum": 4024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Short Knife+4"
             },
             {
               "index": 23,
               "itemVnum": 5014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Silver Bell+4"
             },
             {
               "index": 24,
               "itemVnum": 5024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Golden Bell+4"
             },
             {
               "index": 25,
               "itemVnum": 7014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Iron Fan+4"
             },
             {
               "index": 26,
               "itemVnum": 7024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Black Tiger Fan+4"
             },
             {
               "index": 27,
               "itemVnum": 7034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Crane Wing Fan+4"
             },
             {
               "index": 28,
               "itemVnum": 7044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Peacock Fan+4"
             },
             {
               "index": 29,
               "itemVnum": 7054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Aquatic Fan+4"
             }
-          ]
+          ],
+          "mobNameReference": "Cursed Alpha Wolf"
         },
         {
           "groupName": "r_r",
@@ -3772,205 +3870,235 @@
               "itemVnum": 30027,
               "quantity": 2,
               "rawRate": 4,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Wolf Fur"
             },
             {
               "index": 2,
               "itemVnum": 27799,
               "quantity": 1,
               "rawRate": 2,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Fishbones"
             },
             {
               "index": 3,
               "itemVnum": 24,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Long Sword+4"
             },
             {
               "index": 4,
               "itemVnum": 34,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Crescent Sword+4"
             },
             {
               "index": 5,
               "itemVnum": 44,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Bamboo Sword+4"
             },
             {
               "index": 6,
               "itemVnum": 54,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Broad Sword+4"
             },
             {
               "index": 7,
               "itemVnum": 64,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Silver Sword+4"
             },
             {
               "index": 8,
               "itemVnum": 1014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Cobra Dagger+4"
             },
             {
               "index": 9,
               "itemVnum": 1024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Scissor Dagger+4"
             },
             {
               "index": 10,
               "itemVnum": 2014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Long Bow+4"
             },
             {
               "index": 11,
               "itemVnum": 2024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Composite Bow+4"
             },
             {
               "index": 12,
               "itemVnum": 2034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Battle Bow+4"
             },
             {
               "index": 13,
               "itemVnum": 2044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Horseback Long Bow+4"
             },
             {
               "index": 14,
               "itemVnum": 2054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Horseback Battle Bow+4"
             },
             {
               "index": 15,
               "itemVnum": 3014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Spear+4"
             },
             {
               "index": 16,
               "itemVnum": 3024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Guillotine Blade+4"
             },
             {
               "index": 17,
               "itemVnum": 3034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Spider Spear+4"
             },
             {
               "index": 18,
               "itemVnum": 3044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Gisarme+4"
             },
             {
               "index": 19,
               "itemVnum": 3054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "War Scythe+4"
             },
             {
               "index": 20,
               "itemVnum": 4004,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Amija+4"
             },
             {
               "index": 21,
               "itemVnum": 4014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Nine Blades+4"
             },
             {
               "index": 22,
               "itemVnum": 4024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Short Knife+4"
             },
             {
               "index": 23,
               "itemVnum": 5014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Silver Bell+4"
             },
             {
               "index": 24,
               "itemVnum": 5024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Golden Bell+4"
             },
             {
               "index": 25,
               "itemVnum": 7014,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Iron Fan+4"
             },
             {
               "index": 26,
               "itemVnum": 7024,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Black Tiger Fan+4"
             },
             {
               "index": 27,
               "itemVnum": 7034,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Crane Wing Fan+4"
             },
             {
               "index": 28,
               "itemVnum": 7044,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Peacock Fan+4"
             },
             {
               "index": 29,
               "itemVnum": 7054,
               "quantity": 1,
               "rawRate": 0.3,
-              "extraParameter": null
+              "extraParameter": null,
+              "itemNameReference": "Aquatic Fan+4"
             }
-          ]
+          ],
+          "mobNameReference": "Cursed Alpha Blue Wolf"
         }
       ],
       "interpretation": "Raw engine parameters only. In this repository the same mob VNUMs can have very different drops from another community repository; do not merge these sets or interpret rawRate as a percent without matching server source/config and item_proto."
@@ -4270,6 +4398,43 @@
         "name": "Wolf Fur",
         "matched": true
       }
+    ]
+  },
+  "dataQualityReport": {
+    "generatedAt": "2026-10-26",
+    "purpose": "Audit and organization summary; not game runtime data.",
+    "sourcePolicy": {
+      "officialWiki": "Use for publicly documented item/monster/map facts; record exact page URL and what the page actually confirms.",
+      "communityServerFiles": "Keep in isolated community-only sections. Never treat rawRate as a percentage without confirming that file's engine semantics.",
+      "unresolved": "Keep null or explicitly unresolved rather than inventing a value.",
+      "runtime": "The game currently does not load this JSON; this is reference catalog only."
+    },
+    "catalogCounts": {
+      "monstersInWikiReference": 14,
+      "metinStones": 4,
+      "bookEntries": 90,
+      "officialBooksIndexEntries": 75,
+      "upgradeMaterialEntries": 118,
+      "communityDropSources": 2,
+      "communityDropGroups": 14,
+      "communityDropEntries": 113,
+      "distinctMobVnums": 7,
+      "distinctItemVnums": 50,
+      "mobVnumsMappedToNames": 7,
+      "itemVnumsMappedToNames": 50
+    },
+    "knownLimitations": [
+      "Community item and mob names come from a different public server pack; they are VNUM-based hints, not proof of current official Gameforge naming.",
+      "Drop groups from different community sources remain separate because their server versions and drop rules may differ.",
+      "Official wiki monster list can confirm public facts such as monster names, levels, maps and EXP, but does not imply that every server drop rate is published.",
+      "Some existing books and upgradeMaterials entries are curated/partial lists and are not guaranteed to be a complete canonical item index.",
+      "No claim is made that this JSON is loaded by index.html."
+    ],
+    "nextWorkOrder": [
+      "Normalize source metadata and distinguish official-wiki facts from community-only records.",
+      "Expand official-wiki monster/map records in small verifiable batches.",
+      "Audit book and upgrade-material lists for duplicates and canonical names.",
+      "Only then implement a runtime data loader in index.html."
     ]
   }
 }
