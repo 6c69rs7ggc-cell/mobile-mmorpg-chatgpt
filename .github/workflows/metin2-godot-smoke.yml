@@ -1,4 +1,4 @@
-name: Metin2 Godot upstream smoke test
+name: Metin2 Godot asset-independent smoke test
 
 on:
   workflow_dispatch:
@@ -35,10 +35,20 @@ jobs:
           version: 4.7.0
           use-dotnet: false
 
-      - name: Run server smoke test
+      - name: Import and parse project without proprietary assets
         working-directory: upstream/metin2-godot
-        run: godot --headless --path godot -- --smoke-test --expect-role=server
+        run: godot --headless --editor --path godot --quit
 
-      - name: Run client smoke test
+      - name: Run asset-independent client controls smoke test
         working-directory: upstream/metin2-godot
-        run: godot --headless --path godot -- --role=client --smoke-test --expect-role=client
+        run: godot --headless --path godot -- --role=client --client-controls-sandbox --smoke-test --expect-role=client
+
+      - name: Check whether generated map data is present
+        working-directory: upstream/metin2-godot
+        run: |
+          if [ -d generated/maps ] && [ "$(find generated/maps -type f | wc -l)" -gt 0 ]; then
+            echo "Generated map data exists; server smoke test can be run."
+            godot --headless --path godot -- --smoke-test --expect-role=server
+          else
+            echo "::warning::Server smoke test not run: generated/maps is absent. The upstream project requires local converted map data for authoritative collision initialization."
+          fi
