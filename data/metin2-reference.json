@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 16,
+    "version": 17,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -66,6 +66,11 @@
       {
         "version": 16,
         "change": "Added verified official-wiki category source index for weapons, armour and equipment to guide systematic item cataloguing; this is an index, not a claim that all equipment has been imported.",
+        "date": "2026-10-26"
+      },
+      {
+        "version": 17,
+        "change": "Added three low-level sword equipment records from the official Warrior weapons wiki table, including base stats and upgrade Yang costs; upgrade materials deliberately left unresolved where table parsing was ambiguous.",
         "date": "2026-10-26"
       }
     ]
@@ -4456,7 +4461,7 @@
       "Keep the custom 10% game rate clearly separate from official source facts.",
       "Only then implement runtime item and drop systems in index.html."
     ],
-    "version": 16,
+    "version": 17,
     "customDropRatePolicy": "Every currently catalogued monster drop item is assigned 10% as a project design choice. This is not an official Metin2 drop rate. If each kill rolls independently, 10% means 1 item on average per 10 kills over the long run, not a guaranteed item every 10 kills. Catalog is not yet consumed by index.html.",
     "monstersWithCustom20PercentDropRates": 13,
     "monsterDropItemsAssigned20Percent": 48,
@@ -4469,7 +4474,9 @@
         "armour": 108,
         "equipment": 23
       }
-    }
+    },
+    "equipmentRecordsImported": 3,
+    "equipmentImportNote": "Equipment records are being imported in verified batches. Current first batch has 3 low-level swords. Their source table lists upgrade material columns, but exact material-to-upgrade mapping was not reliably parsed in this batch, so no materials were guessed."
   },
   "equipmentCategorySources": [
     {
@@ -4499,6 +4506,122 @@
       "url": "https://en-wiki.metin2.gameforge.com/index.php/Items",
       "wikiListedPages": null,
       "status": "overview_only"
+    }
+  ],
+  "equipmentItems": [
+    {
+      "id": "sword_level_1",
+      "name": "Sword",
+      "category": "weapon",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 1,
+      "attackValue": {
+        "min": 13,
+        "max": 15
+      },
+      "magicAttackValue": {
+        "min": 15,
+        "max": 19
+      },
+      "attackSpeedBonusPercent": 22,
+      "sockets": 1,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 600,
+        "+2": 1200,
+        "+3": 2500,
+        "+4": 5000,
+        "+5": 10000,
+        "+6": 20000,
+        "+7": 30000,
+        "+8": 45000,
+        "+9": 75000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "table_columns_not_reliably_parsed_no_materials_added",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
+      "sourceVerified": true
+    },
+    {
+      "id": "long_sword_level_5",
+      "name": "Long Sword",
+      "category": "weapon",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 5,
+      "attackValue": {
+        "min": 15,
+        "max": 19
+      },
+      "magicAttackValue": {
+        "min": 13,
+        "max": 15
+      },
+      "attackSpeedBonusPercent": 27,
+      "sockets": 1,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 600,
+        "+2": 1200,
+        "+3": 2500,
+        "+4": 5000,
+        "+5": 10000,
+        "+6": 20000,
+        "+7": 30000,
+        "+8": 45000,
+        "+9": 75000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "table_columns_not_reliably_parsed_no_materials_added",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
+      "sourceVerified": true
+    },
+    {
+      "id": "crescent_sword_level_10",
+      "name": "Crescent Sword",
+      "category": "weapon",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 10,
+      "attackValue": {
+        "min": 20,
+        "max": 24
+      },
+      "magicAttackValue": {
+        "min": 20,
+        "max": 24
+      },
+      "attackSpeedBonusPercent": 24,
+      "sockets": 1,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 600,
+        "+2": 1200,
+        "+3": 2500,
+        "+4": 5000,
+        "+5": 10000,
+        "+6": 20000,
+        "+7": 30000,
+        "+8": 45000,
+        "+9": 75000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "table_columns_not_reliably_parsed_no_materials_added",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
+      "sourceVerified": true
     }
   ]
 }
