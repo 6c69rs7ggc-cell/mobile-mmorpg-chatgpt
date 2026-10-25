@@ -1,9 +1,9 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 6,
+    "version": 7,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
-    "accuracy": "Starter monster records now checked against individual official wiki pages for level/EXP/location and listed drops. Wiki-listed drops are not guaranteed per kill; no drop rates are inferred. Other catalog sections remain partially verified.",
+    "accuracy": "Starter and early-map monster catalog expanded using individual official wiki pages. Item lists reflect wiki-listed drops only; no probability is implied. Conflicting EXP values are explicitly flagged rather than guessed.",
     "sources": {
       "items": "https://en-wiki.metin2.gameforge.com/index.php/Items",
       "books": "https://en-wiki.metin2.gameforge.com/index.php/Books",
@@ -21,7 +21,7 @@
       "official_upgrade_category_pages": 307,
       "currently_catalogued_books": 90,
       "currently_catalogued_upgrade_materials": 118,
-      "currently_catalogued_monsters": 7,
+      "currently_catalogued_monsters": 14,
       "per_monster_drop_tables_populated": true,
       "notes": [
         "Book names were expanded against the official category listing of 75 pages; many records only have category-list confirmation, not detailed effects/drop sources.",
@@ -31,7 +31,10 @@
         "officialBooksIndex is the exact 75-name index from the wiki category page. books contains additional selected entries and is not expected to equal 75; reconcile individual item pages before treating it as a canonical full list.",
         "The wiki Books table also includes Young Pet Book; included as a book-system entry even though the category listing extraction returned 74 names.",
         "Starter monster EXP was checked against individual pages; Alpha Wolf corrected from 51 to 41 EXP.",
-        "Monster dropItems list items shown under Other Drops on individual wiki pages; exact probability is not provided and remains null. Item type labels are descriptive, not claims about drop mechanics."
+        "Monster dropItems list items shown under Other Drops on individual wiki pages; exact probability is not provided and remains null. Item type labels are descriptive, not claims about drop mechanics.",
+        "Added individual-page records for Blue Wolf, Grey Wolf, Cursed Wolf, Cursed Blue Wolf, Cursed Alpha Wolf, Cursed Alpha Blue Wolf and Alpha Blue Wolf.",
+        "Alpha Wolf EXP is null with conflicting source notes: individual page reports 41, Monster overview reports 51. Resolve against intended official server/version before using EXP in gameplay.",
+        "An empty dropItems array only means the individual page lists no items in the captured drop section; it does not imply no Yang or no shared/alternative drops."
       ],
       "official_book_index_entries": 75
     }
@@ -2081,7 +2084,7 @@
         "Pyungmoo",
         "Yongan"
       ],
-      "exp": 41,
+      "exp": null,
       "dropItems": [
         {
           "name": "Cobra Dagger +2",
@@ -2134,7 +2137,18 @@
       ],
       "dropStatus": "wiki_listed_items_verified_no_rates",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Alpha_Wolf",
-      "sourceVerified": true
+      "sourceVerified": true,
+      "expStatus": "conflicting_official_wiki_sources",
+      "expSourceNotes": [
+        {
+          "url": "https://en-wiki.metin2.gameforge.com/index.php/Alpha_Wolf",
+          "value": 41
+        },
+        {
+          "url": "https://en-wiki.metin2.gameforge.com/index.php/Monster",
+          "value": 51
+        }
+      ]
     },
     {
       "id": "hungry_alpha_wolf",
@@ -2207,6 +2221,263 @@
       "dropStatus": "wiki_listed_items_verified_no_rates",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Hungry_Blue_Wolf",
       "sourceVerified": true
+    },
+    {
+      "id": "blue_wolf",
+      "name": "Blue Wolf",
+      "level": 6,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 75,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Blue_Wolf",
+      "dropItems": [
+        {
+          "name": "Broad Sword +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Composite Bow +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Crescent Sword +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Leather Shoes +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wooden Necklace +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Lilac",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Polymorph Marble",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Liver",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates"
+    },
+    {
+      "id": "grey_wolf",
+      "name": "Grey Wolf",
+      "level": 13,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 159,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Grey_Wolf",
+      "dropItems": [
+        {
+          "name": "Polymorph Marble",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Fur+",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Intestine",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Pelt",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates"
+    },
+    {
+      "id": "cursed_wolf",
+      "name": "Cursed Wolf",
+      "level": 8,
+      "stage": 3,
+      "race": "Animal",
+      "locations": [
+        "Imha",
+        "Jungrang",
+        "Waryong",
+        "Snakefield"
+      ],
+      "exp": 198,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Cursed_Wolf",
+      "dropItems": [
+        {
+          "name": "Autumn Wind Fan +0",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Bellflower",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Claw",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates"
+    },
+    {
+      "id": "cursed_blue_wolf",
+      "name": "Cursed Blue Wolf",
+      "level": 11,
+      "stage": 3,
+      "race": "Animal",
+      "locations": [
+        "Imha",
+        "Jungrang",
+        "Waryong",
+        "Snakefield"
+      ],
+      "exp": 270,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Cursed_Blue_Wolf",
+      "dropItems": [],
+      "dropStatus": "wiki_lists_no_other_drops"
+    },
+    {
+      "id": "cursed_alpha_wolf",
+      "name": "Cursed Alpha Wolf",
+      "level": 9,
+      "stage": 4,
+      "race": "Animal",
+      "locations": [
+        "Imha",
+        "Jungrang",
+        "Waryong",
+        "Snakefield"
+      ],
+      "exp": 444,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Cursed_Alpha_Wolf",
+      "dropItems": [
+        {
+          "name": "Kaki Blossom",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Claw+",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates"
+    },
+    {
+      "id": "cursed_alpha_blue_wolf",
+      "name": "Cursed Alpha Blue Wolf",
+      "level": 14,
+      "stage": 4,
+      "race": "Animal",
+      "locations": [
+        "Imha",
+        "Jungrang",
+        "Waryong",
+        "Snakefield"
+      ],
+      "exp": 684,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Cursed_Alpha_Blue_Wolf",
+      "dropItems": [
+        {
+          "name": "Antique Bell +0",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Full Moon Sword +0",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Phoenix Lance +0",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Fur",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates"
+    },
+    {
+      "id": "alpha_blue_wolf",
+      "name": "Alpha Blue Wolf",
+      "level": 9,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 111,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Alpha_Blue_Wolf",
+      "dropItems": [
+        {
+          "name": "Requiem Plate Armour +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Bloody Helmet +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Bamboo Skin Shoes +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Golden Necklace +2",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Polymorph Marble",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Fur",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates"
     }
   ],
   "officialBooksIndex": [
