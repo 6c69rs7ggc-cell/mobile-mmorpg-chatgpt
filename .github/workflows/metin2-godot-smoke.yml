@@ -1,0 +1,44 @@
+name: Metin2 Godot upstream smoke test
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/metin2-godot-smoke.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
+
+      - name: Checkout upstream candidate into isolated folder
+        uses: actions/checkout@v4
+        with:
+          repository: EnriqueGF/metin2-godot
+          ref: main
+          path: upstream/metin2-godot
+          persist-credentials: false
+
+      - name: Record upstream revision
+        working-directory: upstream/metin2-godot
+        run: git rev-parse HEAD
+
+      - name: Set up Godot 4.7
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.0
+          use-dotnet: false
+
+      - name: Run server smoke test
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot -- --smoke-test --expect-role=server
+
+      - name: Run client smoke test
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot -- --role=client --smoke-test --expect-role=client
