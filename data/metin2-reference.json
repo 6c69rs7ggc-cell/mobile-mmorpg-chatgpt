@@ -1,9 +1,9 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 5,
+    "version": 6,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
-    "accuracy": "Expanded from the official wiki category listings. Names marked category_listing_only are not yet individually verified for recipe, source or version-specific availability. This is still not a complete drop database.",
+    "accuracy": "Starter monster records now checked against individual official wiki pages for level/EXP/location and listed drops. Wiki-listed drops are not guaranteed per kill; no drop rates are inferred. Other catalog sections remain partially verified.",
     "sources": {
       "items": "https://en-wiki.metin2.gameforge.com/index.php/Items",
       "books": "https://en-wiki.metin2.gameforge.com/index.php/Books",
@@ -22,14 +22,16 @@
       "currently_catalogued_books": 90,
       "currently_catalogued_upgrade_materials": 118,
       "currently_catalogued_monsters": 7,
-      "per_monster_drop_tables_populated": false,
+      "per_monster_drop_tables_populated": true,
       "notes": [
         "Book names were expanded against the official category listing of 75 pages; many records only have category-list confirmation, not detailed effects/drop sources.",
         "Upgrade item names were expanded from the official Upgrade Items table. The current page includes both upgrade materials and a separate craft-items table; some entries appear in both.",
         "Do not use category-list-only entries to generate gameplay drops or recipes until their individual item pages and version are verified.",
         "Per-monster drop tables remain empty pending source-level verification.",
         "officialBooksIndex is the exact 75-name index from the wiki category page. books contains additional selected entries and is not expected to equal 75; reconcile individual item pages before treating it as a canonical full list.",
-        "The wiki Books table also includes Young Pet Book; included as a book-system entry even though the category listing extraction returned 74 names."
+        "The wiki Books table also includes Young Pet Book; included as a book-system entry even though the category listing extraction returned 74 names.",
+        "Starter monster EXP was checked against individual pages; Alpha Wolf corrected from 51 to 41 EXP.",
+        "Monster dropItems list items shown under Other Drops on individual wiki pages; exact probability is not provided and remains null. Item type labels are descriptive, not claims about drop mechanics."
       ],
       "official_book_index_entries": 75
     }
@@ -1966,9 +1968,17 @@
         "Yongan"
       ],
       "exp": 11,
-      "dropItems": [],
-      "dropStatus": "not_verified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "dropItems": [
+        {
+          "name": "Polymorph Marble",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Hungry_Stray_Dog",
+      "sourceVerified": true
     },
     {
       "id": "wild_dog",
@@ -1982,9 +1992,23 @@
         "Yongan"
       ],
       "exp": 15,
-      "dropItems": [],
-      "dropStatus": "not_verified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "dropItems": [
+        {
+          "name": "Polymorph Marble",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Uriels Book",
+          "kind": "quest_or_research_item",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Wild_Dog",
+      "sourceVerified": true
     },
     {
       "id": "hungry_wolf",
@@ -1998,9 +2022,23 @@
         "Yongan"
       ],
       "exp": 27,
-      "dropItems": [],
-      "dropStatus": "not_verified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "dropItems": [
+        {
+          "name": "Polymorph Marble",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Claw",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Hungry_Wolf",
+      "sourceVerified": true
     },
     {
       "id": "wolf",
@@ -2014,9 +2052,23 @@
         "Yongan"
       ],
       "exp": 39,
-      "dropItems": [],
-      "dropStatus": "not_verified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "dropItems": [
+        {
+          "name": "Wolf Claw",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Polymorph Marble",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Wolf",
+      "sourceVerified": true
     },
     {
       "id": "alpha_wolf",
@@ -2029,10 +2081,60 @@
         "Pyungmoo",
         "Yongan"
       ],
-      "exp": 51,
-      "dropItems": [],
-      "dropStatus": "not_verified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "exp": 41,
+      "dropItems": [
+        {
+          "name": "Cobra Dagger +2",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Nine Blades +2",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Steel Torch +2",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Azure Suit +2",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Divine Wind Armour +2",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Copper Necklace",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Polymorph Marble",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Claw+",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Alpha_Wolf",
+      "sourceVerified": true
     },
     {
       "id": "hungry_alpha_wolf",
@@ -2046,9 +2148,35 @@
         "Yongan"
       ],
       "exp": 36,
-      "dropItems": [],
-      "dropStatus": "not_verified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "dropItems": [
+        {
+          "name": "Blood Red Flower",
+          "kind": "quest_or_research_item",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Peach Blossom",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Polymorph Marble",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Wolf Claw+",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Hungry_Alpha_Wolf",
+      "sourceVerified": true
     },
     {
       "id": "hungry_blue_wolf",
@@ -2062,9 +2190,23 @@
         "Yongan"
       ],
       "exp": 53,
-      "dropItems": [],
-      "dropStatus": "not_verified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "dropItems": [
+        {
+          "name": "Orange Flower",
+          "kind": "quest_or_research_item",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        },
+        {
+          "name": "Polymorph Marble",
+          "kind": "wiki_listed_drop",
+          "dropRate": null,
+          "rateStatus": "not_published_on_source_page"
+        }
+      ],
+      "dropStatus": "wiki_listed_items_verified_no_rates",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Hungry_Blue_Wolf",
+      "sourceVerified": true
     }
   ],
   "officialBooksIndex": [
