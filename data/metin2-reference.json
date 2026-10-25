@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 8,
+    "version": 9,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -12,7 +12,8 @@
       "spiritStones": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones",
       "potions": "https://en-wiki.metin2.gameforge.com/index.php/Potions",
       "boxes": "https://en-wiki.metin2.gameforge.com/index.php/Boxes",
-      "monsters": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "monsters": "https://en-wiki.metin2.gameforge.com/index.php/Monster",
+      "communityDropData": "https://github.com/d1str4ught/m2dev-server/blob/main/share/locale/english/mob_drop_item.txt"
     },
     "dropPolicy": "Do not fabricate exact drop chances or per-monster item sources. Fill those only from a cited item page or version-matched mob_drop_item/common_drop_item/special_item_group data.",
     "comparison": {
@@ -36,10 +37,12 @@
         "Alpha Wolf EXP is null with conflicting source notes: individual page reports 41, Monster overview reports 51. Resolve against intended official server/version before using EXP in gameplay.",
         "An empty dropItems array only means the individual page lists no items in the captured drop section; it does not imply no Yang or no shared/alternative drops.",
         "Added individual Metin pages for Metin of Sorrow, Combat, Battle and Soul, including their listed monster spawns, map locations and item groups where captured.",
-        "Metin of Battle drop groups are partial in this capture; do not use empty armour/other arrays to infer confirmed no drops."
+        "Metin of Battle drop groups are partial in this capture; do not use empty armour/other arrays to infer confirmed no drops.",
+        "Added raw drop groups from a public community Metin2 server-file repository for matching early monsters. These are legacy community data, not official Gameforge tables; VNUMs are preserved and raw rates are not presented as percentages."
       ],
       "official_book_index_entries": 75,
-      "currently_catalogued_metin_stones": 4
+      "currently_catalogued_metin_stones": 4,
+      "raw_community_drop_groups": 7
     }
   },
   "itemCategories": [
@@ -3055,5 +3058,188 @@
       "dropRates": null,
       "verification": "individual_wiki_page"
     }
-  ]
+  ],
+  "rawCommunityDropData": {
+    "sourceType": "public community server files, not official Gameforge drop tables",
+    "sourceRepository": "d1str4ught/m2dev-server",
+    "sourceFile": "https://github.com/d1str4ught/m2dev-server/blob/main/share/locale/english/mob_drop_item.txt",
+    "caution": "Legacy/community server data. Raw rate columns are engine-specific parameters, not guaranteed percentages and not guaranteed to match current official servers. Do not use these values as official drop chances.",
+    "groups": [
+      {
+        "groupName": "Alpha_Wolf",
+        "mobVnum": 103,
+        "type": "drop",
+        "entries": [
+          {
+            "index": 1,
+            "itemVnum": 1012,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 2,
+            "itemVnum": 4012,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 3,
+            "itemVnum": 11402,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 4,
+            "itemVnum": 16022,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          }
+        ]
+      },
+      {
+        "groupName": "Blue_Wolf",
+        "mobVnum": 104,
+        "type": "drop",
+        "entries": [
+          {
+            "index": 1,
+            "itemVnum": 32,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 2,
+            "itemVnum": 52,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 3,
+            "itemVnum": 15002,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 4,
+            "itemVnum": 2022,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 5,
+            "itemVnum": 16002,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          }
+        ]
+      },
+      {
+        "groupName": "Alpha_Blue_Wolf",
+        "mobVnum": 105,
+        "type": "drop",
+        "entries": [
+          {
+            "index": 1,
+            "itemVnum": 11602,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 2,
+            "itemVnum": 12482,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 3,
+            "itemVnum": 15022,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          },
+          {
+            "index": 4,
+            "itemVnum": 16062,
+            "quantity": 1,
+            "rawRate": 0.2,
+            "extraParameter": null
+          }
+        ]
+      },
+      {
+        "groupName": "Cursed_Wolf",
+        "mobVnum": 131,
+        "type": "kill",
+        "entries": [
+          {
+            "index": 1,
+            "itemVnum": 7160,
+            "quantity": 1,
+            "rawRate": 25,
+            "extraParameter": 10
+          }
+        ]
+      },
+      {
+        "groupName": "Cursed_Wolf",
+        "mobVnum": 131,
+        "type": "drop",
+        "entries": [
+          {
+            "index": 1,
+            "itemVnum": 50722,
+            "quantity": 1,
+            "rawRate": 2,
+            "extraParameter": null
+          }
+        ]
+      },
+      {
+        "groupName": "Cursed_Alpha_Wolf",
+        "mobVnum": 132,
+        "type": "drop",
+        "entries": [
+          {
+            "index": 1,
+            "itemVnum": 50723,
+            "quantity": 1,
+            "rawRate": 1,
+            "extraParameter": null
+          }
+        ]
+      },
+      {
+        "groupName": "Cursed_Alpha_Blue_Wolf",
+        "mobVnum": 134,
+        "type": "kill",
+        "entries": [
+          {
+            "index": 1,
+            "itemVnum": 5110,
+            "quantity": 1,
+            "rawRate": 25,
+            "extraParameter": 10
+          },
+          {
+            "index": 2,
+            "itemVnum": 290,
+            "quantity": 1,
+            "rawRate": 15,
+            "extraParameter": 10
+          }
+        ]
+      }
+    ]
+  }
 }
