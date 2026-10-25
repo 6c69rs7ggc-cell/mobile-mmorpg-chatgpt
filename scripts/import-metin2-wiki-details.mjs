@@ -63,7 +63,7 @@ for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
       dropRatesStatus: "not_extracted",
     });
   }
-  console.log(`Processed ${Math.min(offset + batch.length, catalog.items.length)} / ${catalog.items.length} pages`);
+  console.log(`Processed ${Math.min(offset + batch.length, catalogItems.length)} / ${catalog.items.length} pages`);
   if (offset + BATCH_SIZE < catalog.items.length) await new Promise(resolve => setTimeout(resolve, PAUSE_MS));
 }
 
@@ -74,7 +74,7 @@ const output = {
     title: "ASHEN REALM — official Metin2 Wiki page details",
     source: "Gameforge Metin2 Wiki API",
     generatedAt: new Date().toISOString(),
-    requestedPages: catalog.items.length,
+    requestedPages: catalogItems.length,
     returnedPages: unique.size,
     scope: "Introductory text and categories for catalogued pages. This file does not claim complete infobox/stat/recipe/drop extraction.",
   },
