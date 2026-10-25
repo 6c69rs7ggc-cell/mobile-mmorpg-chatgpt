@@ -1,9 +1,9 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 3,
+    "version": 4,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
-    "accuracy": "Version 3: source-checked partial catalog. The official wiki lists 75 book pages and 307 upgrade-item category pages; this file currently models only selected examples. Monster levels/EXP/locations below are sourced from the official monster overview. Per-monster item drop tables and drop rates remain unverified and intentionally empty. This is not a complete official database.",
+    "accuracy": "Expanded from the official wiki category listings. Names marked category_listing_only are not yet individually verified for recipe, source or version-specific availability. This is still not a complete drop database.",
     "sources": {
       "items": "https://en-wiki.metin2.gameforge.com/index.php/Items",
       "books": "https://en-wiki.metin2.gameforge.com/index.php/Books",
@@ -19,15 +19,15 @@
       "official_item_categories": 10,
       "official_book_pages": 75,
       "official_upgrade_category_pages": 307,
-      "currently_catalogued_books": 16,
-      "currently_catalogued_upgrade_materials": 14,
+      "currently_catalogued_books": 90,
+      "currently_catalogued_upgrade_materials": 118,
       "currently_catalogued_monsters": 7,
       "per_monster_drop_tables_populated": false,
       "notes": [
-        "Official item overview groups content into Books, Boxes, Fishing Items, Item Shop Items, Ores, Other Items, Potions, Quest Items, Spirit Stones and Upgrade Items.",
-        "Official Books category lists 75 pages; the books array here is a selected gameplay subset, not all 75.",
-        "Official Upgrade category lists 307 pages; upgradeMaterials is only a small sample.",
-        "Monster overview provides name, level, location and EXP, but does not by itself provide a complete item-drop table for each monster."
+        "Book names were expanded against the official category listing of 75 pages; many records only have category-list confirmation, not detailed effects/drop sources.",
+        "Upgrade item names were expanded from the official Upgrade Items table. The current page includes both upgrade materials and a separate craft-items table; some entries appear in both.",
+        "Do not use category-list-only entries to generate gameplay drops or recipes until their individual item pages and version are verified.",
+        "Per-monster drop tables remain empty pending source-level verification."
       ]
     }
   },
@@ -240,6 +240,598 @@
       "purpose": "Používa sa na zvyšovanie presnosti.",
       "consumedOnUse": true,
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "wiki_9th_skill_book",
+      "name": "9th Skill Book",
+      "category": "character_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_advanced_polymorph_book",
+      "name": "Advanced Polymorph Book",
+      "category": "polymorph",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_anti_magic_book",
+      "name": "Anti-Magic Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_art_of_combo",
+      "name": "Art of Combo",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_balathor_s_skill_book",
+      "name": "Balathor's Skill Book",
+      "category": "guild_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_berserker_book",
+      "name": "Berserker Book",
+      "category": "pet_or_character_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_book_of_forgetfulness",
+      "name": "Book of Forgetfulness",
+      "category": "skill_reset",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_book_of_precision",
+      "name": "Book of Precision",
+      "category": "precision",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_boost_manual",
+      "name": "Boost Manual",
+      "category": "boost_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_boost_skill_book",
+      "name": "Boost Skill Book",
+      "category": "boost_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_bulwark_book",
+      "name": "Bulwark Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_charisma_of_a_rookie",
+      "name": "Charisma of a Rookie",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_charisma_of_an_adept",
+      "name": "Charisma of an Adept",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_charisma_of_an_expert",
+      "name": "Charisma of an Expert",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_chunjo_linguistics",
+      "name": "Chunjo Linguistics",
+      "category": "language",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_combo_master_book",
+      "name": "Combo Master Book",
+      "category": "combo",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_combo_mastery",
+      "name": "Combo Mastery",
+      "category": "combo",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_drill_book",
+      "name": "Drill Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_eagle_eyes_book",
+      "name": "Eagle Eyes Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_haste_book",
+      "name": "Haste Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_horse_riding_manual",
+      "name": "Horse Riding Manual",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_horse_taming_manual",
+      "name": "Horse Taming Manual",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_immortal_book",
+      "name": "Immortal Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_inspiration_of_a_rookie",
+      "name": "Inspiration of a Rookie",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_inspiration_of_an_adept",
+      "name": "Inspiration of an Adept",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_inspiration_of_an_expert",
+      "name": "Inspiration of an Expert",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_jinno_linguistics",
+      "name": "Jinno Linguistics",
+      "category": "language",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_life_drain_book",
+      "name": "Life Drain Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_manual",
+      "name": "Manual",
+      "category": "class_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_master_brewer_book",
+      "name": "Master Brewer Book",
+      "category": "crafting",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_master_polymorph_book",
+      "name": "Master Polymorph Book",
+      "category": "polymorph",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_mining_guide",
+      "name": "Mining Guide",
+      "category": "mining",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_monster_hunter_book",
+      "name": "Monster Hunter Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_panacea_book",
+      "name": "Panacea Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_polymorph_book",
+      "name": "Polymorph Book",
+      "category": "polymorph",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_range_book",
+      "name": "Range Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_reflection_book",
+      "name": "Reflection Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_resistance_lycan",
+      "name": "Resistance (Lycan)",
+      "category": "resistance",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_resistance_ninja",
+      "name": "Resistance (Ninja)",
+      "category": "resistance",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_resistance_shaman",
+      "name": "Resistance (Shaman)",
+      "category": "resistance",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_resistance_sura",
+      "name": "Resistance (Sura)",
+      "category": "resistance",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_resistance_warrior",
+      "name": "Resistance (Warrior)",
+      "category": "resistance",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_restoration_book",
+      "name": "Restoration Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_exp",
+      "name": "Riding (EXP)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_feather_walk",
+      "name": "Riding (Feather Walk)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_horse_skill",
+      "name": "Riding (Horse Skill)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_immortal",
+      "name": "Riding (Immortal)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_no_knockback",
+      "name": "Riding (No Knockback)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_precision",
+      "name": "Riding (Precision)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_raging_storm",
+      "name": "Riding (Raging Storm)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_random",
+      "name": "Riding (Random)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_sung_ma_s_w_int",
+      "name": "Riding (Sung Ma's W INT)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_sung_ma_s_w_res",
+      "name": "Riding (Sung Ma's W RES)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_sung_ma_s_w_str",
+      "name": "Riding (Sung Ma's W STR)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_sung_ma_s_w_vit",
+      "name": "Riding (Sung Ma's W VIT)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_swift_hooves",
+      "name": "Riding (Swift Hooves)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_vs_lycans",
+      "name": "Riding (vs. Lycans)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_vs_ninjas",
+      "name": "Riding (vs. Ninjas)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_vs_shamans",
+      "name": "Riding (vs. Shamans)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_vs_suras",
+      "name": "Riding (vs. Suras)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_riding_vs_warriors",
+      "name": "Riding (vs. Warriors)",
+      "category": "horse",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_shinsoo_linguistics",
+      "name": "Shinsoo Linguistics",
+      "category": "language",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_skill_book",
+      "name": "Skill Book",
+      "category": "class_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_soul_stone",
+      "name": "Soul Stone",
+      "category": "grand_master_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_soul_stone",
+      "name": "Soul Stone+",
+      "category": "grand_master_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_spiritualism_book",
+      "name": "Spiritualism Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_sun_zi_art_of_war",
+      "name": "Sun Zi Art of War",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_talent_potion",
+      "name": "Talent Potion",
+      "category": "ninth_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_vampirism_book",
+      "name": "Vampirism Book",
+      "category": "combat",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ward_manual",
+      "name": "Ward Manual",
+      "category": "ward_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ward_skill_book",
+      "name": "Ward Skill Book",
+      "category": "ward_skill",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_weiliao_zi_art_of_war",
+      "name": "WeiLiao Zi Art of War",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_wu_zi_art_of_war",
+      "name": "Wu zi Art of War",
+      "category": "leadership",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_yang_drop_book",
+      "name": "Yang Drop Book",
+      "category": "economy",
+      "purpose": "Záznam prevzatý zo zoznamu oficiálnej wiki; presný účinok, požiadavky a zdroj dropu treba overiť na samostatnej stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "category_listing_only"
     }
   ],
   "upgradeMaterials": [
@@ -340,6 +932,838 @@
       "category": "refinement_material",
       "purpose": "Kameň používaný pri zušľachťovaní výbavy.",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "wiki_aamon_s_lavish_chest",
+      "name": "Aamon's Lavish Chest",
+      "category": "box_or_upgrade",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_argos_poisoned_heart",
+      "name": "Argos' Poisoned Heart",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_asmodeus_horn",
+      "name": "Asmodeus Horn",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_asmodeus_scale",
+      "name": "Asmodeus Scale",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_asmodeus_stone_heart",
+      "name": "Asmodeus' Stone Heart",
+      "category": "craft_and_upgrade",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_balathor_s_eye",
+      "name": "Balathor's Eye",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_balathor_s_horn",
+      "name": "Balathor's Horn",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_balathor_s_scale",
+      "name": "Balathor's Scale",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ball",
+      "name": "Ball",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_bear_foot_skin",
+      "name": "Bear Foot Skin+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_bear_gall",
+      "name": "Bear Gall+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_black_uniform",
+      "name": "Black Uniform",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_black_uniform",
+      "name": "Black Uniform+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_blackhorn",
+      "name": "Blackhorn",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_blood_red_pearl",
+      "name": "Blood-Red Pearl",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_blue_crystal",
+      "name": "Blue Crystal",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_blue_pearl",
+      "name": "Blue Pearl",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_blue_zodiac_case",
+      "name": "Blue Zodiac Case",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_book_of_truth",
+      "name": "Book of Truth",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_broken_porcelain",
+      "name": "Broken Porcelain",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_clam",
+      "name": "Clam",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_cobalt",
+      "name": "Cobalt",
+      "category": "craft_and_upgrade",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_crude_metal_sheet",
+      "name": "Crude Metal Sheet",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_cursed_chain",
+      "name": "Cursed Chain",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_cursed_hair",
+      "name": "Cursed Hair",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_damned_soul",
+      "name": "Damned Soul",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_dark_eye",
+      "name": "Dark Eye",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_dark_jadite",
+      "name": "Dark Jadite",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_demon_s_ashes",
+      "name": "Demon's Ashes",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_demon_s_gem",
+      "name": "Demon's Gem",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_demon_s_gem",
+      "name": "Demon's Gem+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_demon_s_keepsake",
+      "name": "Demon's Keepsake",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_demon_s_keepsake",
+      "name": "Demon's Keepsake+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_divine_bloom",
+      "name": "Divine Bloom",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_dragon_skull",
+      "name": "Dragon Skull",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_dragon_s_tooth",
+      "name": "Dragon's Tooth",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_elemental_bloom",
+      "name": "Elemental Bloom",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_elixir_of_the_gods",
+      "name": "Elixir of the Gods",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_energy_fragment",
+      "name": "Energy Fragment",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_epic_chaos_stone",
+      "name": "Epic Chaos Stone",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_esoteric_primer",
+      "name": "Esoteric Primer",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_esoteric_primer",
+      "name": "Esoteric Primer+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_face_cream",
+      "name": "Face Cream",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_fencing_pamphlet",
+      "name": "Fencing Pamphlet",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_finger_bones",
+      "name": "Finger Bones",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_fishbones",
+      "name": "Fishbones",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_flag",
+      "name": "Flag",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_flaming_mane",
+      "name": "Flaming Mane",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_forged_steel_sheet",
+      "name": "Forged Steel Sheet",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_frog_tongue",
+      "name": "Frog Tongue",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_frosted_hammer",
+      "name": "Frosted Hammer",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_frog_s_legs",
+      "name": "Frog's Legs",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_fruit_of_the_gods",
+      "name": "Fruit of the Gods",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_grey_dye",
+      "name": "Grey Dye",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_hungering_soul",
+      "name": "Hungering Soul",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ice_killer_whale_horn",
+      "name": "Ice Killer Whale Horn",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ice_marble",
+      "name": "Ice Marble",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ice_marble",
+      "name": "Ice Marble+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_improved_dye",
+      "name": "Improved Dye",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_intermediate_chaos_stone",
+      "name": "Intermediate Chaos Stone",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_jewellery_steel_sheets",
+      "name": "Jewellery Steel Sheets",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_kao_s_sword_fragment",
+      "name": "Kao's Sword Fragment",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_kyanite",
+      "name": "Kyanite",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_leaf",
+      "name": "Leaf",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_leather_hardener",
+      "name": "Leather Hardener",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_leather_hardener",
+      "name": "Leather Hardener+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_lunatic_shard",
+      "name": "Lunatic Shard",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_northwind_weapon_stone",
+      "name": "Northwind Weapon Stone",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_northwind_weapon_stone",
+      "name": "Northwind Weapon Stone+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_nykos_mane",
+      "name": "Nykos' Mane",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_orc_amulet",
+      "name": "Orc Amulet",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_orc_amulet",
+      "name": "Orc Amulet+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_orc_club",
+      "name": "Orc Club",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_orc_tooth",
+      "name": "Orc Tooth",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_orc_tooth",
+      "name": "Orc Tooth+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ornament",
+      "name": "Ornament",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_ornamental_hairpin",
+      "name": "Ornamental Hairpin",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_padparadscha",
+      "name": "Padparadscha",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_piece_of_broken_armour",
+      "name": "Piece of Broken Armour",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_piece_of_fabric",
+      "name": "Piece of Fabric",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_piece_of_fabric",
+      "name": "Piece of Fabric+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_piece_of_gem",
+      "name": "Piece of Gem",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_piece_of_ice",
+      "name": "Piece of Ice",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_piece_of_ice",
+      "name": "Piece of Ice+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_plant_sap",
+      "name": "Plant Sap",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_quartz_sand",
+      "name": "Quartz Sand",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_razador_s_horn",
+      "name": "Razador's Horn",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_red_hairband",
+      "name": "Red Hairband",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_red_zodiac_case",
+      "name": "Red Zodiac Case",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_regular_chaos_stone",
+      "name": "Regular Chaos Stone",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_regular_dye",
+      "name": "Regular Dye",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_rusty_blade",
+      "name": "Rusty Blade",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_strong_knot",
+      "name": "Strong Knot+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_strong_rope",
+      "name": "Strong Rope+",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_strong_twine",
+      "name": "Strong Twine",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_sturdy_cords",
+      "name": "Sturdy Cords",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_talisman_essence",
+      "name": "Talisman Essence",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_thick_thread",
+      "name": "Thick Thread",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_thin_thread",
+      "name": "Thin Thread",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_thorn_bowl",
+      "name": "Thorn Bowl",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_tiger_hide",
+      "name": "Tiger Hide",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_titanium_dioxide",
+      "name": "Titanium Dioxide",
+      "category": "refinement_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_titanium_platelet",
+      "name": "Titanium Platelet",
+      "category": "craft_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
+    },
+    {
+      "id": "wiki_tough_straps",
+      "name": "Tough Straps",
+      "category": "upgrade_material",
+      "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
+      "verification": "category_listing_only"
     }
   ],
   "spiritStones": [
