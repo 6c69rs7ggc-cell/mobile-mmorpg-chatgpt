@@ -1,0 +1,201 @@
+{
+  "_meta": {
+    "title": "ASHEN REALM — bestiary data",
+    "version": 1,
+    "purpose": "Source-tracked Metin2 reference data for the browser MMORPG prototype.",
+    "important": "Starter dataset, not a complete official drop database. Unknown values are null/empty instead of invented.",
+    "reference": "https://en-wiki.metin2.gameforge.com/index.php/Monster",
+    "dropRules": "Official wiki states that a character 16 or more levels above a monster receives neither EXP nor item drops from that monster.",
+    "dropDataStatus": "Individual per-monster drops are not populated yet; do not infer drops from names or generic loot behavior."
+  },
+  "maps": [
+    {
+      "id": "yongan",
+      "name": "Yongan",
+      "mapTier": 1,
+      "kingdom": "Shinsoo",
+      "role": "starter",
+      "equivalentMaps": [
+        "joan",
+        "pyungmoo"
+      ],
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Yongan"
+    },
+    {
+      "id": "joan",
+      "name": "Joan",
+      "mapTier": 1,
+      "kingdom": "Chunjo",
+      "role": "starter",
+      "equivalentMaps": [
+        "yongan",
+        "pyungmoo"
+      ],
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Joan"
+    },
+    {
+      "id": "pyungmoo",
+      "name": "Pyungmoo",
+      "mapTier": 1,
+      "kingdom": "Jinno",
+      "role": "starter",
+      "equivalentMaps": [
+        "yongan",
+        "joan"
+      ],
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Pyungmoo"
+    },
+    {
+      "id": "yayang",
+      "name": "Yayang",
+      "mapTier": 2,
+      "kingdom": "Shinsoo",
+      "role": "map2",
+      "equivalentMaps": [
+        "bakra",
+        "bokjung"
+      ],
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+    },
+    {
+      "id": "bokjung",
+      "name": "Bokjung",
+      "mapTier": 2,
+      "kingdom": "Chunjo",
+      "role": "map2",
+      "equivalentMaps": [
+        "yayang",
+        "bakra"
+      ],
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+    },
+    {
+      "id": "bakra",
+      "name": "Bakra",
+      "mapTier": 2,
+      "kingdom": "Jinno",
+      "role": "map2",
+      "equivalentMaps": [
+        "yayang",
+        "bokjung"
+      ],
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+    }
+  ],
+  "monsters": [
+    {
+      "id": "wild_dog",
+      "name": "Divoký pes",
+      "officialEnglishName": "Wild Dog",
+      "level": 1,
+      "maps": [
+        "yongan",
+        "joan",
+        "pyungmoo"
+      ],
+      "expAtEqualLevel": null,
+      "hp": null,
+      "attack": null,
+      "defense": null,
+      "individualDrops": [],
+      "sharedDropsGroup": null,
+      "dropStatus": "unverified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "hungry_stray_dog",
+      "name": "Hladný túlavý pes",
+      "officialEnglishName": "Hungry Stray Dog",
+      "level": 1,
+      "maps": [
+        "yongan",
+        "joan",
+        "pyungmoo"
+      ],
+      "expAtEqualLevel": null,
+      "hp": null,
+      "attack": null,
+      "defense": null,
+      "individualDrops": [],
+      "sharedDropsGroup": null,
+      "dropStatus": "unverified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "wolf",
+      "name": "Vlk",
+      "officialEnglishName": "Wolf",
+      "level": 3,
+      "maps": [
+        "yongan",
+        "joan",
+        "pyungmoo"
+      ],
+      "expAtEqualLevel": null,
+      "hp": null,
+      "attack": null,
+      "defense": null,
+      "individualDrops": [],
+      "sharedDropsGroup": null,
+      "dropStatus": "unverified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "hungry_wolf",
+      "name": "Hladný vlk",
+      "officialEnglishName": "Hungry Wolf",
+      "level": 3,
+      "maps": [
+        "yongan",
+        "joan",
+        "pyungmoo"
+      ],
+      "expAtEqualLevel": null,
+      "hp": null,
+      "attack": null,
+      "defense": null,
+      "individualDrops": [],
+      "sharedDropsGroup": null,
+      "dropStatus": "unverified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "alpha_wolf",
+      "name": "Alfa vlk",
+      "officialEnglishName": "Alpha Wolf",
+      "level": 4,
+      "maps": [
+        "yongan",
+        "joan",
+        "pyungmoo"
+      ],
+      "expAtEqualLevel": null,
+      "hp": null,
+      "attack": null,
+      "defense": null,
+      "individualDrops": [],
+      "sharedDropsGroup": null,
+      "dropStatus": "unverified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    }
+  ],
+  "items": [],
+  "dropGroups": [],
+  "knownRules": [
+    {
+      "id": "level_drop_penalty",
+      "rule": "If the character is 16 or more levels above the monster, EXP and item drops are not awarded.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "map1_equivalence",
+      "rule": "Yongan, Joan and Pyungmoo are equivalent Map 1 starter areas belonging to different kingdoms; they are not consecutive difficulty tiers.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+    },
+    {
+      "id": "map2_equivalence",
+      "rule": "Yayang, Bokjung and Bakra are corresponding Map 2 areas for the three kingdoms.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+    }
+  ]
+}
