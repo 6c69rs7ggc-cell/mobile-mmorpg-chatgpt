@@ -5,13 +5,14 @@ const INPUT = "data/metin2-wiki-catalog-index.json";
 const OUTPUT = "data/metin2-wiki-page-details.json";
 const BATCH_SIZE = 40;
 const PAUSE_MS = 250;
+const MAX_RETRIES = 4;
 
 const catalog = JSON.parse(await fs.readFile(INPUT, "utf8"));
 if (!Array.isArray(catalog.items) || catalog.items.length === 0) {
   throw new Error("Catalog index is empty. Run the catalog importer first.");
 }
 
-async function fetchBatch(titles) {
+async function fetchBatch(titles, attempt = 0) {
   const url = new URL(API);
   const params = {
     action: "query",
@@ -30,18 +31,25 @@ async function fetchBatch(titles) {
   const response = await fetch(url, {
     headers: { "User-Agent": "ASHEN-REALM-Wiki-Details/1.0 (GitHub Actions)" },
   });
-  if (!response.ok) throw new Error(`Wiki API HTTP ${response.status}`);
+  if (!response.ok) {
+    if (attempt < MAX_RETRIES && (response.status === 429 || response.status >= 500)) {
+      await new Promise(resolve => setTimeout(resolve, PAUSE_MS * (attempt + 1) * 2));
+      return fetchBatch(titles, attempt + 1);
+    }
+    throw new Error(`Wiki API HTTP ${response.status}`);
+  }
   const data = await response.json();
   if (data.error) throw new Error(JSON.stringify(data.error));
   return data.query?.pages ?? [];
 }
 
 const details = [];
+const indexedByTitle = new Map(catalog.items.map(item => [item.title.toLocaleLowerCase("en"), item]));
 for (let offset = 0; offset < catalog.items.length; offset += BATCH_SIZE) {
   const batch = catalog.items.slice(offset, offset + BATCH_SIZE);
   const pages = await fetchBatch(batch.map(item => item.title));
   for (const page of pages) {
-    const indexed = catalog.items.find(item => item.title.toLocaleLowerCase("en") === page.title.toLocaleLowerCase("en"));
+    const indexed = indexedByTitle.get(page.title.toLocaleLowerCase("en"));
     details.push({
       title: page.title,
       pageId: page.pageid ?? indexed?.pageId ?? null,
