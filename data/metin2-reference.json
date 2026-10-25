@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 12,
+    "version": 13,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -51,7 +51,8 @@
     "lastUpdated": "2026-10-26",
     "changeLog": [
       "v11: added VNUM-to-name lookup for mob/item IDs in the two separate community drop datasets; provenance and compatibility caveats retained.",
-      "v12: attached resolved VNUM name references to each community drop entry and added data-quality/source-policy audit summary; community data remain isolated from official facts."
+      "v12: attached resolved VNUM name references to each community drop entry and added data-quality/source-policy audit summary; community data remain isolated from official facts.",
+      "v13: resolved Alpha Wolf EXP display value using the official overview table (51 EXP) while preserving the conflicting individual-page value (41) as a source note."
     ]
   },
   "itemCategories": [
@@ -2099,7 +2100,7 @@
         "Pyungmoo",
         "Yongan"
       ],
-      "exp": null,
+      "exp": 51,
       "dropItems": [
         {
           "name": "Cobra Dagger +2",
@@ -2153,15 +2154,17 @@
       "dropStatus": "wiki_listed_items_verified_no_rates",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Alpha_Wolf",
       "sourceVerified": true,
-      "expStatus": "conflicting_official_wiki_sources",
+      "expStatus": "overview_table_preferred_individual_page_conflict",
       "expSourceNotes": [
         {
-          "url": "https://en-wiki.metin2.gameforge.com/index.php/Alpha_Wolf",
-          "value": 41
+          "url": "https://en-wiki.metin2.gameforge.com/index.php/Monster",
+          "value": 51,
+          "reason": "overview table"
         },
         {
-          "url": "https://en-wiki.metin2.gameforge.com/index.php/Monster",
-          "value": 51
+          "url": "https://en-wiki.metin2.gameforge.com/index.php/Alpha_Wolf",
+          "value": 41,
+          "reason": "individual page; conflicts with overview"
         }
       ]
     },
@@ -4426,9 +4429,9 @@
     "knownLimitations": [
       "Community item and mob names come from a different public server pack; they are VNUM-based hints, not proof of current official Gameforge naming.",
       "Drop groups from different community sources remain separate because their server versions and drop rules may differ.",
-      "Official wiki monster list can confirm public facts such as monster names, levels, maps and EXP, but does not imply that every server drop rate is published.",
       "Some existing books and upgradeMaterials entries are curated/partial lists and are not guaranteed to be a complete canonical item index.",
-      "No claim is made that this JSON is loaded by index.html."
+      "No claim is made that this JSON is loaded by index.html.",
+      "Alpha Wolf EXP conflict: overview table says 51 while individual page says 41; current catalog uses overview value 51 and preserves the conflict note."
     ],
     "nextWorkOrder": [
       "Normalize source metadata and distinguish official-wiki facts from community-only records.",
