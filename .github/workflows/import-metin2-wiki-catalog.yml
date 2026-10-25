@@ -1,0 +1,33 @@
+name: Import official Metin2 Wiki catalog
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Build official Wiki category index
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fetch all pages in official Items category
+        run: node scripts/import-metin2-wiki-catalog.mjs
+      - name: Commit catalog index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/metin2-wiki-catalog-index.json
+          if git diff --cached --quiet; then
+            echo "No catalog changes."
+          else
+            git commit -m "Import official Metin2 Wiki item catalog index"
+            git push
+          fi
