@@ -74,23 +74,41 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111710;fon
 (()=>{const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');let W=0,H=0,dpr=1,last=0,started=false,worldT=0,showMap=false,saveTimer=0,selectedClass='warrior';
 function resize(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}addEventListener('resize',resize);resize();
 const maps=[{name:'Yongan',realm:'Shinsoo',ground:'#263627',dark:'#203022',light:'#293a2a',enemies:['wildDog','wolf','bear','whiteOath']},{name:'Joan',realm:'Chunjo',ground:'#2d3328',dark:'#242a21',light:'#343c2d',enemies:['wolf','bear','wildBoar','whiteOath']},{name:'Pyungmoo',realm:'Jinno',ground:'#29343a',dark:'#202b30',light:'#303e44',enemies:['wolf','bear','tiger','whiteOath']}];let currentMap=0;
-// Metin2 wiki reference data. Gameplay rates are custom-server settings; names and spawn facts follow the wiki.
+// Metin2 wiki reference data (Czech Gameforge Wiki). Rates are custom-server settings.
 const metinWiki=[
- {level:5,name:'Metin Mesiaca',areas:['Yongan','Joan','Pyungmoo']},
- {level:60,name:'Metin pádu',areas:['Veža démonov']},
- {level:60,name:'Metin odplaty',areas:['Chrám draka']},
- {level:60,name:'Metin samoty',areas:['Chrám draka']},
- {level:60,name:'Metin hôr',areas:['Chrám draka']},
- {level:60,name:'Metin arogancie',areas:['Chrám draka']},
- {level:65,name:'Metin smrti',areas:['Hora Sohan','Veža démonov']},
- {level:70,name:'Metin vraždy',areas:['Doyyumhwan','Veža démonov']},
- {level:75,name:'Metin Pung-Ma',areas:['Krajina obrov','Les Lungsam']},
- {level:80,name:'Metin Ma-An',areas:['Krajina obrov','Les Lungsam']},
- {level:85,name:'Metin Tu-Young',areas:['Červený les']},
- {level:85,name:'Metin odplaty',areas:['Katakomby diabla']},
+ {level:5,name:'Metin smutku',areas:['Joan','Pyungmoo','Yongan']},
+ {level:10,name:'Metin boje',areas:['Joan','Pyungmoo','Yongan']},
+ {level:15,name:'Metin bitvy',areas:['Joan','Pyungmoo','Yongan']},
+ {level:20,name:'Metin lačnosti',areas:['Joan','Pyungmoo','Yongan']},
+ {level:25,name:'Metin černoty',areas:['Bakra','Bokjung','Yayang','Joan','Pyungmoo','Yongan']},
+ {level:30,name:'Metin tmy',areas:['Bakra','Bokjung','Yayang']},
+ {level:35,name:'Metin žárlivosti',areas:['Bakra','Bokjung','Yayang']},
+ {level:40,name:'Metin duše',areas:['Poušť Yongbi']},
+ {level:45,name:'Metin stínu',areas:['Údolí Seungryong','Poušť Yongbi']},
+ {level:50,name:'Metin tvrdosti',areas:['Poušť Yongbi','Věž démonů - přízemí']},
+ {level:55,name:'Metin ďábla',areas:['Hora Sohan','Věž démonů - 3. patro']},
+ {level:60,name:'Metin pádu',areas:['Věž démonů - 3. patro']},
+ {level:60,name:'Metin nadutosti',areas:['Dračí chrám']},
+ {level:60,name:'Metin pohoří',areas:['Dračí chrám']},
+ {level:60,name:'Metin pomsty',areas:['Dračí chrám']},
+ {level:60,name:'Metin samoty',areas:['Dračí chrám']},
+ {level:65,name:'Metin smrti',areas:['Hora Sohan','Věž démonů - 6. patro']},
+ {level:70,name:'Metin vraždy',areas:['Ohnivá země','Věž démonů - 6. patro']},
+ {level:75,name:'Metin Pung-Ma',areas:['Země obrů','Les duchů']},
+ {level:80,name:'Metin Ma-An',areas:['Země obrů','Les duchů']},
+ {level:85,name:'Metin odplaty',areas:['Ďáblova katakomba']},
+ {level:85,name:'Metin Tu-Young',areas:['Červený les'],respawnMinutes:30,summons:['Červená dryáda','Červený pařez duchů','Červená vrba duchů']},
  {level:90,name:'Metin Jeon-Un',areas:['Červený les'],respawnMinutes:30,spawns:2,summons:['Červená dryáda','Červený pařez duchů','Červená vrba duchů','Červený zlý strom']},
- {level:95,name:'Metin súmraku',areas:['Mys dračieho ohňa']},
- {level:95,name:'Metin žiaru',areas:['Mys dračieho ohňa','Zátoka nefritu']}
+ {level:95,name:'Metin soumraku',areas:['Záliv dračího ohně']},
+ {level:95,name:'Metin žáru',areas:['Nefritový záliv','Záliv dračího ohně']},
+ {level:100,name:'Metin chladu',areas:['Nemerova strážní věž']},
+ {level:100,name:'Metin Ohně očistce',areas:['Pevnost červeného draka']},
+ {level:100,name:'Metin marnosti',areas:['Nefritový záliv']},
+ {level:100,name:'Metin stromových bytostí',areas:['Zakletý les']},
+ {level:100,name:'Metin zloby',areas:['Bouřné hory','Útes Gautama']},
+ {level:105,name:'Metin zlomyslnosti',areas:['Útes Gautama']},
+ {level:105,name:'Metin zkázy',areas:['Bouřné hory']},
+ {level:120,name:'Metin lesů',areas:['Zakletý les']}
 ];
 const world={w:2400,h:1800},player={x:1200,y:900,r:15,hp:100,maxHp:100,level:1,xp:0,gold:0,potions:3,kills:0,fish:0,fishWait:0,fishState:'idle',weaponLevel:0,armorLevel:0,faceX:1,faceY:0,attack:0,skill:0,invuln:0};try{const saved=JSON.parse(localStorage.getItem('ashenRealmSave')||'null');if(saved){Object.assign(player,{hp:saved.hp,maxHp:saved.maxHp,level:saved.level,xp:saved.xp,gold:saved.gold,potions:saved.potions,kills:saved.kills,fish:saved.fish||0,weaponLevel:saved.weaponLevel||0,armorLevel:saved.armorLevel||0});if(['warrior','assassin','mage','sura'].includes(saved.selectedClass))selectedClass=saved.selectedClass;if(Number.isFinite(saved.x))player.x=Math.max(20,Math.min(2380,saved.x));if(Number.isFinite(saved.y))player.y=Math.max(20,Math.min(1780,saved.y))}}catch(e){};let enemies=[],trees=[],rocks=[],particles=[],floaters=[],drops=[],joystick={x:0,y:0},keys={},merchant={x:1200,y:900};document.querySelectorAll('[data-class]').forEach(btn=>{btn.classList.toggle('active',btn.dataset.class===selectedClass);btn.addEventListener('click',()=>{selectedClass=btn.dataset.class;document.querySelectorAll('[data-class]').forEach(b=>b.classList.toggle('active',b===btn));saveGame();toast('Vybraná trieda: '+btn.textContent.trim().split('\n')[0])})});const rand=(a,b)=>a+Math.random()*(b-a);const rates={exp:1.5,drop:1.6,yang:1.8,fish:2.0};
 function spawnEnemy(x,y){const pool=maps[currentMap].enemies,roll=Math.random(),type=pool[Math.min(pool.length-1,Math.floor(roll*pool.length))],stats=type==='wildDog'?{r:12,hp:30,speed:rand(28,43),xp:15,gold:1,level:1,name:'Divoký pes'}:type==='wolf'?{r:14,hp:42,speed:rand(40,55),xp:39,gold:1,level:3,name:'Vlk'}:type==='bear'?{r:17,hp:68,speed:rand(22,34),xp:147,gold:2,level:12,name:'Medveď'}:type==='wildBoar'?{r:15,hp:48,speed:rand(35,48),xp:28,gold:1,level:4,name:'Červený divočák'}:type==='tiger'?{r:16,hp:62,speed:rand(43,57),xp:120,gold:2,level:12,name:'Tygr'}:{r:15,hp:58,speed:rand(30,42),xp:365,gold:2,level:18,name:'Vojak Bielej prísahy'};enemies.push({x,y,type,...stats,maxHp:stats.hp,hit:0,attackWait:rand(.1,1),phase:rand(0,7),alive:true})}
