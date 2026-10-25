@@ -1,0 +1,12 @@
+{
+  "name": "Ashen Realm — Mobile RPG Prototype",
+  "short_name": "Ashen Realm",
+  "description": "Touch-first browser RPG prototype.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#101510",
+  "theme_color": "#101510",
+  "categories": ["games"]
+}
