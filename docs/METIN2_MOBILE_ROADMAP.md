@@ -23,7 +23,10 @@ Vlastný multiplayerový Metin2 server s vyšším EXP/dropom, ktorý sa dá hra
 - Záver: sledovať, ale nie je to skratka k spustiteľnému serveru.
 
 ### Mobilný klient
-- Verejné informácie o mobilných portoch ukazujú hlavne rozpracované Unity/Unreal projekty a Android buildy; oznámenie iOS verzie samo osebe nie je dôkazom, že si ju vieme nainštalovať a pripojiť k vlastnému serveru.
+- **Old2.pl** verejne ponúka iOS beta cez TestFlight: https://testflight.apple.com/join/ktHHqmpF. Je to konkrétny, testovateľný iOS klient pre ich vlastný herný svet.
+- Dôležité: existencia Old2 iOS klienta nedokazuje, že ho možno nakonfigurovať na náš vlastný server. Berieme ho ako dôkaz, že Metin2 na iPhone je technicky možné, a ako referenciu na dotykové ovládanie; nie ako riešenie nášho servera.
+- **Alesta2 Mobile** uvádza Android klienta a iOS stav „coming soon / awaiting App Store approval“: https://alestamt2.com.tr/en/indir. Zatiaľ to nie je dostupná iOS cesta, ktorú môžeme použiť.
+- Verejné Unity/Unreal projekty sú prevažne rozpracované; oznámenie iOS verzie samo osebe nie je dôkazom, že si ju vieme nainštalovať a pripojiť k vlastnému serveru.
 - Zatiaľ nemáme overený iOS klient s potvrdenou kompatibilitou s konkrétnym serverovým jadrom.
 - To je aktuálna kritická blokácia. Neobjednávať VPS ani nekupovať drahý klient, kým nie je odstránená.
 
@@ -60,6 +63,8 @@ Zatiaľ 0 € na VPS a komerčné klienty. Najprv musí byť dokázaná cesta ku
 - Quantum Core X README: https://github.com/MeikelLP/quantum-core-x
 - Quantum Core X client setup (ukazuje požiadavku na TMP4 klienta): https://github.com/MeikelLP/quantum-core-x/blob/main/docs/docs/Getting%20Started/client.md
 - go-metin2-server README: https://github.com/MikelCalvo/go-metin2-server
+- Old2.pl iOS TestFlight (referenčný klient, nie potvrdenie podpory vlastného servera): https://testflight.apple.com/join/ktHHqmpF
+- Alesta2 Mobile platform status: https://alestamt2.com.tr/en/indir
 - Mobilné klienty – aktuálny prieskum a odkazy na vývojárske diskusie: https://metin2.gg/en/blog/metin2-mobile-clients-native-unity-unreal
 
 ## Zásada
