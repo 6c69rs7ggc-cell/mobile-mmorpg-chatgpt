@@ -1,201 +1,465 @@
 {
   "_meta": {
-    "title": "ASHEN REALM — bestiary data",
-    "version": 1,
-    "purpose": "Source-tracked Metin2 reference data for the browser MMORPG prototype.",
-    "important": "Starter dataset, not a complete official drop database. Unknown values are null/empty instead of invented.",
-    "reference": "https://en-wiki.metin2.gameforge.com/index.php/Monster",
-    "dropRules": "Official wiki states that a character 16 or more levels above a monster receives neither EXP nor item drops from that monster.",
-    "dropDataStatus": "Individual per-monster drops are not populated yet; do not infer drops from names or generic loot behavior."
+    "title": "ASHEN REALM — Metin2 reference catalog",
+    "version": 2,
+    "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
+    "accuracy": "This file is a curated reference subset, not a complete extraction of the official wiki or official server drop tables. Unknown item origins and rates remain unspecified.",
+    "sources": {
+      "items": "https://en-wiki.metin2.gameforge.com/index.php/Items",
+      "books": "https://en-wiki.metin2.gameforge.com/index.php/Books",
+      "upgradeItems": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items",
+      "refinement": "https://en-wiki.metin2.gameforge.com/index.php/Item_Refinement",
+      "spiritStones": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones",
+      "potions": "https://en-wiki.metin2.gameforge.com/index.php/Potions",
+      "boxes": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    },
+    "dropPolicy": "Do not fabricate exact drop chances or per-monster item sources. Fill those only from a cited item page or version-matched mob_drop_item/common_drop_item/special_item_group data."
   },
-  "maps": [
+  "itemCategories": [
     {
-      "id": "yongan",
-      "name": "Yongan",
-      "mapTier": 1,
-      "kingdom": "Shinsoo",
-      "role": "starter",
-      "equivalentMaps": [
-        "joan",
-        "pyungmoo"
-      ],
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Yongan"
+      "id": "books",
+      "label": "Knihy a manuály",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
     },
     {
-      "id": "joan",
-      "name": "Joan",
-      "mapTier": 1,
-      "kingdom": "Chunjo",
-      "role": "starter",
-      "equivalentMaps": [
-        "yongan",
-        "pyungmoo"
-      ],
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Joan"
+      "id": "upgrade_materials",
+      "label": "Predmety na vylepšovanie",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
     },
     {
-      "id": "pyungmoo",
-      "name": "Pyungmoo",
-      "mapTier": 1,
-      "kingdom": "Jinno",
-      "role": "starter",
-      "equivalentMaps": [
-        "yongan",
-        "joan"
-      ],
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Pyungmoo"
+      "id": "craft_materials",
+      "label": "Materiály na výrobu a zdokonaľovanie",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Item_Refinement"
     },
     {
-      "id": "yayang",
-      "name": "Yayang",
-      "mapTier": 2,
-      "kingdom": "Shinsoo",
-      "role": "map2",
-      "equivalentMaps": [
-        "bakra",
-        "bokjung"
-      ],
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+      "id": "spirit_stones",
+      "label": "Duchovné kamene",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
     },
     {
-      "id": "bokjung",
-      "name": "Bokjung",
-      "mapTier": 2,
-      "kingdom": "Chunjo",
-      "role": "map2",
-      "equivalentMaps": [
-        "yayang",
-        "bakra"
-      ],
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+      "id": "ores",
+      "label": "Rudy a spracovanie rúd",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
     },
     {
-      "id": "bakra",
-      "name": "Bakra",
-      "mapTier": 2,
-      "kingdom": "Jinno",
-      "role": "map2",
-      "equivalentMaps": [
-        "yayang",
-        "bokjung"
-      ],
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+      "id": "potions",
+      "label": "Liečivé a posilňujúce elixíry",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Potions"
+    },
+    {
+      "id": "boxes",
+      "label": "Truhlice a balíčky",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    },
+    {
+      "id": "quest_items",
+      "label": "Predmety úloh",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
+    },
+    {
+      "id": "equipment",
+      "label": "Zbrane, brnenia a doplnky",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
+    },
+    {
+      "id": "pet_mount",
+      "label": "Predmety pre mazlíčkov a kone",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
     }
   ],
-  "monsters": [
+  "upgradeRules": [
     {
-      "id": "wild_dog",
-      "name": "Divoký pes",
-      "officialEnglishName": "Wild Dog",
-      "level": 1,
-      "maps": [
-        "yongan",
-        "joan",
-        "pyungmoo"
-      ],
-      "expAtEqualLevel": null,
-      "hp": null,
-      "attack": null,
-      "defense": null,
-      "individualDrops": [],
-      "sharedDropsGroup": null,
-      "dropStatus": "unverified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "id": "general_upgrade",
+      "rule": "Equipable items are commonly upgraded to +9; some systems allow higher values. Upgrade attempts usually require Yang and upgrade materials.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
     },
     {
-      "id": "hungry_stray_dog",
-      "name": "Hladný túlavý pes",
-      "officialEnglishName": "Hungry Stray Dog",
-      "level": 1,
-      "maps": [
-        "yongan",
-        "joan",
-        "pyungmoo"
-      ],
-      "expAtEqualLevel": null,
-      "hp": null,
-      "attack": null,
-      "defense": null,
-      "individualDrops": [],
-      "sharedDropsGroup": null,
-      "dropStatus": "unverified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "id": "npc_upgrade_risk",
+      "rule": "NPC upgrades can destroy an item on failure depending on the upgrade method; refinement items can offer different failure outcomes.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
     },
     {
-      "id": "wolf",
-      "name": "Vlk",
-      "officialEnglishName": "Wolf",
-      "level": 3,
-      "maps": [
-        "yongan",
-        "joan",
-        "pyungmoo"
-      ],
-      "expAtEqualLevel": null,
-      "hp": null,
-      "attack": null,
-      "defense": null,
-      "individualDrops": [],
-      "sharedDropsGroup": null,
-      "dropStatus": "unverified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "id": "refinement_vs_upgrade",
+      "rule": "Craft/refinement materials and upgrade materials are related but not identical categories; some items can be used in both.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Item_Refinement"
     },
     {
-      "id": "hungry_wolf",
-      "name": "Hladný vlk",
-      "officialEnglishName": "Hungry Wolf",
-      "level": 3,
-      "maps": [
-        "yongan",
-        "joan",
-        "pyungmoo"
-      ],
-      "expAtEqualLevel": null,
-      "hp": null,
-      "attack": null,
-      "defense": null,
-      "individualDrops": [],
-      "sharedDropsGroup": null,
-      "dropStatus": "unverified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
-    },
-    {
-      "id": "alpha_wolf",
-      "name": "Alfa vlk",
-      "officialEnglishName": "Alpha Wolf",
-      "level": 4,
-      "maps": [
-        "yongan",
-        "joan",
-        "pyungmoo"
-      ],
-      "expAtEqualLevel": null,
-      "hp": null,
-      "attack": null,
-      "defense": null,
-      "individualDrops": [],
-      "sharedDropsGroup": null,
-      "dropStatus": "unverified",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "id": "spirit_stone_socket",
+      "rule": "Spirit stones provide persistent equipment bonuses when successfully inserted into supported equipment; insertion can fail and leave a broken slot.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
     }
   ],
-  "items": [],
+  "books": [
+    {
+      "id": "skill_book",
+      "name": "Kniha schopností",
+      "category": "class_skill",
+      "purpose": "Zvyšuje úroveň bežnej schopnosti od M1 smerom k G1.",
+      "requirements": [
+        "20 000 XP; ďalšie podmienky podľa schopnosti"
+      ],
+      "consumedOnUse": true,
+      "cooldownHours": [
+        18,
+        30
+      ],
+      "originSummary": "Metiny a vybrané príšery/truhlice; presný zdroj sa líši podľa predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Skill_Book"
+    },
+    {
+      "id": "manual",
+      "name": "Manuál",
+      "category": "class_skill",
+      "purpose": "Alternatívny predmet na zvyšovanie schopností v rozsahu M1 až G1; wiki uvádza o niečo vyššiu úspešnosť než pri bežnej knihe schopností.",
+      "requirements": [
+        "20 000 XP; podľa schopnosti"
+      ],
+      "consumedOnUse": true,
+      "originSummary": "Napríklad obchodovanie cez Seon-Hae, vybrané truhlice a úlohy.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Manual"
+    },
+    {
+      "id": "book_of_forgetfulness",
+      "name": "Kniha zabudnutia",
+      "category": "skill_reset",
+      "purpose": "Umožňuje zabudnúť naučenú schopnosť a presunúť jeden bod schopnosti.",
+      "originSummary": "Presný zdroj treba overiť na stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "soul_stone",
+      "name": "Duševný kameň",
+      "category": "grand_master_skill",
+      "purpose": "Používa sa na zvyšovanie schopností na úrovni veľmajstra od G1 smerom k P.",
+      "consumedOnUse": true,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "polymorph_book",
+      "name": "Kniha premeny",
+      "category": "polymorph",
+      "purpose": "Zvyšuje schopnosť premeny; existujú knihy pre rôzne stupne schopnosti.",
+      "consumedOnUse": true,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "horse_taming_manual",
+      "name": "Manuál krotenia koňa",
+      "category": "horse",
+      "purpose": "Trénuje privolanie koňa.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "horse_riding_manual",
+      "name": "Manuál jazdenia",
+      "category": "horse",
+      "purpose": "Zvyšuje základné jazdecké schopnosti.",
+      "consumedOnUse": true,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "mining_guide",
+      "name": "Sprievodca ťažbou",
+      "category": "mining",
+      "purpose": "Zvyšuje úroveň ťažby.",
+      "consumedOnUse": true,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "combo_mastery",
+      "name": "Kniha komba",
+      "category": "combat",
+      "purpose": "Trénuje kombo; wiki uvádza viacero kníh pre tento systém.",
+      "consumedOnUse": true,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "pet_skill_book",
+      "name": "Kniha schopnosti mazlíčka",
+      "category": "pet",
+      "purpose": "Učí mazlíčka vybranú schopnosť.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "pet_evolution_books",
+      "name": "Knihy vývoja mazlíčka",
+      "category": "pet",
+      "purpose": "Knihy jednotlivých stupňov sa používajú pri postupe mazlíčka na vyššiu vývojovú úroveň.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    }
+  ],
+  "upgradeMaterials": [
+    {
+      "id": "bear_foot_skin",
+      "name": "Medvedia koža z laby",
+      "category": "upgrade_material",
+      "purpose": "Materiál uvedený v katalógu predmetov na vylepšovanie; presné recepty treba overiť podľa konkrétnej výbavy.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "bear_gall",
+      "name": "Medvedia žlč",
+      "category": "upgrade_material",
+      "purpose": "Materiál uvedený v katalógu predmetov na vylepšovanie; presné použitie závisí od receptu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "curse_book",
+      "name": "Kniha kliatby",
+      "category": "upgrade_material",
+      "purpose": "Materiál na vylepšovanie; presné recepty treba overiť podľa konkrétnej výbavy.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "curse_book_plus",
+      "name": "Kniha kliatby +",
+      "category": "upgrade_material",
+      "purpose": "Variant materiálu na vylepšovanie.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "spider_web",
+      "name": "Pavučina",
+      "category": "upgrade_material",
+      "purpose": "Materiál používaný v receptoch na vylepšovanie; konkrétny recept treba overiť.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "spiders_poison_sack",
+      "name": "Pavúčí jedový vak",
+      "category": "upgrade_material",
+      "purpose": "Materiál používaný v receptoch na vylepšovanie; konkrétny recept treba overiť.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "tiger_fang",
+      "name": "Tigrí tesák",
+      "category": "upgrade_material",
+      "purpose": "Materiál uvedený v katalógu predmetov na vylepšovanie.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "thin_leather",
+      "name": "Tenká koža",
+      "category": "upgrade_material",
+      "purpose": "Materiál na spracovanie a vylepšovanie.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "cloth",
+      "name": "Látka",
+      "category": "upgrade_material",
+      "purpose": "Materiál na spracovanie.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "steel",
+      "name": "Oceľ",
+      "category": "upgrade_material",
+      "purpose": "Materiál na spracovanie a vylepšovanie.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "dragon_scale",
+      "name": "Dračia šupina",
+      "category": "refinement_material",
+      "purpose": "Materiál na zušľachťovanie.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "dragon_claw",
+      "name": "Dračí pazúr",
+      "category": "refinement_material",
+      "purpose": "Materiál na zušľachťovanie.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "moonstone",
+      "name": "Mesačný kameň",
+      "category": "refinement_material",
+      "purpose": "Materiál na zušľachťovanie výbavy.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    },
+    {
+      "id": "agate",
+      "name": "Achát",
+      "category": "refinement_material",
+      "purpose": "Kameň používaný pri zušľachťovaní výbavy.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+    }
+  ],
+  "spiritStones": [
+    {
+      "id": "stone_of_haste",
+      "name": "Kameň zhone",
+      "slotTypes": [
+        "armour"
+      ],
+      "bonus": "Rýchlosť pohybu",
+      "grades": {
+        "0": "+5%",
+        "1": "+10%",
+        "2": "+15%",
+        "3": "+20%",
+        "4": "+30%"
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
+    },
+    {
+      "id": "stone_of_magic",
+      "name": "Kameň mágie",
+      "slotTypes": [
+        "armour"
+      ],
+      "bonus": "SP",
+      "grades": {
+        "0": "+30",
+        "1": "+60",
+        "2": "+90",
+        "3": "+120",
+        "4": "+150"
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
+    },
+    {
+      "id": "stone_of_vitality",
+      "name": "Kameň vitality",
+      "slotTypes": [
+        "armour"
+      ],
+      "bonus": "HP",
+      "grades": {
+        "0": "+50",
+        "1": "+100",
+        "2": "+150",
+        "3": "+200",
+        "4": "+300"
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
+    },
+    {
+      "id": "stone_of_evasion",
+      "name": "Kameň úhybu",
+      "slotTypes": [
+        "armour"
+      ],
+      "bonus": "Šanca blokovať útok zblízka",
+      "grades": {
+        "0": "1%",
+        "1": "2%",
+        "2": "3%",
+        "3": "5%",
+        "4": "8%"
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
+    },
+    {
+      "id": "stone_of_defence",
+      "name": "Kameň obrany",
+      "slotTypes": [
+        "armour"
+      ],
+      "bonus": "Obrana",
+      "grades": {
+        "0": "+2",
+        "1": "+4",
+        "2": "+6",
+        "3": "+10",
+        "4": "+15"
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
+    }
+  ],
+  "potionExamples": [
+    {
+      "id": "red_potion",
+      "name": "Červený elixír",
+      "category": "healing",
+      "effect": "Obnovuje HP",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Potions"
+    },
+    {
+      "id": "blue_potion",
+      "name": "Modrý elixír",
+      "category": "healing",
+      "effect": "Obnovuje SP",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Potions"
+    },
+    {
+      "id": "green_potion",
+      "name": "Zelený elixír",
+      "category": "buff",
+      "effect": "Zvyšuje rýchlosť útoku na 10 minút",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Potions"
+    },
+    {
+      "id": "purple_potion",
+      "name": "Fialový elixír",
+      "category": "buff",
+      "effect": "Zvyšuje rýchlosť pohybu na 10 minút",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Potions"
+    },
+    {
+      "id": "potion_of_wisdom",
+      "name": "Elixír múdrosti",
+      "category": "buff",
+      "effect": "Zvyšuje získavanie skúseností",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Potions"
+    }
+  ],
+  "boxExamples": [
+    {
+      "id": "chief_orc_box",
+      "name": "Truhlica Orčieho vodcu",
+      "origin": "Chief Orc",
+      "contents": "Obsah je potrebné čítať z detailnej stránky truhlice; neodhadovať.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    },
+    {
+      "id": "queen_spider_box",
+      "name": "Truhlica Pavúčej kráľovnej",
+      "origin": "Queen Spider",
+      "contents": "Obsah je potrebné čítať z detailnej stránky truhlice; neodhadovať.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    },
+    {
+      "id": "skill_book_selection_box",
+      "name": "Výberová truhlica kníh schopností",
+      "origin": "Various",
+      "contents": "Balíček súvisiaci s knihami schopností; konkrétny obsah sa musí overiť na stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    },
+    {
+      "id": "pet_book_chest",
+      "name": "Truhlica kníh mazlíčkov",
+      "origin": "Selected bosses/monsters",
+      "contents": "Obsahuje náhodne vybranú knihu schopnosti mazlíčka.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    },
+    {
+      "id": "horse_skill_chest",
+      "name": "Truhlica jazdeckých schopností",
+      "origin": "Selected bosses/chests",
+      "contents": "Obsahuje náhodnú knihu jazdeckej schopnosti.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    }
+  ],
   "dropGroups": [],
   "knownRules": [
     {
-      "id": "level_drop_penalty",
-      "rule": "If the character is 16 or more levels above the monster, EXP and item drops are not awarded.",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+      "id": "book_reading_cooldown",
+      "rule": "Knihy majú časový odstup medzi čítaniami; oficiálna wiki uvádza približne 18 až 30 hodín a predmet Exorcism Scroll môže cooldown preskočiť.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
     },
     {
-      "id": "map1_equivalence",
-      "rule": "Yongan, Joan and Pyungmoo are equivalent Map 1 starter areas belonging to different kingdoms; they are not consecutive difficulty tiers.",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+      "id": "spirit_stone_insertion",
+      "rule": "Duchovné kamene dávajú bonus po vložení do podporovanej výbavy; vloženie môže zlyhať a poškodiť slot.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
     },
     {
-      "id": "map2_equivalence",
-      "rule": "Yayang, Bokjung and Bakra are corresponding Map 2 areas for the three kingdoms.",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Worldmap"
+      "id": "boxes",
+      "rule": "Truhlice môžu obsahovať Yang, skúsenosti, bežné alebo vzácne predmety, prípadne príšery; časť vyžaduje kľúč.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
     }
   ]
 }
