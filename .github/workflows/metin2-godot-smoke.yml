@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: EnriqueGF/metin2-godot
-          ref: main
+          ref: 078d39a41a3ef17c9e09fb9807956cb1a2f16641
           path: upstream/metin2-godot
           persist-credentials: false
 
