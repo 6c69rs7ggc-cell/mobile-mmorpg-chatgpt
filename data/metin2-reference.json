@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 14,
+    "version": 15,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -56,6 +56,11 @@
       {
         "version": 14,
         "change": "Assigned a custom 20% drop chance to every currently catalogued monster drop item. This is a game-design rule, not an official Metin2 rate; catalog is still reference-only until index.html loads it.",
+        "date": "2026-10-26"
+      },
+      {
+        "version": 15,
+        "change": "Changed all currently catalogued monster drop item chances from 20% to 10% as a custom game-design rule; not official Metin2 rates.",
         "date": "2026-10-26"
       }
     ]
@@ -1996,8 +2001,8 @@
         {
           "name": "Polymorph Marble",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate",
@@ -2020,14 +2025,14 @@
         {
           "name": "Polymorph Marble",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Uriels Book",
           "kind": "quest_or_research_item",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate",
@@ -2050,14 +2055,14 @@
         {
           "name": "Polymorph Marble",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Claw",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate",
@@ -2080,14 +2085,14 @@
         {
           "name": "Wolf Claw",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Polymorph Marble",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate",
@@ -2110,50 +2115,50 @@
         {
           "name": "Cobra Dagger +2",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Nine Blades +2",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Steel Torch +2",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Azure Suit +2",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Divine Wind Armour +2",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Copper Necklace",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Polymorph Marble",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Claw+",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate",
@@ -2189,26 +2194,26 @@
         {
           "name": "Blood Red Flower",
           "kind": "quest_or_research_item",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Peach Blossom",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Polymorph Marble",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Claw+",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate",
@@ -2231,14 +2236,14 @@
         {
           "name": "Orange Flower",
           "kind": "quest_or_research_item",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Polymorph Marble",
           "kind": "wiki_listed_drop",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate",
@@ -2261,43 +2266,43 @@
       "dropItems": [
         {
           "name": "Broad Sword +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Composite Bow +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Crescent Sword +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Leather Shoes +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wooden Necklace +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Lilac",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Polymorph Marble",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Liver",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate"
@@ -2318,23 +2323,23 @@
       "dropItems": [
         {
           "name": "Polymorph Marble",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Fur+",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Intestine",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Pelt",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate"
@@ -2356,18 +2361,18 @@
       "dropItems": [
         {
           "name": "Autumn Wind Fan +0",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Bellflower",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Claw",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate"
@@ -2406,13 +2411,13 @@
       "dropItems": [
         {
           "name": "Kaki Blossom",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Claw+",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate"
@@ -2434,23 +2439,23 @@
       "dropItems": [
         {
           "name": "Antique Bell +0",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Full Moon Sword +0",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Phoenix Lance +0",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Fur",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate"
@@ -2471,33 +2476,33 @@
       "dropItems": [
         {
           "name": "Requiem Plate Armour +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Bloody Helmet +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Bamboo Skin Shoes +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Golden Necklace +2",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Polymorph Marble",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         },
         {
           "name": "Wolf Fur",
-          "dropRate": 20,
-          "rateStatus": "custom_game_design_rate_20_percent_not_official"
+          "dropRate": 10,
+          "rateStatus": "custom_game_design_rate_10_percent_not_official"
         }
       ],
       "dropStatus": "wiki_item_list_with_custom_20_percent_game_rate"
@@ -4444,9 +4449,10 @@
       "Audit book and upgrade-material lists for duplicates and canonical names.",
       "Only then implement a runtime data loader in index.html."
     ],
-    "version": 14,
-    "customDropRatePolicy": "Every currently catalogued monster drop item is assigned 20% as a project design choice. This is not an official Metin2 drop rate. The catalog is not yet consumed by index.html.",
+    "version": 15,
+    "customDropRatePolicy": "Every currently catalogued monster drop item is assigned 10% as a project design choice. This is not an official Metin2 drop rate. If each kill rolls independently, 10% means 1 item on average per 10 kills over the long run, not a guaranteed item every 10 kills. Catalog is not yet consumed by index.html.",
     "monstersWithCustom20PercentDropRates": 13,
-    "monsterDropItemsAssigned20Percent": 48
+    "monsterDropItemsAssigned20Percent": 48,
+    "monsterDropItemsAssigned10Percent": 48
   }
 }
