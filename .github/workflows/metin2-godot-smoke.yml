@@ -12,7 +12,7 @@ permissions:
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout this repository
         uses: actions/checkout@v4
@@ -43,12 +43,36 @@ jobs:
         working-directory: upstream/metin2-godot
         run: godot --headless --path godot -- --role=client --client-controls-sandbox --smoke-test --expect-role=client
 
+      - name: Run server foundation tests without map assets
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot --script res://server/tests/run_server_foundation_tests.gd
+
+      - name: Run gameplay domain tests
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot --script res://server/tests/run_gameplay_domain_tests.gd
+
+      - name: Run authoritative coordinator tests
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot --script res://server/tests/run_authoritative_game_coordinator_tests.gd
+
+      - name: Run ENet session tests
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot --script res://server/tests/run_enet_session_tests.gd
+
+      - name: Run ENet gameplay gateway tests
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot --script res://server/tests/run_enet_gameplay_gateway_tests.gd
+
+      - name: Run aggregate persistence tests
+        working-directory: upstream/metin2-godot
+        run: godot --headless --path godot --script res://server/tests/aggregate_repository_test_runner.gd
+
       - name: Check whether generated map data is present
         working-directory: upstream/metin2-godot
         run: |
           if [ -d generated/maps ] && [ "$(find generated/maps -type f | wc -l)" -gt 0 ]; then
-            echo "Generated map data exists; server smoke test can be run."
+            echo "Generated map data exists; run the authoritative server smoke test."
             godot --headless --path godot -- --smoke-test --expect-role=server
           else
-            echo "::warning::Server smoke test not run: generated/maps is absent. The upstream project requires local converted map data for authoritative collision initialization."
+            echo "::warning::Server runtime smoke test not run: generated/maps is absent. Domain, persistence and transport tests run separately above, but real map-backed server startup remains unverified."
           fi
