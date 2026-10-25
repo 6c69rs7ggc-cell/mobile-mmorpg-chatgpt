@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 15,
+    "version": 16,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -61,6 +61,11 @@
       {
         "version": 15,
         "change": "Changed all currently catalogued monster drop item chances from 20% to 10% as a custom game-design rule; not official Metin2 rates.",
+        "date": "2026-10-26"
+      },
+      {
+        "version": 16,
+        "change": "Added verified official-wiki category source index for weapons, armour and equipment to guide systematic item cataloguing; this is an index, not a claim that all equipment has been imported.",
         "date": "2026-10-26"
       }
     ]
@@ -4444,15 +4449,56 @@
       "Alpha Wolf EXP conflict: overview table says 51 while individual page says 41; current catalog uses overview value 51 and preserves the conflict note."
     ],
     "nextWorkOrder": [
-      "Normalize source metadata and distinguish official-wiki facts from community-only records.",
-      "Expand official-wiki monster/map records in small verifiable batches.",
-      "Audit book and upgrade-material lists for duplicates and canonical names.",
-      "Only then implement a runtime data loader in index.html."
+      "Import individual equipment names from official wiki by category, starting with beginner weapons and armour.",
+      "For each item, capture level/class requirements and upgrade path only when the item page confirms them.",
+      "Connect upgrade recipes to specific material items and source pages.",
+      "Map each material to monsters only when an official page documents the drop; leave unknown rates unresolved.",
+      "Keep the custom 10% game rate clearly separate from official source facts.",
+      "Only then implement runtime item and drop systems in index.html."
     ],
-    "version": 15,
+    "version": 16,
     "customDropRatePolicy": "Every currently catalogued monster drop item is assigned 10% as a project design choice. This is not an official Metin2 drop rate. If each kill rolls independently, 10% means 1 item on average per 10 kills over the long run, not a guaranteed item every 10 kills. Catalog is not yet consumed by index.html.",
     "monstersWithCustom20PercentDropRates": 13,
     "monsterDropItemsAssigned20Percent": 48,
-    "monsterDropItemsAssigned10Percent": 48
-  }
+    "monsterDropItemsAssigned10Percent": 48,
+    "equipmentCatalogStatus": {
+      "complete": false,
+      "note": "Weapon and armour category pages are now tracked as authoritative index sources, but individual equipment records, upgrade recipes, and monster drops have not been fully imported.",
+      "sourcePages": {
+        "weapons": 178,
+        "armour": 108,
+        "equipment": 23
+      }
+    }
+  },
+  "equipmentCategorySources": [
+    {
+      "id": "weapons",
+      "label": "Zbrane",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "wikiListedPages": 178,
+      "status": "source_index_only_not_imported"
+    },
+    {
+      "id": "armour",
+      "label": "Brnenia",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "wikiListedPages": 108,
+      "status": "source_index_only_not_imported"
+    },
+    {
+      "id": "equipment",
+      "label": "Ostatná výbava",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AEquipment",
+      "wikiListedPages": 23,
+      "status": "source_index_only_not_imported"
+    },
+    {
+      "id": "items",
+      "label": "Všetky predmety",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Items",
+      "wikiListedPages": null,
+      "status": "overview_only"
+    }
+  ]
 }
