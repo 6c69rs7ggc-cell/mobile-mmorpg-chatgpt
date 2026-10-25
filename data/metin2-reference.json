@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 10,
+    "version": 11,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -47,7 +47,11 @@
       "raw_community_drop_groups": 7,
       "second_community_drop_groups": 7,
       "second_community_drop_entries": 95
-    }
+    },
+    "lastUpdated": "2026-10-26",
+    "changeLog": [
+      "v11: added VNUM-to-name lookup for mob/item IDs in the two separate community drop datasets; provenance and compatibility caveats retained."
+    ]
   },
   "itemCategories": [
     {
@@ -3971,5 +3975,301 @@
       ],
       "interpretation": "Raw engine parameters only. In this repository the same mob VNUMs can have very different drops from another community repository; do not merge these sets or interpret rawRate as a percent without matching server source/config and item_proto."
     }
-  ]
+  ],
+  "communityVnumNameLookup": {
+    "sourceType": "name lookup from public community server files; not an official Gameforge dataset",
+    "sourceRepository": "giosoares101/metin2-server",
+    "itemNamesSource": "https://github.com/giosoares101/metin2-server/blob/main/gamefiles/conf/item_names_en.txt",
+    "mobNamesSource": "https://github.com/giosoares101/metin2-server/blob/main/gamefiles/conf/mob_names_en.txt",
+    "caution": "Names are mapped by VNUM from a separate reference server pack. They help decode raw drop files but do not prove the same item/mob names or drops exist in current official Gameforge servers.",
+    "mobs": [
+      {
+        "vnum": 103,
+        "name": "Alpha Wolf",
+        "matched": true
+      },
+      {
+        "vnum": 104,
+        "name": "Blue Wolf",
+        "matched": true
+      },
+      {
+        "vnum": 105,
+        "name": "Alpha Blue Wolf",
+        "matched": true
+      },
+      {
+        "vnum": 131,
+        "name": "Cursed Wolf",
+        "matched": true
+      },
+      {
+        "vnum": 132,
+        "name": "Cursed Alpha Wolf",
+        "matched": true
+      },
+      {
+        "vnum": 134,
+        "name": "Cursed Alpha Blue Wolf",
+        "matched": true
+      },
+      {
+        "vnum": 102,
+        "name": "Wolf",
+        "matched": true
+      }
+    ],
+    "items": [
+      {
+        "vnum": 1012,
+        "name": "Cobra Dagger+2",
+        "matched": true
+      },
+      {
+        "vnum": 4012,
+        "name": "Nine Blades+2",
+        "matched": true
+      },
+      {
+        "vnum": 11402,
+        "name": "Azure Suit+2",
+        "matched": true
+      },
+      {
+        "vnum": 16022,
+        "name": "Copper Necklace+2",
+        "matched": true
+      },
+      {
+        "vnum": 32,
+        "name": "Crescent Sword+2",
+        "matched": true
+      },
+      {
+        "vnum": 52,
+        "name": "Broad Sword+2",
+        "matched": true
+      },
+      {
+        "vnum": 15002,
+        "name": "Leather Shoes+2",
+        "matched": true
+      },
+      {
+        "vnum": 2022,
+        "name": "Composite Bow+2",
+        "matched": true
+      },
+      {
+        "vnum": 16002,
+        "name": "Wooden Necklace+2",
+        "matched": true
+      },
+      {
+        "vnum": 11602,
+        "name": "Requiem Plate Armour+2",
+        "matched": true
+      },
+      {
+        "vnum": 12482,
+        "name": "Bloody Helmet+2",
+        "matched": true
+      },
+      {
+        "vnum": 15022,
+        "name": "Bamboo Skin Shoes+2",
+        "matched": true
+      },
+      {
+        "vnum": 16062,
+        "name": "Golden Necklace+2",
+        "matched": true
+      },
+      {
+        "vnum": 7160,
+        "name": "Autumn Wind Fan+0",
+        "matched": true
+      },
+      {
+        "vnum": 50722,
+        "name": "Bellflower",
+        "matched": true
+      },
+      {
+        "vnum": 50723,
+        "name": "Kaki Blossom",
+        "matched": true
+      },
+      {
+        "vnum": 5110,
+        "name": "Antique Bell+0",
+        "matched": true
+      },
+      {
+        "vnum": 290,
+        "name": "Full Moon Sword+0",
+        "matched": true
+      },
+      {
+        "vnum": 30069,
+        "name": "Wolf Claw+",
+        "matched": true
+      },
+      {
+        "vnum": 30070,
+        "name": "Wolf Fur+",
+        "matched": true
+      },
+      {
+        "vnum": 30023,
+        "name": "White Tiger Hide",
+        "matched": true
+      },
+      {
+        "vnum": 27799,
+        "name": "Fishbones",
+        "matched": true
+      },
+      {
+        "vnum": 24,
+        "name": "Long Sword+4",
+        "matched": true
+      },
+      {
+        "vnum": 34,
+        "name": "Crescent Sword+4",
+        "matched": true
+      },
+      {
+        "vnum": 44,
+        "name": "Bamboo Sword+4",
+        "matched": true
+      },
+      {
+        "vnum": 54,
+        "name": "Broad Sword+4",
+        "matched": true
+      },
+      {
+        "vnum": 64,
+        "name": "Silver Sword+4",
+        "matched": true
+      },
+      {
+        "vnum": 1014,
+        "name": "Cobra Dagger+4",
+        "matched": true
+      },
+      {
+        "vnum": 1024,
+        "name": "Scissor Dagger+4",
+        "matched": true
+      },
+      {
+        "vnum": 2014,
+        "name": "Long Bow+4",
+        "matched": true
+      },
+      {
+        "vnum": 2024,
+        "name": "Composite Bow+4",
+        "matched": true
+      },
+      {
+        "vnum": 2034,
+        "name": "Battle Bow+4",
+        "matched": true
+      },
+      {
+        "vnum": 2044,
+        "name": "Horseback Long Bow+4",
+        "matched": true
+      },
+      {
+        "vnum": 2054,
+        "name": "Horseback Battle Bow+4",
+        "matched": true
+      },
+      {
+        "vnum": 3014,
+        "name": "Spear+4",
+        "matched": true
+      },
+      {
+        "vnum": 3024,
+        "name": "Guillotine Blade+4",
+        "matched": true
+      },
+      {
+        "vnum": 3034,
+        "name": "Spider Spear+4",
+        "matched": true
+      },
+      {
+        "vnum": 3044,
+        "name": "Gisarme+4",
+        "matched": true
+      },
+      {
+        "vnum": 3054,
+        "name": "War Scythe+4",
+        "matched": true
+      },
+      {
+        "vnum": 4004,
+        "name": "Amija+4",
+        "matched": true
+      },
+      {
+        "vnum": 4014,
+        "name": "Nine Blades+4",
+        "matched": true
+      },
+      {
+        "vnum": 4024,
+        "name": "Short Knife+4",
+        "matched": true
+      },
+      {
+        "vnum": 5014,
+        "name": "Silver Bell+4",
+        "matched": true
+      },
+      {
+        "vnum": 5024,
+        "name": "Golden Bell+4",
+        "matched": true
+      },
+      {
+        "vnum": 7014,
+        "name": "Iron Fan+4",
+        "matched": true
+      },
+      {
+        "vnum": 7024,
+        "name": "Black Tiger Fan+4",
+        "matched": true
+      },
+      {
+        "vnum": 7034,
+        "name": "Crane Wing Fan+4",
+        "matched": true
+      },
+      {
+        "vnum": 7044,
+        "name": "Peacock Fan+4",
+        "matched": true
+      },
+      {
+        "vnum": 7054,
+        "name": "Aquatic Fan+4",
+        "matched": true
+      },
+      {
+        "vnum": 30027,
+        "name": "Wolf Fur",
+        "matched": true
+      }
+    ]
+  }
 }
