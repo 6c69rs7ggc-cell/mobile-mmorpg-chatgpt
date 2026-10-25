@@ -19,9 +19,9 @@
       "official_item_categories": 10,
       "official_book_pages": 75,
       "official_upgrade_category_pages": 307,
-      "currently_catalogued_books": 11,
+      "currently_catalogued_books": 16,
       "currently_catalogued_upgrade_materials": 14,
-      "currently_catalogued_monsters": 5,
+      "currently_catalogued_monsters": 7,
       "per_monster_drop_tables_populated": false,
       "notes": [
         "Official item overview groups content into Books, Boxes, Fishing Items, Item Shop Items, Ores, Other Items, Potions, Quest Items, Spirit Stones and Upgrade Items.",
