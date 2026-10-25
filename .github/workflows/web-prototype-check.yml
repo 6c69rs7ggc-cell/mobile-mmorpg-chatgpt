@@ -1,0 +1,35 @@
+name: Web prototype checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verify prototype entrypoint exists
+        run: test -s index.html
+      - name: Check essential game elements
+        run: |
+          grep -q '<canvas id="game"' index.html
+          grep -q 'id="joystick"' index.html
+          grep -q 'id="attack"' index.html
+          grep -q 'id="inventory"' index.html
+      - name: Check JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("index.html").read_text(encoding="utf-8")
+          scripts = re.findall(r"<script\b[^>]*>(.*?)</script>", html, re.S | re.I)
+          if not scripts:
+              raise SystemExit("No inline JavaScript found")
+          Path("/tmp/prototype.js").write_text("\n".join(scripts), encoding="utf-8")
+          PY
+          node --check /tmp/prototype.js
