@@ -30,7 +30,7 @@ async function fetchCategory(category) {
         const current = pages.get(key) ?? {
           title, pageId: page.pageid,
           url: `https://en-wiki.metin2.gameforge.com/index.php/${encodeURIComponent(title.replaceAll(" ", "_"))}`,
-          categories: [], sourceVerified: true, detailStatus: "title_and_category_indexed_only",
+          categories: [], titleListedOnOfficialWiki: true, detailStatus: "title_and_category_indexed_only",
         };
         if (!current.categories.includes(category)) current.categories.push(category);
         pages.set(key, current);
