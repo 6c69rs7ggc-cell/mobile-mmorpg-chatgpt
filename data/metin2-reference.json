@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 4,
+    "version": 5,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Expanded from the official wiki category listings. Names marked category_listing_only are not yet individually verified for recipe, source or version-specific availability. This is still not a complete drop database.",
     "sources": {
@@ -27,8 +27,10 @@
         "Book names were expanded against the official category listing of 75 pages; many records only have category-list confirmation, not detailed effects/drop sources.",
         "Upgrade item names were expanded from the official Upgrade Items table. The current page includes both upgrade materials and a separate craft-items table; some entries appear in both.",
         "Do not use category-list-only entries to generate gameplay drops or recipes until their individual item pages and version are verified.",
-        "Per-monster drop tables remain empty pending source-level verification."
-      ]
+        "Per-monster drop tables remain empty pending source-level verification.",
+        "officialBooksIndex is the exact 75-name index from the wiki category page. books contains additional selected entries and is not expected to equal 75; reconcile individual item pages before treating it as a canonical full list."
+      ],
+      "official_book_index_entries": 74
     }
   },
   "itemCategories": [
@@ -2062,6 +2064,378 @@
       "dropItems": [],
       "dropStatus": "not_verified",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    }
+  ],
+  "officialBooksIndex": [
+    {
+      "name": "9th Skill Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Advanced Polymorph Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Anti-Magic Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Art of Combo",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Balathor's Skill Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Berserker Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Book of Forgetfulness",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Book of Precision",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Boost Manual",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Boost Skill Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Bulwark Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Charisma of a Rookie",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Charisma of an Adept",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Charisma of an Expert",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Chunjo Linguistics",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Combo Master Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Combo Mastery",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Drill Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Eagle Eyes Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Haste Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Horse Riding Manual",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Horse Taming Manual",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Immortal Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Inspiration of a Rookie",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Inspiration of an Adept",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Inspiration of an Expert",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Jinno Linguistics",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Life Drain Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Manual",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Master Brewer Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Master Polymorph Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Mining Guide",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Monster Hunter Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Panacea Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Polymorph Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Range Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Reflection Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Resistance (Lycan)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Resistance (Ninja)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Resistance (Shaman)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Resistance (Sura)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Resistance (Warrior)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Restoration Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (EXP)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Feather Walk)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Horse Skill)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Immortal)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (No Knockback)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Precision)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Raging Storm)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Random)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Sung Ma's W INT)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Sung Ma's W RES)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Sung Ma's W STR)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Sung Ma's W VIT)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (Swift Hooves)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (vs. Lycans)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (vs. Ninjas)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (vs. Shamans)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (vs. Suras)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Riding (vs. Warriors)",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Shinsoo Linguistics",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Skill Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Soul Stone",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Soul Stone+",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Spiritualism Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Sun Zi Art of War",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Talent Potion",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Vampirism Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Ward Manual",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Ward Skill Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "WeiLiao Zi Art of War",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Wu zi Art of War",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
+    },
+    {
+      "name": "Yang Drop Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
+      "verification": "official_category_listing"
     }
   ]
 }
