@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 17,
+    "version": 18,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -71,6 +71,11 @@
       {
         "version": 17,
         "change": "Added three low-level sword equipment records from the official Warrior weapons wiki table, including base stats and upgrade Yang costs; upgrade materials deliberately left unresolved where table parsing was ambiguous.",
+        "date": "2026-10-26"
+      },
+      {
+        "version": 18,
+        "change": "Bulk-imported 54 named weapon and armour entries from official category indexes. Records intentionally contain only verified category membership; stats, exact upgrade recipes, and monster drops remain unfilled until individual pages are checked.",
         "date": "2026-10-26"
       }
     ]
@@ -4461,7 +4466,7 @@
       "Keep the custom 10% game rate clearly separate from official source facts.",
       "Only then implement runtime item and drop systems in index.html."
     ],
-    "version": 17,
+    "version": 18,
     "customDropRatePolicy": "Every currently catalogued monster drop item is assigned 10% as a project design choice. This is not an official Metin2 drop rate. If each kill rolls independently, 10% means 1 item on average per 10 kills over the long run, not a guaranteed item every 10 kills. Catalog is not yet consumed by index.html.",
     "monstersWithCustom20PercentDropRates": 13,
     "monsterDropItemsAssigned20Percent": 48,
@@ -4475,8 +4480,8 @@
         "equipment": 23
       }
     },
-    "equipmentRecordsImported": 3,
-    "equipmentImportNote": "Equipment records are being imported in verified batches. Current first batch has 3 low-level swords. Their source table lists upgrade material columns, but exact material-to-upgrade mapping was not reliably parsed in this batch, so no materials were guessed."
+    "equipmentRecordsImported": 57,
+    "equipmentImportNote": "Bulk index pass: 28 weapon names and 26 armour names imported from official category listings, plus 3 earlier starter sword records. Index membership is verified; individual stats, recipes, and drop sources are not yet complete."
   },
   "equipmentCategorySources": [
     {
@@ -4622,6 +4627,438 @@
       "upgradeMaterialsStatus": "table_columns_not_reliably_parsed_no_materials_added",
       "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true
+    },
+    {
+      "id": "bamboo_sword",
+      "name": "Bamboo Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "barbarian_sword",
+      "name": "Barbarian Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "bastard_sword",
+      "name": "Bastard Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "battle_sword",
+      "name": "Battle Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "bloody_sword",
+      "name": "Bloody Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "broad_sword",
+      "name": "Broad Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "crescent_sword",
+      "name": "Crescent Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "demon_blade",
+      "name": "Demon Blade",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "exorcism_sword",
+      "name": "Exorcism Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "five_element_blade",
+      "name": "Five Element Blade",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "flying_wizard_sword",
+      "name": "Flying Wizard Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "full_moon_sword",
+      "name": "Full Moon Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "ghost_fang_blade",
+      "name": "Ghost Fang Blade",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "great_sword",
+      "name": "Great Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "grudge_sword",
+      "name": "Grudge Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "half_moon_sword",
+      "name": "Half Moon Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "holy_sword",
+      "name": "Holy Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "lion_sword",
+      "name": "Lion Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "long_sword",
+      "name": "Long Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "nymph_sword",
+      "name": "Nymph Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "orchid_sword",
+      "name": "Orchid Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "poison_sword",
+      "name": "Poison Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "red_iron_blade",
+      "name": "Red Iron Blade",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "silver_sword",
+      "name": "Silver Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "sting_sword",
+      "name": "Sting Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "sword",
+      "name": "Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "triton_sword",
+      "name": "Triton Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "twelve_spirit_sword",
+      "name": "Twelve Spirit Sword",
+      "category": "weapon",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "black_clothing",
+      "name": "Black Clothing",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "black_steel_armour",
+      "name": "Black Steel Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "blue_steel_armour",
+      "name": "Blue Steel Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "bronze_plate_armour",
+      "name": "Bronze Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "crimson_clothing",
+      "name": "Crimson Clothing",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "crimson_suit",
+      "name": "Crimson Suit",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "dragon_clothing",
+      "name": "Dragon Clothing",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "dragon_plate_armour",
+      "name": "Dragon Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "ghost_plate_armour",
+      "name": "Ghost Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "gold_plate_armour",
+      "name": "Gold Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "hwang_armour",
+      "name": "Hwang Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "iron_plate_armour",
+      "name": "Iron Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "ivory_suit",
+      "name": "Ivory Suit",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "killer_wind_suit",
+      "name": "Killer Wind Suit",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "lethal_plate_armour",
+      "name": "Lethal Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "lion_plate_armour",
+      "name": "Lion Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "magic_plate_armour",
+      "name": "Magic Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "misfortune_armour",
+      "name": "Misfortune Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "monk_plate_armour",
+      "name": "Monk Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "mystic_plate_armour",
+      "name": "Mystic Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "ninja_suit",
+      "name": "Ninja Suit",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "scale_plate_armour",
+      "name": "Scale Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "spirit_plate_armour",
+      "name": "Spirit Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "tiger_plate_armour",
+      "name": "Tiger Plate Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "yin_and_yang_armour",
+      "name": "Yin and Yang Armour",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "young_dragon_suit",
+      "name": "Young Dragon Suit",
+      "category": "armour",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
+      "sourceVerified": true,
+      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
     }
   ]
 }
