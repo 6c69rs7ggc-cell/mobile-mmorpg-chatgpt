@@ -22,6 +22,8 @@ jobs:
         run: node scripts/import-metin2-wiki-catalog.mjs
       - name: Extract introductory details for indexed pages
         run: node scripts/import-metin2-wiki-details.mjs
+      - name: Validate imported catalog and page details
+        run: node scripts/validate-metin2-wiki-import.mjs
       - name: Commit catalog and details
         run: |
           git config user.name "github-actions[bot]"
