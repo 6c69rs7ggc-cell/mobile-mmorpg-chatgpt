@@ -1,9 +1,9 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 2,
+    "version": 3,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
-    "accuracy": "This file is a curated reference subset, not a complete extraction of the official wiki or official server drop tables. Unknown item origins and rates remain unspecified.",
+    "accuracy": "Version 3: source-checked partial catalog. The official wiki lists 75 book pages and 307 upgrade-item category pages; this file currently models only selected examples. Monster levels/EXP/locations below are sourced from the official monster overview. Per-monster item drop tables and drop rates remain unverified and intentionally empty. This is not a complete official database.",
     "sources": {
       "items": "https://en-wiki.metin2.gameforge.com/index.php/Items",
       "books": "https://en-wiki.metin2.gameforge.com/index.php/Books",
@@ -11,9 +11,25 @@
       "refinement": "https://en-wiki.metin2.gameforge.com/index.php/Item_Refinement",
       "spiritStones": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones",
       "potions": "https://en-wiki.metin2.gameforge.com/index.php/Potions",
-      "boxes": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+      "boxes": "https://en-wiki.metin2.gameforge.com/index.php/Boxes",
+      "monsters": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
     },
-    "dropPolicy": "Do not fabricate exact drop chances or per-monster item sources. Fill those only from a cited item page or version-matched mob_drop_item/common_drop_item/special_item_group data."
+    "dropPolicy": "Do not fabricate exact drop chances or per-monster item sources. Fill those only from a cited item page or version-matched mob_drop_item/common_drop_item/special_item_group data.",
+    "comparison": {
+      "official_item_categories": 10,
+      "official_book_pages": 75,
+      "official_upgrade_category_pages": 307,
+      "currently_catalogued_books": 11,
+      "currently_catalogued_upgrade_materials": 14,
+      "currently_catalogued_monsters": 5,
+      "per_monster_drop_tables_populated": false,
+      "notes": [
+        "Official item overview groups content into Books, Boxes, Fishing Items, Item Shop Items, Ores, Other Items, Potions, Quest Items, Spirit Stones and Upgrade Items.",
+        "Official Books category lists 75 pages; the books array here is a selected gameplay subset, not all 75.",
+        "Official Upgrade category lists 307 pages; upgradeMaterials is only a small sample.",
+        "Monster overview provides name, level, location and EXP, but does not by itself provide a complete item-drop table for each monster."
+      ]
+    }
   },
   "itemCategories": [
     {
@@ -22,23 +38,28 @@
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
     },
     {
-      "id": "upgrade_materials",
-      "label": "Predmety na vylepšovanie",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
+      "id": "boxes",
+      "label": "Truhlice a balíčky",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
     },
     {
-      "id": "craft_materials",
-      "label": "Materiály na výrobu a zdokonaľovanie",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Item_Refinement"
+      "id": "fishing_items",
+      "label": "Rybárske predmety",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
     },
     {
-      "id": "spirit_stones",
-      "label": "Duchovné kamene",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
+      "id": "item_shop_items",
+      "label": "Predmety z Item Shopu",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
     },
     {
       "id": "ores",
-      "label": "Rudy a spracovanie rúd",
+      "label": "Rudy",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
+    },
+    {
+      "id": "other_items",
+      "label": "Ostatné predmety",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
     },
     {
@@ -47,24 +68,19 @@
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Potions"
     },
     {
-      "id": "boxes",
-      "label": "Truhlice a balíčky",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
-    },
-    {
       "id": "quest_items",
       "label": "Predmety úloh",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
     },
     {
-      "id": "equipment",
-      "label": "Zbrane, brnenia a doplnky",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Items"
+      "id": "spirit_stones",
+      "label": "Duchovné kamene",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spirit_Stones"
     },
     {
-      "id": "pet_mount",
-      "label": "Predmety pre mazlíčkov a kone",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+      "id": "upgrade_materials",
+      "label": "Predmety na vylepšovanie",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Upgrade_Items"
     }
   ],
   "upgradeRules": [
@@ -185,6 +201,44 @@
       "name": "Knihy vývoja mazlíčka",
       "category": "pet",
       "purpose": "Knihy jednotlivých stupňov sa používajú pri postupe mazlíčka na vyššiu vývojovú úroveň.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "advanced_polymorph_book",
+      "name": "Pokročilá kniha premeny",
+      "category": "polymorph",
+      "purpose": "Kniha zo zoznamu kníh oficiálnej wiki; presné požiadavky a zdroj treba overiť na stránke predmetu.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books"
+    },
+    {
+      "id": "art_of_combo",
+      "name": "Umenie komba",
+      "category": "combat",
+      "purpose": "Kniha na tréning komba; konkrétne pravidlá sa môžu líšiť podľa verzie.",
+      "consumedOnUse": true,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "combo_master_book",
+      "name": "Kniha majstra komba",
+      "category": "combat",
+      "purpose": "Kniha pre pokročilý tréning komba.",
+      "consumedOnUse": true,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "horse_skill_book",
+      "name": "Kniha jazdeckej schopnosti",
+      "category": "horse",
+      "purpose": "Kniha súvisiaca s pokročilými schopnosťami koňa; presné pravidlá podľa wiki verzie treba doplniť.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
+    },
+    {
+      "id": "book_of_precision",
+      "name": "Kniha presnosti",
+      "category": "character_progression",
+      "purpose": "Používa sa na zvyšovanie presnosti.",
+      "consumedOnUse": true,
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Books"
     }
   ],
@@ -460,6 +514,130 @@
       "id": "boxes",
       "rule": "Truhlice môžu obsahovať Yang, skúsenosti, bežné alebo vzácne predmety, prípadne príšery; časť vyžaduje kľúč.",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Boxes"
+    },
+    {
+      "id": "monster_drop_level_penalty",
+      "rule": "Podľa oficiálnej wiki hráč, ktorý je o 16 alebo viac úrovní vyššie než príšera, nezískava z nej EXP ani predmety; pred implementáciou treba potvrdiť, že táto verzia pravidla zodpovedá cieľovej verzii hry.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "starter_kingdom_maps_equivalent",
+      "rule": "Joan, Pyungmoo a Yongan sú tri kráľovské varianty Mapy 1; rovnaké základné príšery sa vyskytujú vo všetkých troch.",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    }
+  ],
+  "monsters": [
+    {
+      "id": "hungry_stray_dog",
+      "name": "Hungry Stray Dog",
+      "level": 1,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 11,
+      "dropItems": [],
+      "dropStatus": "not_verified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "wild_dog",
+      "name": "Wild Dog",
+      "level": 1,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 15,
+      "dropItems": [],
+      "dropStatus": "not_verified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "hungry_wolf",
+      "name": "Hungry Wolf",
+      "level": 3,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 27,
+      "dropItems": [],
+      "dropStatus": "not_verified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "wolf",
+      "name": "Wolf",
+      "level": 3,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 39,
+      "dropItems": [],
+      "dropStatus": "not_verified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "alpha_wolf",
+      "name": "Alpha Wolf",
+      "level": 4,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 51,
+      "dropItems": [],
+      "dropStatus": "not_verified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "hungry_alpha_wolf",
+      "name": "Hungry Alpha Wolf",
+      "level": 4,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 36,
+      "dropItems": [],
+      "dropStatus": "not_verified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
+    },
+    {
+      "id": "hungry_blue_wolf",
+      "name": "Hungry Blue Wolf",
+      "level": 6,
+      "stage": 1,
+      "race": "Animal",
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "exp": 53,
+      "dropItems": [],
+      "dropStatus": "not_verified",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Monster"
     }
   ]
 }
