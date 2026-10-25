@@ -47,9 +47,10 @@ for (let offset = 0; offset < catalog.items.length; offset += BATCH_SIZE) {
       pageId: page.pageid ?? indexed?.pageId ?? null,
       sourceUrl: page.fullurl ?? indexed?.url ?? null,
       categories: (page.categories ?? []).map(c => c.title.replace(/^Category:/, "")),
-      introductoryText: page.extract ?? "",
-      sourceStatus: page.missing ? "source_page_missing" : "official_wiki_intro_extracted",
-      structuredStatsStatus: "not_extracted_from_infobox_yet",
+      pageText: page.extract ?? "",
+      pageProperties: page.pageprops ?? {},
+      sourceStatus: page.missing ? "source_page_missing" : "official_wiki_page_text_extracted",
+      structuredStatsStatus: "needs_infobox_parser_validation",
       dropRatesStatus: "not_extracted",
     });
   }
