@@ -22,6 +22,8 @@ jobs:
           grep -q 'id="attack"' index.html
           grep -q 'id="inventory"' index.html
           grep -q 'x:player.x,y:player.y' index.html
+          grep -q 'saveTimer>=3' index.html
+          grep -q "addEventListener('pagehide',saveGame)" index.html
           grep -q 'postup sa ukladá v tomto prehliadači' index.html
       - name: Verify installable mobile web app files
         run: |
