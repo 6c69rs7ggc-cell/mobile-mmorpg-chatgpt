@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 18,
+    "version": 19,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -76,6 +76,11 @@
       {
         "version": 18,
         "change": "Bulk-imported 54 named weapon and armour entries from official category indexes. Records intentionally contain only verified category membership; stats, exact upgrade recipes, and monster drops remain unfilled until individual pages are checked.",
+        "date": "2026-10-26"
+      },
+      {
+        "version": 19,
+        "change": "Expanded official equipment source index across accessory categories and added 36 individually linked upgrade/refinement/craft material records with explicit unresolved recipe/drop status.",
         "date": "2026-10-26"
       }
     ]
@@ -1813,6 +1818,246 @@
       "purpose": "Názov uvedený v katalógu oficiálnej wiki. Presný recept, cieľový predmet a pôvod dropu sa ešte musia overiť na detailnej stránke.",
       "source": "https://en-wiki.metin2.gameforge.com/index.php?stable=1&title=Upgrade_Items",
       "verification": "category_listing_only"
+    },
+    {
+      "id": "abrasive",
+      "name": "Abrasive",
+      "category": "refinement_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Abrasive",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "amethyst_engraving_knife",
+      "name": "Amethyst Engraving Knife",
+      "category": "craft_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Amethyst_Engraving_Knife",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "antique_epaulette",
+      "name": "Antique Epaulette",
+      "category": "craft_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Antique_Epaulette",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "armour_design",
+      "name": "Armour Design",
+      "category": "craft_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Armour_Design",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "armour_design_helm",
+      "name": "Armour Design-Helm",
+      "category": "craft_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Armour_Design-Helm",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "ball",
+      "name": "Ball",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Ball",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "black_uniform",
+      "name": "Black Uniform",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Black_Uniform",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "blackhorn",
+      "name": "Blackhorn",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Blackhorn",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "blood_red_pearl",
+      "name": "Blood-Red Pearl",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Blood-Red_Pearl",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "blue_pearl",
+      "name": "Blue Pearl",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Blue_Pearl",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "clam",
+      "name": "Clam",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Clam",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "cobalt",
+      "name": "Cobalt",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Cobalt",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "crude_metal_sheet",
+      "name": "Crude Metal Sheet",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Crude_Metal_Sheet",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "cursed_chain",
+      "name": "Cursed Chain",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Cursed_Chain",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "cursed_hair",
+      "name": "Cursed Hair",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Cursed_Hair",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "dragon_scales",
+      "name": "Dragon Scales",
+      "category": "refinement_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Dragon_Scales",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "energy_fragment",
+      "name": "Energy Fragment",
+      "category": "refinement_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Energy_Fragment",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "jewellery_steel_sheets",
+      "name": "Jewellery Steel Sheets",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Jewellery_Steel_Sheets",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "leather_hardener",
+      "name": "Leather Hardener",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Leather_Hardener",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "mithril",
+      "name": "Mithril",
+      "category": "refinement_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Mithril",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "orc_tooth",
+      "name": "Orc Tooth",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Orc_Tooth",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "piece_of_broken_armour",
+      "name": "Piece of Broken Armour",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Piece_of_Broken_Armour",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "spider_s_poison_sack",
+      "name": "Spider's Poison Sack",
+      "category": "upgrade_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Spider%27s_Poison_Sack",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
+    },
+    {
+      "id": "titanium_platelet",
+      "name": "Titanium Platelet",
+      "category": "craft_material",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Titanium_Platelet",
+      "sourceVerified": true,
+      "dropRate": null,
+      "dropSourceStatus": "not_mapped_to_monsters_yet",
+      "recipeStatus": "individual_item_page_registered_recipe_not_verified"
     }
   ],
   "spiritStones": [
@@ -4459,14 +4704,13 @@
       "Alpha Wolf EXP conflict: overview table says 51 while individual page says 41; current catalog uses overview value 51 and preserves the conflict note."
     ],
     "nextWorkOrder": [
-      "Import individual equipment names from official wiki by category, starting with beginner weapons and armour.",
-      "For each item, capture level/class requirements and upgrade path only when the item page confirms them.",
-      "Connect upgrade recipes to specific material items and source pages.",
-      "Map each material to monsters only when an official page documents the drop; leave unknown rates unresolved.",
-      "Keep the custom 10% game rate clearly separate from official source facts.",
-      "Only then implement runtime item and drop systems in index.html."
+      "Import individual accessory/equipment records from registered official pages.",
+      "Verify each upgrade recipe from item-specific wiki tables before linking materials to gear.",
+      "Map material drops to monster pages only where explicitly documented; do not infer drop sources.",
+      "Apply custom 10% chance only in game-design fields, separate from official data.",
+      "Implement verified records in index.html after the catalog is consistent."
     ],
-    "version": 18,
+    "version": 19,
     "customDropRatePolicy": "Every currently catalogued monster drop item is assigned 10% as a project design choice. This is not an official Metin2 drop rate. If each kill rolls independently, 10% means 1 item on average per 10 kills over the long run, not a guaranteed item every 10 kills. Catalog is not yet consumed by index.html.",
     "monstersWithCustom20PercentDropRates": 13,
     "monsterDropItemsAssigned20Percent": 48,
@@ -4481,7 +4725,9 @@
       }
     },
     "equipmentRecordsImported": 57,
-    "equipmentImportNote": "Bulk index pass: 28 weapon names and 26 armour names imported from official category listings, plus 3 earlier starter sword records. Index membership is verified; individual stats, recipes, and drop sources are not yet complete."
+    "equipmentImportNote": "Bulk index pass: 28 weapon names and 26 armour names imported from official category listings, plus 3 earlier starter sword records. Index membership is verified; individual stats, recipes, and drop sources are not yet complete.",
+    "upgradeMaterialEntries": 142,
+    "equipmentSourceCategoryCount": 13
   },
   "equipmentCategorySources": [
     {
@@ -4511,6 +4757,60 @@
       "url": "https://en-wiki.metin2.gameforge.com/index.php/Items",
       "wikiListedPages": null,
       "status": "overview_only"
+    },
+    {
+      "id": "belts",
+      "label": "Opasky",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Belts",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "bracelets",
+      "label": "Náramky",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Bracelets",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "earrings",
+      "label": "Náušnice",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Earrings",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "gloves",
+      "label": "Rukavice",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Gloves",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "necklaces",
+      "label": "Náhrdelníky",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Necklaces",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "shields",
+      "label": "Štíty",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Shields",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "shoes",
+      "label": "Topánky",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Shoes",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "talismans",
+      "label": "Talizmany",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Talismans",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
+    },
+    {
+      "id": "helmets",
+      "label": "Prilby",
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Warrior/helmet",
+      "status": "official_wiki_source_registered_individual_items_not_imported"
     }
   ],
   "equipmentItems": [
