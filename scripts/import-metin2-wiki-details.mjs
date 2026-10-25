@@ -15,11 +15,11 @@ async function fetchBatch(titles) {
   const url = new URL(API);
   const params = {
     action: "query",
-    prop: "extracts|categories|info",
+    prop: "extracts|categories|info|pageprops",
     titles: titles.join("|"),
-    exintro: "1",
+    exintro: "0",
     explaintext: "1",
-    exchars: "3500",
+    exchars: "12000",
     cllimit: "max",
     inprop: "url",
     redirects: "1",
