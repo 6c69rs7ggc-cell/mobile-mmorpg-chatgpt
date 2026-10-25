@@ -1,13 +1,6 @@
 name: Deploy iPhone web prototype
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "index.html"
-      - "manifest.webmanifest"
-      - "sw.js"
-      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
