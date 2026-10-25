@@ -51,9 +51,14 @@ jobs:
         working-directory: upstream/metin2-godot
         run: godot --headless --path godot --script res://server/tests/run_gameplay_domain_tests.gd
 
-      - name: Run authoritative coordinator tests
+      - name: Run authoritative coordinator tests when map manifests are available
         working-directory: upstream/metin2-godot
-        run: godot --headless --path godot --script res://server/tests/run_authoritative_game_coordinator_tests.gd
+        run: |
+          if [ -f generated/maps/metin2_map_a1/server_content_manifest.json ] && [ -f generated/maps/metin2_map_a1/collision_manifest.json ]; then
+            godot --headless --path godot --script res://server/tests/run_authoritative_game_coordinator_tests.gd
+          else
+            echo "::warning::Authoritative coordinator tests skipped: audited city content and collision manifests are absent. These tests require local generated map data."
+          fi
 
       - name: Run ENet session tests
         working-directory: upstream/metin2-godot
