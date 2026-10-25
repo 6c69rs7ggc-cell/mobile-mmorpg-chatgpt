@@ -1,9 +1,9 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 7,
+    "version": 8,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
-    "accuracy": "Starter and early-map monster catalog expanded using individual official wiki pages. Item lists reflect wiki-listed drops only; no probability is implied. Conflicting EXP values are explicitly flagged rather than guessed.",
+    "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
       "items": "https://en-wiki.metin2.gameforge.com/index.php/Items",
       "books": "https://en-wiki.metin2.gameforge.com/index.php/Books",
@@ -34,9 +34,12 @@
         "Monster dropItems list items shown under Other Drops on individual wiki pages; exact probability is not provided and remains null. Item type labels are descriptive, not claims about drop mechanics.",
         "Added individual-page records for Blue Wolf, Grey Wolf, Cursed Wolf, Cursed Blue Wolf, Cursed Alpha Wolf, Cursed Alpha Blue Wolf and Alpha Blue Wolf.",
         "Alpha Wolf EXP is null with conflicting source notes: individual page reports 41, Monster overview reports 51. Resolve against intended official server/version before using EXP in gameplay.",
-        "An empty dropItems array only means the individual page lists no items in the captured drop section; it does not imply no Yang or no shared/alternative drops."
+        "An empty dropItems array only means the individual page lists no items in the captured drop section; it does not imply no Yang or no shared/alternative drops.",
+        "Added individual Metin pages for Metin of Sorrow, Combat, Battle and Soul, including their listed monster spawns, map locations and item groups where captured.",
+        "Metin of Battle drop groups are partial in this capture; do not use empty armour/other arrays to infer confirmed no drops."
       ],
-      "official_book_index_entries": 75
+      "official_book_index_entries": 75,
+      "currently_catalogued_metin_stones": 4
     }
   },
   "itemCategories": [
@@ -2855,6 +2858,202 @@
       "name": "Young Pet Book",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Books",
       "verification": "official_books_table"
+    }
+  ],
+  "metinStones": [
+    {
+      "id": "metin_of_sorrow",
+      "name": "Metin of Sorrow",
+      "level": 5,
+      "class": 5,
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "element": "none",
+      "spawnedBy": "Metin Stone(L)",
+      "spawnLimitPerMapChannel": 2,
+      "averageRespawnMinutes": 30,
+      "monsterSpawns": [
+        "Alpha Blue Wolf",
+        "Blue Wolf",
+        "Hungry Alpha Blue Wolf",
+        "Hungry Blue Wolf",
+        "Hungry Red Boar",
+        "Hungry Wild Boar",
+        "Hungry Wolf",
+        "Red Wild Boar",
+        "Wild Boar",
+        "Wolf"
+      ],
+      "drops": {
+        "weapons": [
+          "Amija +0 or +2",
+          "Iron Fan +0 or +2",
+          "Long Bow +0 or +2",
+          "Long Sword +0 or +2",
+          "Spear +0 or +2"
+        ],
+        "armours": [
+          "Azure Suit +0 or +2",
+          "Crimson Clothing +0 or +2",
+          "Monk Plate Armour +0 or +2",
+          "Requiem Plate Armour +0 or +2"
+        ],
+        "other": [
+          "Blue Potion(M) x30",
+          "Blue Potion(L) x20",
+          "Red Potion(M) x50",
+          "Red Potion(L) x30",
+          "Skill Book"
+        ]
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Metin_of_Sorrow",
+      "dropRates": null,
+      "verification": "individual_wiki_page"
+    },
+    {
+      "id": "metin_of_combat",
+      "name": "Metin of Combat",
+      "level": 10,
+      "class": 5,
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "element": "none",
+      "spawnedBy": "Metin Stone(L)",
+      "spawnLimitPerMapChannel": 2,
+      "averageRespawnMinutes": 30,
+      "monsterSpawns": [
+        "Alpha Grey Wolf",
+        "Bear",
+        "Grey Wolf",
+        "Hungry Bear",
+        "Hungry Grey Wolf",
+        "Hungry Red Boar",
+        "Red Wild Boar"
+      ],
+      "drops": {
+        "weapons": [
+          "Black Tiger Fan +0~2",
+          "Crescent Sword +0~2",
+          "Cobra Dagger +0~2",
+          "Composite Bow +0~2",
+          "Copper Bell +0~2",
+          "Guillotine Blade +0~2"
+        ],
+        "armours": [
+          "Iron Plate Armour +0~2",
+          "Ivory Suit +0~2",
+          "Storm Plate Armour +0~2",
+          "Turquoise Clothing +0~2"
+        ],
+        "other": [
+          "Blue Potion(M) x30",
+          "Blue Potion(L) x20",
+          "Red Potion(M) x50",
+          "Red Potion(L) x30",
+          "Skill Book"
+        ]
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Metin_of_Combat",
+      "dropRates": null,
+      "verification": "individual_wiki_page"
+    },
+    {
+      "id": "metin_of_battle",
+      "name": "Metin of Battle",
+      "level": 15,
+      "class": 5,
+      "locations": [
+        "Joan",
+        "Pyungmoo",
+        "Yongan"
+      ],
+      "element": "none",
+      "spawnedBy": "Metin Stone(L)",
+      "spawnLimitPerMapChannel": 2,
+      "averageRespawnMinutes": 30,
+      "monsterSpawns": [
+        "Alpha Grey Wolf",
+        "Black Bear",
+        "Grizzly Bear",
+        "Hungry Alpha Grey Wolf",
+        "Hungry Grizzly",
+        "Hungry Tiger",
+        "Tiger"
+      ],
+      "drops": {
+        "weapons": [
+          "Battle Bow +0~2",
+          "Bamboo Sword +0~2",
+          "Crane Wing Fan +0~2",
+          "Nine Blades +0~2",
+          "Silver Bell +0~2",
+          "Spider Spear +0~2"
+        ],
+        "armours": [],
+        "other": []
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Metin_of_Battle",
+      "dropRates": null,
+      "verification": "individual_wiki_page_partial"
+    },
+    {
+      "id": "metin_of_soul",
+      "name": "Metin of Soul",
+      "level": 40,
+      "class": 5,
+      "locations": [
+        "Yongbi Desert"
+      ],
+      "element": "none",
+      "spawnedBy": "Metin Stone(N)",
+      "spawnLimitPerMapChannel": 2,
+      "averageRespawnMinutes": 20,
+      "monsterSpawns": [
+        "Black Orc",
+        "Elite Orc",
+        "Elite Orc Fighter",
+        "Elite Orc General",
+        "Elite Orc Scout",
+        "Elite Orc Sorcerer",
+        "King Scorpion"
+      ],
+      "drops": {
+        "weapons": [
+          "Apricot Bell +0/1",
+          "Barbarian Sword +0/1",
+          "Devil Mask Dagger +0/1",
+          "Giant Axe +0/1",
+          "Red Eye Bow +0/1",
+          "Sting Fan +0/1"
+        ],
+        "armours": [
+          "Ant Lion Suit +0~2",
+          "Heavenly Clothing +0~2",
+          "Lethal Plate Armour +0~2",
+          "Malachite Plate Armour +0~2",
+          "Yin and Yang Armour +0~2"
+        ],
+        "other": [
+          "Blood Pill",
+          "Blue Potion(M) x30",
+          "Blue Potion(L) x20",
+          "Book of Forgetfulness",
+          "Red Potion(M) x50",
+          "Red Potion(L) x30",
+          "Skill Book",
+          "Soul Stone",
+          "Spirit Stones"
+        ]
+      },
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Metin_of_Soul",
+      "dropRates": null,
+      "verification": "individual_wiki_page"
     }
   ]
 }
