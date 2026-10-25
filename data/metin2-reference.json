@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 19,
+    "version": 20,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -81,6 +81,11 @@
       {
         "version": 19,
         "change": "Expanded official equipment source index across accessory categories and added 36 individually linked upgrade/refinement/craft material records with explicit unresolved recipe/drop status.",
+        "date": "2026-10-26"
+      },
+      {
+        "version": 20,
+        "change": "Expanded Warrior weapon table import with 15 sword/two-handed weapon records, level requirements, base attack values, speed, sockets, and upgrade Yang costs from official wiki. Material item names/quantities left unfilled rather than guessed.",
         "date": "2026-10-26"
       }
     ]
@@ -4710,7 +4715,7 @@
       "Apply custom 10% chance only in game-design fields, separate from official data.",
       "Implement verified records in index.html after the catalog is consistent."
     ],
-    "version": 19,
+    "version": 20,
     "customDropRatePolicy": "Every currently catalogued monster drop item is assigned 10% as a project design choice. This is not an official Metin2 drop rate. If each kill rolls independently, 10% means 1 item on average per 10 kills over the long run, not a guaranteed item every 10 kills. Catalog is not yet consumed by index.html.",
     "monstersWithCustom20PercentDropRates": 13,
     "monsterDropItemsAssigned20Percent": 48,
@@ -4724,10 +4729,23 @@
         "equipment": 23
       }
     },
-    "equipmentRecordsImported": 57,
+    "equipmentRecordsImported": 60,
     "equipmentImportNote": "Bulk index pass: 28 weapon names and 26 armour names imported from official category listings, plus 3 earlier starter sword records. Index membership is verified; individual stats, recipes, and drop sources are not yet complete.",
     "upgradeMaterialEntries": 142,
-    "equipmentSourceCategoryCount": 13
+    "equipmentSourceCategoryCount": 13,
+    "weaponTableBatch20": {
+      "recordsAddedOrUpdated": 15,
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
+      "fields": [
+        "levelRequirement",
+        "attackValue",
+        "magicAttackValue_when_available",
+        "attackSpeedBonusPercent",
+        "sockets",
+        "upgradeYangByLevel"
+      ],
+      "upgradeMaterialsStatus": "not complete; exact material rows still need extraction"
+    }
   },
   "equipmentCategorySources": [
     {
@@ -4932,49 +4950,235 @@
       "id": "bamboo_sword",
       "name": "Bamboo Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 15,
+      "attackValue": {
+        "min": 22,
+        "max": 26
+      },
+      "attackSpeedBonusPercent": 21,
+      "sockets": 1,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 600,
+        "+2": 1200,
+        "+3": 2500,
+        "+4": 5000,
+        "+5": 10000,
+        "+6": 20000,
+        "+7": 30000,
+        "+8": 45000,
+        "+9": 75000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 25,
+        "max": 35
+      }
     },
     {
       "id": "barbarian_sword",
       "name": "Barbarian Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 40,
+      "attackValue": {
+        "min": 52,
+        "max": 68
+      },
+      "attackSpeedBonusPercent": 15,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1000,
+        "+2": 2000,
+        "+3": 4000,
+        "+4": 8000,
+        "+5": 13000,
+        "+6": 20000,
+        "+7": 40000,
+        "+8": 70000,
+        "+9": 120000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 48,
+        "max": 58
+      }
     },
     {
       "id": "bastard_sword",
       "name": "Bastard Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 36,
+      "attackValue": {
+        "min": 48,
+        "max": 58
+      },
+      "attackSpeedBonusPercent": 21,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1000,
+        "+2": 2000,
+        "+3": 4000,
+        "+4": 8000,
+        "+5": 13000,
+        "+6": 20000,
+        "+7": 40000,
+        "+8": 70000,
+        "+9": 120000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 52,
+        "max": 68
+      }
     },
     {
       "id": "battle_sword",
       "name": "Battle Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 65,
+      "attackValue": {
+        "min": 100,
+        "max": 140
+      },
+      "attackSpeedBonusPercent": 15,
+      "sockets": 3,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1200,
+        "+2": 2500,
+        "+3": 5000,
+        "+4": 10000,
+        "+5": 20000,
+        "+6": 30000,
+        "+7": 45000,
+        "+8": 90000,
+        "+9": 150000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 65,
+        "max": 87
+      }
     },
     {
       "id": "bloody_sword",
       "name": "Bloody Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 45,
+      "attackValue": {
+        "min": 102,
+        "max": 138
+      },
+      "attackSpeedBonusPercent": 17,
+      "sockets": 3,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1200,
+        "+2": 2500,
+        "+3": 5000,
+        "+4": 10000,
+        "+5": 20000,
+        "+6": 30000,
+        "+7": 45000,
+        "+8": 90000,
+        "+9": 150000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 69,
+        "max": 81
+      }
     },
     {
       "id": "broad_sword",
       "name": "Broad Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 20,
+      "attackValue": {
+        "min": 25,
+        "max": 35
+      },
+      "attackSpeedBonusPercent": 15,
+      "sockets": 1,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 600,
+        "+2": 1200,
+        "+3": 2500,
+        "+4": 5000,
+        "+5": 10000,
+        "+6": 20000,
+        "+7": 30000,
+        "+8": 45000,
+        "+9": 75000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 20,
+        "max": 28
+      }
     },
     {
       "id": "crescent_sword",
@@ -5020,9 +5224,40 @@
       "id": "full_moon_sword",
       "name": "Full Moon Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 30,
+      "attackValue": {
+        "min": 57,
+        "max": 73
+      },
+      "attackSpeedBonusPercent": 15,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 3000,
+        "+2": 6000,
+        "+3": 12000,
+        "+4": 25000,
+        "+5": 40000,
+        "+6": 60000,
+        "+7": 90000,
+        "+8": 120000,
+        "+9": 150000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 62,
+        "max": 88
+      }
     },
     {
       "id": "ghost_fang_blade",
@@ -5092,41 +5327,186 @@
       "id": "orchid_sword",
       "name": "Orchid Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 32,
+      "attackValue": {
+        "min": 38,
+        "max": 52
+      },
+      "attackSpeedBonusPercent": 27,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1000,
+        "+2": 2000,
+        "+3": 4000,
+        "+4": 8000,
+        "+5": 13000,
+        "+6": 20000,
+        "+7": 40000,
+        "+8": 70000,
+        "+9": 120000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 36,
+        "max": 46
+      }
     },
     {
       "id": "poison_sword",
       "name": "Poison Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 75,
+      "attackValue": {
+        "min": 100,
+        "max": 140
+      },
+      "attackSpeedBonusPercent": 17,
+      "sockets": 3,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1200,
+        "+2": 2500,
+        "+3": 5000,
+        "+4": 10000,
+        "+5": 20000,
+        "+6": 30000,
+        "+7": 45000,
+        "+8": 90000,
+        "+9": 150000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed"
     },
     {
       "id": "red_iron_blade",
       "name": "Red Iron Blade",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "two_handed",
+      "classUse": [
+        "Warrior"
+      ],
+      "levelRequirement": 30,
+      "attackValue": {
+        "min": 72,
+        "max": 109
+      },
+      "attackSpeedBonusPercent": 15,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 3000,
+        "+2": 6000,
+        "+3": 12000,
+        "+4": 25000,
+        "+5": 40000,
+        "+6": 60000,
+        "+7": 90000,
+        "+8": 120000,
+        "+9": 150000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed"
     },
     {
       "id": "silver_sword",
       "name": "Silver Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 25,
+      "attackValue": {
+        "min": 36,
+        "max": 46
+      },
+      "attackSpeedBonusPercent": 30,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1000,
+        "+2": 2000,
+        "+3": 4000,
+        "+4": 8000,
+        "+5": 13000,
+        "+6": 20000,
+        "+7": 40000,
+        "+8": 70000,
+        "+9": 120000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 38,
+        "max": 52
+      }
     },
     {
       "id": "sting_sword",
       "name": "Sting Sword",
       "category": "weapon",
-      "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AWeapons",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
       "sourceVerified": true,
-      "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table",
+      "weaponType": "sword",
+      "classUse": [
+        "Warrior",
+        "Ninja",
+        "Sura"
+      ],
+      "levelRequirement": 70,
+      "attackValue": {
+        "min": 102,
+        "max": 138
+      },
+      "attackSpeedBonusPercent": 15,
+      "sockets": 3,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1200,
+        "+2": 2500,
+        "+3": 5000,
+        "+4": 10000,
+        "+5": 20000,
+        "+6": 30000,
+        "+7": 45000,
+        "+8": 90000,
+        "+9": 150000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "magicAttackValue": {
+        "min": 69,
+        "max": 81
+      }
     },
     {
       "id": "sword",
@@ -5359,6 +5739,105 @@
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Category%3AArmour",
       "sourceVerified": true,
       "dataStatus": "official_category_listing_only_stats_upgrade_recipe_and_drop_not_yet_verified"
+    },
+    {
+      "id": "battle_pitchfork",
+      "name": "Battle Pitchfork",
+      "category": "weapon",
+      "weaponType": "two_handed",
+      "classUse": [
+        "Warrior"
+      ],
+      "levelRequirement": 32,
+      "attackValue": {
+        "min": 58,
+        "max": 88
+      },
+      "attackSpeedBonusPercent": 24,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1000,
+        "+2": 2000,
+        "+3": 4000,
+        "+4": 8000,
+        "+5": 13000,
+        "+6": 20000,
+        "+7": 40000,
+        "+8": 70000,
+        "+9": 120000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
+      "sourceVerified": true,
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table"
+    },
+    {
+      "id": "halberd",
+      "name": "Halberd",
+      "category": "weapon",
+      "weaponType": "two_handed",
+      "classUse": [
+        "Warrior"
+      ],
+      "levelRequirement": 36,
+      "attackValue": {
+        "min": 60,
+        "max": 96
+      },
+      "attackSpeedBonusPercent": 21,
+      "sockets": 2,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1000,
+        "+2": 2000,
+        "+3": 4000,
+        "+4": 8000,
+        "+5": 13000,
+        "+6": 20000,
+        "+7": 40000,
+        "+8": 70000,
+        "+9": 120000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
+      "sourceVerified": true,
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table"
+    },
+    {
+      "id": "giant_axe",
+      "name": "Giant Axe",
+      "category": "weapon",
+      "weaponType": "two_handed",
+      "classUse": [
+        "Warrior"
+      ],
+      "levelRequirement": 40,
+      "attackValue": {
+        "min": 136,
+        "max": 184
+      },
+      "attackSpeedBonusPercent": 17,
+      "sockets": 3,
+      "upgradeYangByLevel": {
+        "+0": 0,
+        "+1": 1200,
+        "+2": 2500,
+        "+3": 5000,
+        "+4": 10000,
+        "+5": 20000,
+        "+6": 30000,
+        "+7": 45000,
+        "+8": 90000,
+        "+9": 150000
+      },
+      "upgradeMaterials": [],
+      "upgradeMaterialsStatus": "material identities and quantities require parsing item-specific table; not guessed",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php?redirect=no&stable=0&title=Warrior%2Fweapons",
+      "sourceVerified": true,
+      "dataStatus": "base_stats_and_upgrade_yang_transcribed_from_official_wiki_table"
     }
   ]
 }
