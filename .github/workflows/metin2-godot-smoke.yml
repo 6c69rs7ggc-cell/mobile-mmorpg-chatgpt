@@ -72,6 +72,15 @@ jobs:
         working-directory: upstream/metin2-godot
         run: godot --headless --path godot --script res://server/tests/aggregate_repository_test_runner.gd
 
+      - name: Run two-player online end-to-end test when audited maps are available
+        working-directory: upstream/metin2-godot
+        run: |
+          if [ -f generated/maps/metin2_map_a1/server_content_manifest.json ] && [ -f generated/maps/metin2_map_a1/collision_manifest.json ]; then
+            godot --headless --path godot --script res://integration/tests/run_alpha_online_e2e.gd
+          else
+            echo "::warning::Two-player online E2E skipped: the upstream test needs locally generated map/collision content. ENet session and gameplay gateway unit tests do not prove a full live two-client world."
+          fi
+
       - name: Check whether generated map data is present
         working-directory: upstream/metin2-godot
         run: |
