@@ -49,6 +49,22 @@ const indexedByTitle = new Map(catalogItems.map(item => [item.title.toLocaleLowe
 for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
   const batch = catalogItems.slice(offset, offset + BATCH_SIZE);
   const pages = await fetchBatch(batch.map(item => item.title));
+  const returnedTitles = new Set(pages.map(page => page.title.toLocaleLowerCase("en")));
+  for (const requested of batch) {
+    if (!returnedTitles.has(requested.title.toLocaleLowerCase("en"))) {
+      details.push({
+        title: requested.title,
+        pageId: requested.pageId ?? null,
+        sourceUrl: requested.url ?? null,
+        categories: requested.categories ?? [],
+        pageText: "",
+        pageProperties: {},
+        sourceStatus: "not_returned_by_api_or_missing",
+        structuredStatsStatus: "not_available",
+        dropRatesStatus: "not_extracted",
+      });
+    }
+  }
   for (const page of pages) {
     const indexed = indexedByTitle.get(page.title.toLocaleLowerCase("en"));
     details.push({
@@ -63,8 +79,8 @@ for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
       dropRatesStatus: "not_extracted",
     });
   }
-  console.log(`Processed ${Math.min(offset + batch.length, catalogItems.length)} / ${catalog.items.length} pages`);
-  if (offset + BATCH_SIZE < catalog.items.length) await new Promise(resolve => setTimeout(resolve, PAUSE_MS));
+  console.log(`Processed ${Math.min(offset + batch.length, catalogItems.length)} / ${catalogItems.length} pages`);
+  if (offset + BATCH_SIZE < catalogItems.length) await new Promise(resolve => setTimeout(resolve, PAUSE_MS));
 }
 
 const unique = new Map();
@@ -76,7 +92,9 @@ const output = {
     generatedAt: new Date().toISOString(),
     requestedPages: catalogItems.length,
     returnedPages: unique.size,
-    scope: "Introductory text and categories for catalogued pages. This file does not claim complete infobox/stat/recipe/drop extraction.",
+    pagesWithText: [...unique.values()].filter(row => row.pageText.length > 0).length,
+    pagesWithoutText: [...unique.values()].filter(row => row.pageText.length === 0).length,
+    scope: "Extracted page text and categories for catalogued pages, with explicit records for requested titles not returned by the API. This does not claim complete infobox/stat/recipe/drop extraction.",
   },
   pages: [...unique.values()].sort((a, b) => a.title.localeCompare(b.title, "en")),
 };
