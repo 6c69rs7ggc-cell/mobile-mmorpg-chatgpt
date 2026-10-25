@@ -28,9 +28,10 @@
         "Upgrade item names were expanded from the official Upgrade Items table. The current page includes both upgrade materials and a separate craft-items table; some entries appear in both.",
         "Do not use category-list-only entries to generate gameplay drops or recipes until their individual item pages and version are verified.",
         "Per-monster drop tables remain empty pending source-level verification.",
-        "officialBooksIndex is the exact 75-name index from the wiki category page. books contains additional selected entries and is not expected to equal 75; reconcile individual item pages before treating it as a canonical full list."
+        "officialBooksIndex is the exact 75-name index from the wiki category page. books contains additional selected entries and is not expected to equal 75; reconcile individual item pages before treating it as a canonical full list.",
+        "The wiki Books table also includes Young Pet Book; included as a book-system entry even though the category listing extraction returned 74 names."
       ],
-      "official_book_index_entries": 74
+      "official_book_index_entries": 75
     }
   },
   "itemCategories": [
@@ -2436,6 +2437,11 @@
       "name": "Yang Drop Book",
       "source": "https://en-wiki.metin2.gameforge.com/index.php/Category:Items/Books",
       "verification": "official_category_listing"
+    },
+    {
+      "name": "Young Pet Book",
+      "source": "https://en-wiki.metin2.gameforge.com/index.php/Books",
+      "verification": "official_books_table"
     }
   ]
 }
