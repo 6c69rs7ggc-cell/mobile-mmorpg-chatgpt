@@ -8,7 +8,8 @@ const PAUSE_MS = 250;
 const MAX_RETRIES = 4;
 
 const catalog = JSON.parse(await fs.readFile(INPUT, "utf8"));
-if (!Array.isArray(catalog.items) || catalog.items.length === 0) {
+const catalogItems = catalog.items ?? catalog.records;
+if (!Array.isArray(catalogItems) || catalogItems.length === 0) {
   throw new Error("Catalog index is empty. Run the catalog importer first.");
 }
 
@@ -44,9 +45,9 @@ async function fetchBatch(titles, attempt = 0) {
 }
 
 const details = [];
-const indexedByTitle = new Map(catalog.items.map(item => [item.title.toLocaleLowerCase("en"), item]));
-for (let offset = 0; offset < catalog.items.length; offset += BATCH_SIZE) {
-  const batch = catalog.items.slice(offset, offset + BATCH_SIZE);
+const indexedByTitle = new Map(catalogItems.map(item => [item.title.toLocaleLowerCase("en"), item]));
+for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
+  const batch = catalogItems.slice(offset, offset + BATCH_SIZE);
   const pages = await fetchBatch(batch.map(item => item.title));
   for (const page of pages) {
     const indexed = indexedByTitle.get(page.title.toLocaleLowerCase("en"));
