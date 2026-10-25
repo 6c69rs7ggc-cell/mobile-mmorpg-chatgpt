@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "ASHEN REALM — Metin2 reference catalog",
-    "version": 9,
+    "version": 10,
     "scope": "Reference catalog and implementation planning for a Metin2-inspired browser MMORPG.",
     "accuracy": "Catalog includes source-checked individual Metin Stone pages for four examples. Drop lists are wiki-listed outcomes, not probabilities; partial page captures are explicitly marked. Server/version differences may apply.",
     "sources": {
@@ -13,7 +13,8 @@
       "potions": "https://en-wiki.metin2.gameforge.com/index.php/Potions",
       "boxes": "https://en-wiki.metin2.gameforge.com/index.php/Boxes",
       "monsters": "https://en-wiki.metin2.gameforge.com/index.php/Monster",
-      "communityDropData": "https://github.com/d1str4ught/m2dev-server/blob/main/share/locale/english/mob_drop_item.txt"
+      "communityDropData": "https://github.com/d1str4ught/m2dev-server/blob/main/share/locale/english/mob_drop_item.txt",
+      "communityDropDataSecond": "https://github.com/fespinozasanchez/Metin2-nidavelir/blob/main/source-client/Srcs/Tools/wiki-tool/mob_drop_item.txt"
     },
     "dropPolicy": "Do not fabricate exact drop chances or per-monster item sources. Fill those only from a cited item page or version-matched mob_drop_item/common_drop_item/special_item_group data.",
     "comparison": {
@@ -38,11 +39,14 @@
         "An empty dropItems array only means the individual page lists no items in the captured drop section; it does not imply no Yang or no shared/alternative drops.",
         "Added individual Metin pages for Metin of Sorrow, Combat, Battle and Soul, including their listed monster spawns, map locations and item groups where captured.",
         "Metin of Battle drop groups are partial in this capture; do not use empty armour/other arrays to infer confirmed no drops.",
-        "Added raw drop groups from a public community Metin2 server-file repository for matching early monsters. These are legacy community data, not official Gameforge tables; VNUMs are preserved and raw rates are not presented as percentages."
+        "Added raw drop groups from a public community Metin2 server-file repository for matching early monsters. These are legacy community data, not official Gameforge tables; VNUMs are preserved and raw rates are not presented as percentages.",
+        "Captured a second independent community server drop file for monster VNUMs 102, 103, 104, 105, 131, 132 and 134. This demonstrates server-specific differences: these records are kept in a separate comparison array, not merged into the first drop set."
       ],
       "official_book_index_entries": 75,
       "currently_catalogued_metin_stones": 4,
-      "raw_community_drop_groups": 7
+      "raw_community_drop_groups": 7,
+      "second_community_drop_groups": 7,
+      "second_community_drop_entries": 95
     }
   },
   "itemCategories": [
@@ -3241,5 +3245,731 @@
         ]
       }
     ]
-  }
+  },
+  "dropSourceComparisons": [
+    {
+      "sourceType": "community server files; not official Gameforge rates",
+      "repository": "fespinozasanchez/Metin2-nidavelir",
+      "file": "source-client/Srcs/Tools/wiki-tool/mob_drop_item.txt",
+      "url": "https://github.com/fespinozasanchez/Metin2-nidavelir/blob/main/source-client/Srcs/Tools/wiki-tool/mob_drop_item.txt",
+      "blobSha": "4d8f4a119b2182731f12ffcc8eebaae07de7b8bf",
+      "groups": [
+        {
+          "groupName": "r",
+          "mobVnum": 102,
+          "type": "drop",
+          "entries": [
+            {
+              "index": 1,
+              "itemVnum": 30069,
+              "quantity": 1,
+              "rawRate": 3,
+              "extraParameter": null
+            },
+            {
+              "index": 2,
+              "itemVnum": 30070,
+              "quantity": 1,
+              "rawRate": 3,
+              "extraParameter": null
+            }
+          ]
+        },
+        {
+          "groupName": "r",
+          "mobVnum": 103,
+          "type": "drop",
+          "entries": [
+            {
+              "index": 1,
+              "itemVnum": 30069,
+              "quantity": 1,
+              "rawRate": 3,
+              "extraParameter": null
+            },
+            {
+              "index": 2,
+              "itemVnum": 30070,
+              "quantity": 1,
+              "rawRate": 3,
+              "extraParameter": null
+            }
+          ]
+        },
+        {
+          "groupName": "r",
+          "mobVnum": 104,
+          "type": "drop",
+          "entries": [
+            {
+              "index": 1,
+              "itemVnum": 30069,
+              "quantity": 1,
+              "rawRate": 3,
+              "extraParameter": null
+            },
+            {
+              "index": 2,
+              "itemVnum": 30070,
+              "quantity": 1,
+              "rawRate": 3,
+              "extraParameter": null
+            }
+          ]
+        },
+        {
+          "groupName": "r",
+          "mobVnum": 105,
+          "type": "drop",
+          "entries": [
+            {
+              "index": 1,
+              "itemVnum": 30069,
+              "quantity": 1,
+              "rawRate": 1,
+              "extraParameter": null
+            },
+            {
+              "index": 2,
+              "itemVnum": 30070,
+              "quantity": 1,
+              "rawRate": 3,
+              "extraParameter": null
+            }
+          ]
+        },
+        {
+          "groupName": "r_r",
+          "mobVnum": 131,
+          "type": "drop",
+          "entries": [
+            {
+              "index": 1,
+              "itemVnum": 30023,
+              "quantity": 2,
+              "rawRate": 4,
+              "extraParameter": null
+            },
+            {
+              "index": 2,
+              "itemVnum": 27799,
+              "quantity": 1,
+              "rawRate": 2,
+              "extraParameter": null
+            },
+            {
+              "index": 3,
+              "itemVnum": 24,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 4,
+              "itemVnum": 34,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 5,
+              "itemVnum": 44,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 6,
+              "itemVnum": 54,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 7,
+              "itemVnum": 64,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 8,
+              "itemVnum": 1014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 9,
+              "itemVnum": 1024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 10,
+              "itemVnum": 2014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 11,
+              "itemVnum": 2024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 12,
+              "itemVnum": 2034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 13,
+              "itemVnum": 2044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 14,
+              "itemVnum": 2054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 15,
+              "itemVnum": 3014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 16,
+              "itemVnum": 3024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 17,
+              "itemVnum": 3034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 18,
+              "itemVnum": 3044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 19,
+              "itemVnum": 3054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 20,
+              "itemVnum": 4004,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 21,
+              "itemVnum": 4014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 22,
+              "itemVnum": 4024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 23,
+              "itemVnum": 5014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 24,
+              "itemVnum": 5024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 25,
+              "itemVnum": 7014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 26,
+              "itemVnum": 7024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 27,
+              "itemVnum": 7034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 28,
+              "itemVnum": 7044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 29,
+              "itemVnum": 7054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            }
+          ]
+        },
+        {
+          "groupName": "r",
+          "mobVnum": 132,
+          "type": "drop",
+          "entries": [
+            {
+              "index": 1,
+              "itemVnum": 30069,
+              "quantity": 2,
+              "rawRate": 4,
+              "extraParameter": null
+            },
+            {
+              "index": 2,
+              "itemVnum": 27799,
+              "quantity": 1,
+              "rawRate": 2,
+              "extraParameter": null
+            },
+            {
+              "index": 3,
+              "itemVnum": 24,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 4,
+              "itemVnum": 34,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 5,
+              "itemVnum": 44,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 6,
+              "itemVnum": 54,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 7,
+              "itemVnum": 64,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 8,
+              "itemVnum": 1014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 9,
+              "itemVnum": 1024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 10,
+              "itemVnum": 2014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 11,
+              "itemVnum": 2024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 12,
+              "itemVnum": 2034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 13,
+              "itemVnum": 2044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 14,
+              "itemVnum": 2054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 15,
+              "itemVnum": 3014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 16,
+              "itemVnum": 3024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 17,
+              "itemVnum": 3034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 18,
+              "itemVnum": 3044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 19,
+              "itemVnum": 3054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 20,
+              "itemVnum": 4004,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 21,
+              "itemVnum": 4014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 22,
+              "itemVnum": 4024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 23,
+              "itemVnum": 5014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 24,
+              "itemVnum": 5024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 25,
+              "itemVnum": 7014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 26,
+              "itemVnum": 7024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 27,
+              "itemVnum": 7034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 28,
+              "itemVnum": 7044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 29,
+              "itemVnum": 7054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            }
+          ]
+        },
+        {
+          "groupName": "r_r",
+          "mobVnum": 134,
+          "type": "drop",
+          "entries": [
+            {
+              "index": 1,
+              "itemVnum": 30027,
+              "quantity": 2,
+              "rawRate": 4,
+              "extraParameter": null
+            },
+            {
+              "index": 2,
+              "itemVnum": 27799,
+              "quantity": 1,
+              "rawRate": 2,
+              "extraParameter": null
+            },
+            {
+              "index": 3,
+              "itemVnum": 24,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 4,
+              "itemVnum": 34,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 5,
+              "itemVnum": 44,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 6,
+              "itemVnum": 54,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 7,
+              "itemVnum": 64,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 8,
+              "itemVnum": 1014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 9,
+              "itemVnum": 1024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 10,
+              "itemVnum": 2014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 11,
+              "itemVnum": 2024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 12,
+              "itemVnum": 2034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 13,
+              "itemVnum": 2044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 14,
+              "itemVnum": 2054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 15,
+              "itemVnum": 3014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 16,
+              "itemVnum": 3024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 17,
+              "itemVnum": 3034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 18,
+              "itemVnum": 3044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 19,
+              "itemVnum": 3054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 20,
+              "itemVnum": 4004,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 21,
+              "itemVnum": 4014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 22,
+              "itemVnum": 4024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 23,
+              "itemVnum": 5014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 24,
+              "itemVnum": 5024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 25,
+              "itemVnum": 7014,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 26,
+              "itemVnum": 7024,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 27,
+              "itemVnum": 7034,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 28,
+              "itemVnum": 7044,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            },
+            {
+              "index": 29,
+              "itemVnum": 7054,
+              "quantity": 1,
+              "rawRate": 0.3,
+              "extraParameter": null
+            }
+          ]
+        }
+      ],
+      "interpretation": "Raw engine parameters only. In this repository the same mob VNUMs can have very different drops from another community repository; do not merge these sets or interpret rawRate as a percent without matching server source/config and item_proto."
+    }
+  ]
 }
