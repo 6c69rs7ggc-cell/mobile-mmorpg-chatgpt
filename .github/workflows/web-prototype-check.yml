@@ -21,6 +21,14 @@ jobs:
           grep -q 'id="joystick"' index.html
           grep -q 'id="attack"' index.html
           grep -q 'id="inventory"' index.html
+      - name: Verify installable mobile web app files
+        run: |
+          test -s manifest.webmanifest
+          test -s sw.js
+          grep -q 'rel="manifest"' index.html
+          grep -q 'serviceWorker.register' index.html
+      - name: Check service worker JavaScript syntax
+        run: node --check sw.js
       - name: Check JavaScript syntax
         run: |
           python3 - <<'PY'
