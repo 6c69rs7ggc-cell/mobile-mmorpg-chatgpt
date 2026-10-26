@@ -137,6 +137,36 @@ function extractLinkedReferences(templates, layout) {
   });
 }
 
+function extractCraftingRecipes(originRawValue) {
+  const source = String(originRawValue ?? "").replace(/<!--[\s\S]*?-->/g, "");
+  const recipes = [];
+  const pattern = /\{\{Tm\|([^}|]+)(?:\|[^}]*)?\}\}\s*\(Crafted\s*-\s*([\d.,]+)\s*%\)\s*:([\s\S]*?)(?=\n\s*:\*'''|\n\s*\*'''|$)/gi;
+  for (const match of source.matchAll(pattern)) {
+    const ingredients = [];
+    const ingredientPattern = /\{\{Ti\|([^}|]+)(?:\|([^}]*))?\}\}([^\n]*)/gi;
+    for (const item of match[3].matchAll(ingredientPattern)) {
+      const note = (item[2] ?? "").trim();
+      const trailing = item[3].replace(/^[\s*:]*$/, "").trim();
+      const quantityMatch = (note + " " + trailing).match(/(?:^|\b)([\d][\d.,]*)\s*(x|times|yang|gaya)?\b/i);
+      ingredients.push({
+        item: item[1].trim(),
+        quantityOrCost: note || trailing || null,
+        parsedQuantity: quantityMatch ? quantityMatch[1].replace(/,/g, "") : null,
+        sourceText: item[0].trim()
+      });
+    }
+    recipes.push({
+      npc: match[1].trim(),
+      successRatePercent: Number(match[2].replace(",", ".")),
+      ingredients,
+      sourceText: match[0].trim(),
+      sourceField: "Origin",
+      note: "Extracted from an explicit Wiki crafting annotation; quantities are kept alongside original source text."
+    });
+  }
+  return recipes;
+}
+
 function extractUpgradeSignals(itemProperties, linkedReferences) {
   const functionText = itemProperties?.function?.rawValue ?? "";
   const originText = itemProperties?.origin?.rawValue ?? "";
@@ -145,6 +175,7 @@ function extractUpgradeSignals(itemProperties, linkedReferences) {
     mentionedInFunction: upgradeTerms.test(functionText),
     originMentionsCrafting: /crafted|crafting|smith|upgrade|refin/i.test(originText),
     materialReferences: linkedReferences.filter(ref => ref.kind === "item" && ["Origin", "Function"].includes(ref.contextField)),
+    craftingRecipes: extractCraftingRecipes(originText),
     sourceFields: ["Function", "Origin"].filter(field => {
       const key = field === "Function" ? "function" : "origin";
       return Boolean(itemProperties?.[key]?.rawValue);
@@ -246,6 +277,9 @@ const output = {
     pagesWithLinkedReferences: pages.filter(page => page.linkedReferences.length > 0).length,
     totalLinkedReferences: pages.reduce((sum, page) => sum + page.linkedReferences.length, 0),
     pagesWithUpgradeSignals: pages.filter(page => page.upgradeSignals.mentionedInFunction || page.upgradeSignals.originMentionsCrafting).length,
+    pagesWithParsedCraftingRecipes: pages.filter(page => page.upgradeSignals.craftingRecipes.length > 0).length,
+    totalParsedCraftingRecipes: pages.reduce((sum, page) => sum + page.upgradeSignals.craftingRecipes.length, 0),
+    sampleCraftingRecipes: pages.filter(page => page.upgradeSignals.craftingRecipes.length > 0).slice(0, 8).map(page => ({ title: page.title, recipes: page.upgradeSignals.craftingRecipes })),
     sampleLinkedReferences: pages.filter(page => page.linkedReferences.length > 0).slice(0, 8).map(page => ({ title: page.title, references: page.linkedReferences.slice(0, 8) })),
     commonTemplateNames: [...pages.flatMap(page => page.templates.map(template => template.name))].reduce((counts, name) => { counts[name] = (counts[name] ?? 0) + 1; return counts; }, {}),
     templatesWithPositionalArguments: pages.reduce((sum, page) => sum + page.templates.filter(template => template.positional?.length).length, 0),
