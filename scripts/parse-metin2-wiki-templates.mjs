@@ -167,6 +167,44 @@ function extractCraftingRecipes(originRawValue) {
   return recipes;
 }
 
+function extractAcquisitionSources(originRawValue) {
+  const source = String(originRawValue ?? "").replace(/<!--[\\s\\S]*?-->/g, "");
+  const lines = source.split(/\\r?\\n/);
+  let section = "Unclassified";
+  const sources = [];
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    const heading = line.match(/\\[\\[([^\\]|]+)(?:\\|[^\\]]+)?\\]\\]/);
+    if (/^:?\\*+/.test(line) && heading && /'''/.test(line)) {
+      section = heading[1].trim();
+      continue;
+    }
+    const templatePattern = /\\{\\{(Ti2?|Tm)\\|([^}|]+)(?:\\|([^}]*))?\\}\\}/gi;
+    for (const match of line.matchAll(templatePattern)) {
+      const template = match[1].toLocaleLowerCase("en");
+      const target = match[2].trim();
+      if (!target) continue;
+      const annotation = line.replace(match[0], "").replace(/^[:*\\s]+/, "").trim();
+      const crafting = /crafted|crafting/i.test(line);
+      sources.push({
+        section: crafting ? "Crafting" : section,
+        target,
+        kind: template === "tm" ? "npc_or_monster" : "item_or_container",
+        annotation: annotation || null,
+        sourceText: line
+      });
+    }
+  }
+  const seen = new Set();
+  return sources.filter(entry => {
+    const key = [entry.section, entry.target.toLocaleLowerCase("en"), entry.annotation ?? ""].join("|");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function extractUpgradeSignals(itemProperties, linkedReferences) {
   const functionText = itemProperties?.function?.rawValue ?? "";
   const originText = itemProperties?.origin?.rawValue ?? "";
@@ -175,7 +213,7 @@ function extractUpgradeSignals(itemProperties, linkedReferences) {
     mentionedInFunction: upgradeTerms.test(functionText),
     originMentionsCrafting: /crafted|crafting|smith|upgrade|refin/i.test(originText),
     materialReferences: linkedReferences.filter(ref => ref.kind === "item" && ["Origin", "Function"].includes(ref.contextField)),
-    craftingRecipes: extractCraftingRecipes(originText),
+    craftingRecipes: extractCraftingRecipes(originText),\n    acquisitionSources: extractAcquisitionSources(originText),
     sourceFields: ["Function", "Origin"].filter(field => {
       const key = field === "Function" ? "function" : "origin";
       return Boolean(itemProperties?.[key]?.rawValue);
@@ -277,7 +315,7 @@ const output = {
     pagesWithLinkedReferences: pages.filter(page => page.linkedReferences.length > 0).length,
     totalLinkedReferences: pages.reduce((sum, page) => sum + page.linkedReferences.length, 0),
     pagesWithUpgradeSignals: pages.filter(page => page.upgradeSignals.mentionedInFunction || page.upgradeSignals.originMentionsCrafting).length,
-    pagesWithParsedCraftingRecipes: pages.filter(page => page.upgradeSignals.craftingRecipes.length > 0).length,
+    pagesWithParsedCraftingRecipes: pages.filter(page => page.upgradeSignals.craftingRecipes.length > 0).length,\n    pagesWithAcquisitionSources: pages.filter(page => page.upgradeSignals.acquisitionSources.length > 0).length,\n    totalAcquisitionSources: pages.reduce((sum, page) => sum + page.upgradeSignals.acquisitionSources.length, 0),\n    sampleAcquisitionSources: pages.filter(page => page.upgradeSignals.acquisitionSources.length > 0).slice(0, 8).map(page => ({ title: page.title, sources: page.upgradeSignals.acquisitionSources.slice(0, 12) })),
     totalParsedCraftingRecipes: pages.reduce((sum, page) => sum + page.upgradeSignals.craftingRecipes.length, 0),
     sampleCraftingRecipes: pages.filter(page => page.upgradeSignals.craftingRecipes.length > 0).slice(0, 8).map(page => ({ title: page.title, recipes: page.upgradeSignals.craftingRecipes })),
     sampleLinkedReferences: pages.filter(page => page.linkedReferences.length > 0).slice(0, 8).map(page => ({ title: page.title, references: page.linkedReferences.slice(0, 8) })),
