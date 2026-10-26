@@ -131,7 +131,8 @@ function extractWikiTables(wikitext) {
 
 const pages = details.pages.map(page => {
   const wikitext = page.rawWikitext ?? "";
-  const templates = templatesIn(wikitext);\n  const wikiTables = extractWikiTables(wikitext);
+  const templates = templatesIn(wikitext);
+  const wikiTables = extractWikiTables(wikitext);
   const allKeys = [...new Set(templates.flatMap(template => Object.keys(template.fields)))];
   const lowerText = wikitext.toLocaleLowerCase("en");
   const statKeys = allKeys.filter(key => /attack|defen[cs]e|level|hp|hit points|bonus|strength|dexterity|intelligence|vitality|speed|magic|value|price|sell|duration|class|type/i.test(key));
@@ -170,7 +171,9 @@ const output = {
     inputPages: pages.length,
     pagesWithRawWikitext: pages.filter(page => page.rawWikitextLength > 0).length,
     pagesWithTemplates: pages.filter(page => page.templateCount > 0).length,
-    pagesWithItemProperties: pages.filter(page => page.itemProperties !== null).length,\n    pagesWithWikiTables: pages.filter(page => page.wikiTables.length > 0).length,\n    totalWikiTables: pages.reduce((sum, page) => sum + page.wikiTables.length, 0),
+    pagesWithItemProperties: pages.filter(page => page.itemProperties !== null).length,
+    pagesWithWikiTables: pages.filter(page => page.wikiTables.length > 0).length,
+    totalWikiTables: pages.reduce((sum, page) => sum + page.wikiTables.length, 0),
     pagesWithPotentialStatFields: pages.filter(page => page.signals.hasPotentialStatFields).length,
     pagesWithPotentialDropFields: pages.filter(page => page.signals.hasPotentialDropFields).length,
     pagesWithPotentialUpgradeFields: pages.filter(page => page.signals.hasPotentialUpgradeFields).length,
