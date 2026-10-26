@@ -1,5 +1,5 @@
-const CACHE_NAME = "ashen-realm-shell-v1";
-const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest"];
+const CACHE_NAME = "ashen-realm-shell-v2";
+const APP_SHELL = ["./", "./index.html", "./items.html", "./manifest.webmanifest"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
   self.skipWaiting();
