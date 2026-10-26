@@ -18,6 +18,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Test Wiki template parser
+        run: node scripts/test-metin2-wiki-template-parser.mjs
       - name: Fetch all pages in official Items category
         run: node scripts/import-metin2-wiki-catalog.mjs
       - name: Extract introductory details for indexed pages
