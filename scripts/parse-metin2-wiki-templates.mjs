@@ -63,6 +63,40 @@ function templatesIn(wikitext) {
   return found;
 }
 
+const ITEM_PROPERTY_FIELDS = {
+  description: ["Description"],
+  function: ["Function"],
+  quest: ["Quest"],
+  origin: ["Origin"],
+  tradableNpc: ["Tradable NPC"],
+  tradableWindow: ["Tradable Window"],
+  privateShop: ["Private Shop"],
+  mailbox: ["Mailbox"],
+  storable: ["Storable"],
+  dropable: ["Dropable", "Droppable"],
+  stackable: ["Stackable"],
+  category: ["Category"],
+  category2: ["Category2"],
+  other: ["Other"]
+};
+
+function extractItemProperties(templates) {
+  const layout = templates.find(template => template.name.toLocaleLowerCase("en") === "item/layoutv2")
+    ?? templates.find(template => template.name.toLocaleLowerCase("en") === "item/layout");
+  if (!layout) return null;
+  const properties = {};
+  for (const [normalizedName, sourceNames] of Object.entries(ITEM_PROPERTY_FIELDS)) {
+    for (const sourceName of sourceNames) {
+      const value = layout.fields[sourceName];
+      if (typeof value === "string" && value.trim()) {
+        properties[normalizedName] = { sourceField: sourceName, rawValue: value.trim() };
+        break;
+      }
+    }
+  }
+  return Object.keys(properties).length ? properties : null;
+}
+
 const pages = details.pages.map(page => {
   const wikitext = page.rawWikitext ?? "";
   const templates = templatesIn(wikitext);
@@ -80,6 +114,7 @@ const pages = details.pages.map(page => {
     rawWikitextLength: wikitext.length,
     templateCount: templates.length,
     templates,
+    itemProperties: extractItemProperties(templates),
     detectedFieldNames: allKeys,
     candidateStatFieldNames: statKeys,
     candidateDropFieldNames: dropKeys,
@@ -103,6 +138,7 @@ const output = {
     inputPages: pages.length,
     pagesWithRawWikitext: pages.filter(page => page.rawWikitextLength > 0).length,
     pagesWithTemplates: pages.filter(page => page.templateCount > 0).length,
+    pagesWithItemProperties: pages.filter(page => page.itemProperties !== null).length,
     pagesWithPotentialStatFields: pages.filter(page => page.signals.hasPotentialStatFields).length,
     pagesWithPotentialDropFields: pages.filter(page => page.signals.hasPotentialDropFields).length,
     pagesWithPotentialUpgradeFields: pages.filter(page => page.signals.hasPotentialUpgradeFields).length,
