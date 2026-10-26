@@ -61,6 +61,22 @@ const sample = `{{Item
 `;
 const parsed = templatesIn(sample);
 
+const commentedTemplate = templatesIn(`{{Item/LayoutV2
+
+<!-- Exact ingame description -->
+|Description = Test item
+|width = 32
+}}`);
+assert.ok(
+  commentedTemplate.some(t => t.name === "Item/LayoutV2"),
+  "HTML comments after a template name must not become part of its name"
+);
+assert.equal(
+  commentedTemplate.find(t => t.name === "Item/LayoutV2").fields.Description,
+  "Test item",
+  "fields after an HTML comment should still parse"
+);
+
 assert.ok(parsed.some(t => t.name === "Item"), "outer Item template should be found");
 assert.ok(parsed.some(t => t.name === "Icon"), "nested Icon template should be found");
 assert.ok(parsed.some(t => t.name === "Upgrade table"), "nested Upgrade table should be found");
