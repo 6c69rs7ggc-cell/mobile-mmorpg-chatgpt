@@ -195,16 +195,16 @@ assert.match(item.fields.upgrade, /material={{Item link\|Moon Shard}}/);
 
 
 function extractCraftingRecipes(originRawValue) {
-  const source = String(originRawValue ?? "").replace(/<!--[\\s\\S]*?-->/g, "");
+  const source = String(originRawValue ?? "").replace(/<!--[\s\S]*?-->/g, "");
   const recipes = [];
-  const pattern = /\\{\\{Tm\\|([^}|]+)(?:\\|[^}]*)?\\}\\}\\s*\\(Crafted\\s*-\\s*([\\d.,]+)\\s*%\\)\\s*:([\\s\\S]*?)(?=\\n\\s*:\\*'''|\\n\\s*\\*'''|$)/gi;
+  const pattern = /\{\{Tm\|([^}|]+)(?:\|[^}]*)?\}\}\s*\(Crafted\s*-\s*([\d.,]+)\s*%\)\s*:([\s\S]*?)(?=\n\s*:\*'''|\n\s*\*'''|$)/gi;
   for (const match of source.matchAll(pattern)) {
     const ingredients = [];
-    const ingredientPattern = /\\{\\{Ti\\|([^}|]+)(?:\\|([^}]*))?\\}\\}([^\\n]*)/gi;
+    const ingredientPattern = /\{\{Ti\|([^}|]+)(?:\|([^}]*))?\}\}([^\n]*)/gi;
     for (const item of match[3].matchAll(ingredientPattern)) {
       const note = (item[2] ?? "").trim();
       const trailing = item[3].trim().replace(/^[*: ]+/, "");
-      const quantityMatch = (note + " " + trailing).match(/(?:^|\\b)([\\d][\\d.,]*)\\s*(x|times|yang|gaya)?\\b/i);
+      const quantityMatch = (note + " " + trailing).match(/(?:^|\b)([\d][\d.,]*)\s*(x|times|yang|gaya)?\b/i);
       ingredients.push({
         item: item[1].trim(),
         quantityOrCost: note || trailing || null,
