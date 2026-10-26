@@ -93,6 +93,38 @@ function extractItemProperties(templates) {
   return Object.keys(properties).length ? properties : null;
 }
 
+function extractWikiTables(wikitext) {
+  const tables = [];
+  const blocks = wikitext.match(/\\{\\|[\\s\\S]*?\\|\\}/g) ?? [];
+  for (const block of blocks) {
+    const rows = [];
+    let row = [];
+    const pushRow = () => {
+      const cleaned = row.map(cell => cell.replace(/<!--[\\s\\S]*?-->/g, "").trim()).filter(Boolean);
+      if (cleaned.length) rows.push(cleaned);
+      row = [];
+    };
+    for (const rawLine of block.split(/\\r?\\n/)) {
+      const line = rawLine.trim();
+      if (line.startsWith("|}")) { pushRow(); break; }
+      if (line.startsWith("|-")) { pushRow(); continue; }
+      if (!(line.startsWith("|") || line.startsWith("!"))) continue;
+      if (line.startsWith("|+") || line.startsWith("|-")) continue;
+      const marker = line[0];
+      const separator = marker === "!" ? "!!" : "||";
+      let cells = line.slice(1).split(separator);
+      if (cells.length === 1) {
+        const pipe = cells[0].indexOf("|");
+        if (pipe >= 0 && /^[^|=]+\\s*=/.test(cells[0].slice(0, pipe))) cells = [cells[0].slice(pipe + 1)];
+      }
+      row.push(...cells.map(cell => cell.replace(/^\\s*[^|]*?\\s\\|\\s*/, "").trim()));
+    }
+    pushRow();
+    if (rows.length) tables.push({ rowCount: rows.length, rows });
+  }
+  return tables;
+}
+
 const sample = `{{Item
 |name=Moon Blade
 |description=Power = mystery
@@ -132,6 +164,19 @@ assert.equal(layoutProperties.origin.rawValue, "Monster drop");
 assert.equal(layoutProperties.dropable.sourceField, "Dropable");
 assert.equal(layoutProperties.stackable.rawValue, "No");
 assert.equal(extractItemProperties(templatesIn("No item layout here")), null);
+
+const progressionTables = extractWikiTables(`{| class="wikitable"
+! Upgrade !! +0 !! +1 !! +2
+|-
+! Defence
+| 12 || 18 || 24
+|-
+! Upgrade Yang
+| - || 600 || 1.200
+|}`);
+assert.equal(progressionTables.length, 1, "Wiki tables should be retained");
+assert.ok(progressionTables[0].rows.some(row => row.includes("Defence")), "table row labels should be retained");
+assert.ok(progressionTables[0].rows.some(row => row.includes("Upgrade Yang")), "upgrade cost rows should be retained");
 
 assert.ok(parsed.some(t => t.name === "Item"), "outer Item template should be found");
 assert.ok(parsed.some(t => t.name === "Icon"), "nested Icon template should be found");
