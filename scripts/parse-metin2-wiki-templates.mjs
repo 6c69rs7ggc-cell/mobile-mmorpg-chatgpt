@@ -335,4 +335,49 @@ const output = {
   pages
 };
 await fs.writeFile(OUTPUT, JSON.stringify(output, null, 2) + "\n");
+
+const compactItems = pages.map(page => {
+  const properties = page.itemProperties ?? {};
+  const raw = key => properties[key]?.rawValue ?? null;
+  return {
+    title: page.title,
+    sourceUrl: page.sourceUrl,
+    categories: page.categories,
+    category: raw("category"),
+    description: raw("description"),
+    function: raw("function"),
+    quest: raw("quest"),
+    origin: raw("origin"),
+    trade: {
+      tradableNpc: raw("tradableNpc"),
+      tradableWindow: raw("tradableWindow"),
+      privateShop: raw("privateShop"),
+      mailbox: raw("mailbox"),
+      storable: raw("storable"),
+      dropable: raw("dropable"),
+      stackable: raw("stackable")
+    },
+    acquisitionSources: page.upgradeSignals.acquisitionSources,
+    craftingRecipes: page.upgradeSignals.craftingRecipes,
+    linkedReferences: page.linkedReferences.filter(ref =>
+      ["Origin", "Function", "Content-items", "Content-other", "Content-weapons", "Content-armours", "Content-accessories", "Content-helmshield"].includes(ref.contextField)
+    ),
+    wikiTables: page.wikiTables
+  };
+});
+const compactOutput = {
+  _meta: {
+    title: "ASHEN REALM — searchable item database",
+    source: output._meta.source,
+    generatedAt: output._meta.generatedAt,
+    itemCount: compactItems.length,
+    pagesWithAcquisitionSources: output._meta.pagesWithAcquisitionSources,
+    totalAcquisitionSources: output._meta.totalAcquisitionSources,
+    pagesWithCraftingRecipes: output._meta.pagesWithParsedCraftingRecipes,
+    totalCraftingRecipes: output._meta.totalParsedCraftingRecipes,
+    note: "Item details are extracted from official Wiki source text. Unknown or unstructured stats/drop rates are not inferred."
+  },
+  items: compactItems
+};
+await fs.writeFile("data/metin2-wiki-item-database.json", JSON.stringify(compactOutput) + "\n");
 console.log(JSON.stringify(output._meta, null, 2));
