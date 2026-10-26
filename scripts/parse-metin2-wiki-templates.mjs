@@ -171,6 +171,7 @@ function extractAcquisitionSources(originRawValue) {
   const source = String(originRawValue ?? "").replace(/<!--[\s\S]*?-->/g, "");
   const lines = source.split(/\r?\n/);
   let section = "Unclassified";
+  let craftingSectionActive = false;
   const sources = [];
   for (const rawLine of lines) {
     const line = rawLine.trim();
@@ -178,6 +179,7 @@ function extractAcquisitionSources(originRawValue) {
     const heading = line.match(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/);
     if (/^:?\*+/.test(line) && heading && /'''/.test(line)) {
       section = heading[1].trim();
+      craftingSectionActive = /crafted|crafting/i.test(line);
     }
     const templatePattern = /\{\{(Ti2?|Tm)\|([^}|]+)(?:\|([^}]*))?\}\}/gi;
     for (const match of line.matchAll(templatePattern)) {
@@ -185,7 +187,7 @@ function extractAcquisitionSources(originRawValue) {
       const target = match[2].trim();
       if (!target) continue;
       const annotation = line.replace(match[0], "").replace(/^[:*\s]+/, "").trim();
-      const crafting = /crafted|crafting/i.test(line);
+      const crafting = craftingSectionActive || /crafted|crafting/i.test(line);
       sources.push({
         section: crafting ? "Crafting" : section,
         target,
