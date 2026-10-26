@@ -48,7 +48,6 @@ function templatesIn(wikitext) {
         if (key && value) fields[key] = value;
       }
       if (name) found.push({ name, fields });
-      i = j - 1;
     }
   }
   return found;
@@ -59,8 +58,7 @@ const pages = details.pages.map(page => {
   const templates = templatesIn(wikitext);
   const allKeys = [...new Set(templates.flatMap(template => Object.keys(template.fields)))];
   const lowerText = wikitext.toLocaleLowerCase("en");
-  const lowerKeys = allKeys.map(key => key.toLocaleLowerCase("en"));
-  const statKeys = allKeys.filter(key => /attack|defen[cs]e|level|level|hp|hit points|bonus|strength|dexterity|intelligence|vitality|speed|magic|value|price|sell|duration|class|type/i.test(key));
+  const statKeys = allKeys.filter(key => /attack|defen[cs]e|level|hp|hit points|bonus|strength|dexterity|intelligence|vitality|speed|magic|value|price|sell|duration|class|type/i.test(key));
   const dropKeys = allKeys.filter(key => /drop|loot|monster|mob|chance|probability|rate/i.test(key));
   const upgradeKeys = allKeys.filter(key => /upgrade|refine|smith|material|recipe|success|fail|failure|stone|scroll/i.test(key));
   return {
