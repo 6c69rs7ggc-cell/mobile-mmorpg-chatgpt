@@ -116,7 +116,7 @@ function extractWikiTables(wikitext) {
       if (line.startsWith("|+") || line.startsWith("|-")) continue;
       const marker = line[0];
       const separator = marker === "!" ? "!!" : "||";
-      let cells = splitTopLevel(line.slice(1), separator);
+      let cells = line.slice(1).split(separator);
       if (cells.length === 1) {
         const pipe = cells[0].indexOf("|");
         if (pipe >= 0 && /^[^|=]+\\s*=/.test(cells[0].slice(0, pipe))) cells = [cells[0].slice(pipe + 1)];
