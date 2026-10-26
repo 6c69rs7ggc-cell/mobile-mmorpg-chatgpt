@@ -2,7 +2,7 @@
   "_meta": {
     "title": "ASHEN REALM — parsed official Metin2 Wiki template index",
     "source": "Raw wikitext extracted from Gameforge Metin2 Wiki",
-    "generatedAt": "2026-10-26T08:28:05.218Z",
+    "generatedAt": "2026-10-26T08:34:34.008Z",
     "inputPages": 2091,
     "pagesWithRawWikitext": 2091,
     "pagesWithTemplates": 2091,
@@ -91,21 +91,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "1* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|1* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|2 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -124,21 +124,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "2* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|2* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|4 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -157,21 +157,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "3* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|3* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|6 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -190,21 +190,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "4* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|4* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|10 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -1951,21 +1951,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "1* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|1* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|2 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -2241,21 +2241,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "2* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|2* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|4 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -2531,21 +2531,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "3* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|3* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|6 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -2821,21 +2821,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "4* Catalyst",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|4* Catalyst}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gaya",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Gaya|10 Gaya}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -44998,7 +44998,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Baek-Go}} / {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Bellflower",
             "kind": "item_or_container",
             "annotation": null,
@@ -53819,14 +53819,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Blacksmith}} (Crafted - 100%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Blessing Scroll",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Blessing Scroll}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Stone of the Blacksmith",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -69543,14 +69543,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Bottle",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Empty Bottle}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Zin Water",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -78949,14 +78949,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Kaki Blossom Juice",
             "kind": "item_or_container",
             "annotation": "100x",
             "sourceText": "::*{{Ti|Kaki Blossom Juice}} 100x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Tue Fungus",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -104677,35 +104677,35 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Fisherman}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Rod Blank",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Rod Blank}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Rod Guide",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Rod Guide}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Rod Grip",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Rod Grip}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Carbon Fibre",
             "kind": "item_or_container",
             "annotation": "3x",
             "sourceText": "::*{{Ti|Carbon Fibre}} 3x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Golden Tuna",
             "kind": "item_or_container",
             "annotation": "'''Other:'''  (opening)",
@@ -118991,7 +118991,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Warrior Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Chiv. Armour Shard I",
             "kind": "item_or_container",
             "annotation": "200x",
@@ -119574,7 +119574,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Warrior Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Chiv. Helmet Shard I",
             "kind": "item_or_container",
             "annotation": "200x",
@@ -120157,7 +120157,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Warrior Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Chiv. Weapon Shard I",
             "kind": "item_or_container",
             "annotation": "200x",
@@ -145509,14 +145509,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Illusion Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Refined Redux Stone",
             "kind": "item_or_container",
             "annotation": "3x",
             "sourceText": "::*{{Ti|Refined Redux Stone}} 3x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Redux Elixir",
             "kind": "item_or_container",
             "annotation": null,
@@ -156854,14 +156854,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Darkthorn",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Darkthorn}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Resistance Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -170033,14 +170033,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Bellflower Juice",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Bellflower Juice}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Lilac",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -178334,14 +178334,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Blacksmith}} (Crafted - 100%):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Blessing Scroll",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Blessing Scroll}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Magic Iron Ore",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -184454,14 +184454,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Earth Vine",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Earth Vine}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Resistance Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -196176,7 +196176,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Alchemist (Energy System)|Alchemist}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Energy Fragment",
             "kind": "item_or_container",
             "annotation": "30x",
@@ -198280,14 +198280,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Illusion Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Craft Redux Stone",
             "kind": "item_or_container",
             "annotation": "2x",
             "sourceText": "::*{{Ti|Craft Redux Stone}} 2x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Redux Elixir",
             "kind": "item_or_container",
             "annotation": null,
@@ -218795,14 +218795,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Flaming Leaf",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Flaming Leaf}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Resistance Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -227692,14 +227692,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Frost Root",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Frost Root}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Resistance Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -232941,7 +232941,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Baek-Go}} / {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gango Root",
             "kind": "item_or_container",
             "annotation": null,
@@ -268846,14 +268846,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Bottle",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Empty Bottle}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Mong Water",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -299360,14 +299360,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Young Water",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Young Water}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Mulberry",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -306889,7 +306889,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Baek-Go}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Leaves of Life",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -323024,7 +323024,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Baek-Go}} / {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Kaki Blossom",
             "kind": "item_or_container",
             "annotation": null,
@@ -327588,14 +327588,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Master Chi}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Moonlight Shard",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Moonlight Shard}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Stone of Monsters",
             "kind": "item_or_container",
             "annotation": "+4",
@@ -375536,14 +375536,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Master Chi}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Demon Stone",
             "kind": "item_or_container",
             "annotation": "+0~4",
             "sourceText": "::*{{Ti|Demon Stone}} +0~4"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Sun Jadite",
             "kind": "item_or_container",
             "annotation": "1~5x",
@@ -381390,14 +381390,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Bo Water",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Bo Water}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Mulberry",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -385070,14 +385070,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Moonshine Orchid",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Moonshine Orchid}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -385323,21 +385323,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Moonshine Orchid",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Moonshine Orchid}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
             "sourceText": "::*{{Ti|Empty Power Elixir}} 20x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Golden Herb",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -421655,14 +421655,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Northwind Blossom",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Northwind Blossom}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -421931,14 +421931,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Northwind Blossom",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Northwind Blossom}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Resistance Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -427017,14 +427017,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Bottle",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Empty Bottle}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Sim Water",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -430666,28 +430666,28 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Baek-Go}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Intermediate Chaos Stone",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Intermediate Chaos Stone}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Special Dye",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Special Dye}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Energy Fragment",
             "kind": "item_or_container",
             "annotation": "200x",
             "sourceText": "::*{{Ti|Energy Fragment}} 200x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -439331,7 +439331,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Baek-Go}} / {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Peach Blossom",
             "kind": "item_or_container",
             "annotation": null,
@@ -470204,14 +470204,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Darkthorn",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Darkthorn}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -470480,14 +470480,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Earth Vine",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Earth Vine}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -470756,14 +470756,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Flaming Leaf",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Flaming Leaf}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -471032,14 +471032,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Frost Root",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Frost Root}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -471308,14 +471308,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Thunder Herb",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Thunder Herb}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Power Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -471731,14 +471731,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Illusion Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Epic Redux Stone",
             "kind": "item_or_container",
             "annotation": null,
             "sourceText": "::*{{Ti|Epic Redux Stone}}"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Redux Elixir",
             "kind": "item_or_container",
             "annotation": null,
@@ -491348,14 +491348,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Bottle",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Empty Bottle}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Dok Water",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -497218,28 +497218,28 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Jae-Seon Kim}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "White Pearl",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|White Pearl}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Blue Pearl",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Blue Pearl}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Blood-Red Pearl",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Blood-Red Pearl}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Energy Fragment",
             "kind": "item_or_container",
             "annotation": "50x",
@@ -506111,14 +506111,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Illusion Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Small Redux Stone",
             "kind": "item_or_container",
             "annotation": "4x",
             "sourceText": "::*{{Ti|Small Redux Stone}} 4x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Redux Elixir",
             "kind": "item_or_container",
             "annotation": null,
@@ -523209,7 +523209,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Warrior Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Chiv. Armour Shard II",
             "kind": "item_or_container",
             "annotation": "10x",
@@ -523584,7 +523584,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Warrior Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Chiv. Helmet Shard II",
             "kind": "item_or_container",
             "annotation": "10x",
@@ -523830,21 +523830,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Medal Keeper}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Foundation Stone",
             "kind": "item_or_container",
             "annotation": "100x",
             "sourceText": "::*{{Ti|Foundation Stone}} 100x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Plywood",
             "kind": "item_or_container",
             "annotation": "100x",
             "sourceText": "::*{{Ti|Plywood}} 100x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Trunk",
             "kind": "item_or_container",
             "annotation": "100x",
@@ -525497,7 +525497,7 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Warrior Statue}} (crafted)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Chiv. Weapon Shard II",
             "kind": "item_or_container",
             "annotation": "10x",
@@ -533712,14 +533712,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Dok Water",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Dok Water}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Alpine Rose",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -546547,21 +546547,21 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Blacksmith}} (Crafted - 100%)"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Blessing Scroll",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Blessing Scroll}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Magic Copper Ore",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Magic Copper Ore}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Yang",
             "kind": "item_or_container",
             "annotation": null,
@@ -589698,14 +589698,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Peach Blossom Juice",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Peach Blossom Juice}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Lilac",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -651555,14 +651555,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Thunder Herb",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Thunder Herb}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Resistance Elixir",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -696372,14 +696372,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Bottle",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Empty Bottle}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "SamBo Water",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -714969,14 +714969,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Empty Bottle",
             "kind": "item_or_container",
             "annotation": "10x",
             "sourceText": "::*{{Ti|Empty Bottle}} 10x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Hwal Water",
             "kind": "item_or_container",
             "annotation": "20x",
@@ -729543,14 +729543,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Gango Root Juice",
             "kind": "item_or_container",
             "annotation": "100x",
             "sourceText": "::*{{Ti|Gango Root Juice}} 100x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Tue Fungus",
             "kind": "item_or_container",
             "annotation": "1x",
@@ -732817,14 +732817,14 @@
             "sourceText": ":*'''[[NPC]]:''' {{Tm|Yu-Hwan}} / {{Tm|Huahn-So}} (crafted):"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Sim Water",
             "kind": "item_or_container",
             "annotation": "1x",
             "sourceText": "::*{{Ti|Sim Water}} 1x"
           },
           {
-            "section": "NPC",
+            "section": "Crafting",
             "target": "Alpine Rose",
             "kind": "item_or_container",
             "annotation": "1x",
