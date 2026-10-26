@@ -212,7 +212,8 @@ function extractUpgradeSignals(itemProperties, linkedReferences) {
     mentionedInFunction: upgradeTerms.test(functionText),
     originMentionsCrafting: /crafted|crafting|smith|upgrade|refin/i.test(originText),
     materialReferences: linkedReferences.filter(ref => ref.kind === "item" && ["Origin", "Function"].includes(ref.contextField)),
-    craftingRecipes: extractCraftingRecipes(originText),\n    acquisitionSources: extractAcquisitionSources(originText),
+    craftingRecipes: extractCraftingRecipes(originText),
+    acquisitionSources: extractAcquisitionSources(originText),
     sourceFields: ["Function", "Origin"].filter(field => {
       const key = field === "Function" ? "function" : "origin";
       return Boolean(itemProperties?.[key]?.rawValue);
