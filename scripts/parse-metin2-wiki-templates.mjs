@@ -29,9 +29,9 @@ function cleanTemplateName(rawName) {
   // Wiki pages commonly place HTML comments between a template name and its first field.
   // Those comments are not part of the MediaWiki template name.
   return rawName
-    .replace(/<!--[\\s\\S]*?-->/g, " ")
-    .replace(/[\\r\\n\\t]+/g, " ")
-    .replace(/\\s+/g, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
