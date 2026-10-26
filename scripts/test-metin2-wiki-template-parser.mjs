@@ -23,6 +23,14 @@ function splitTopLevel(source, delimiter = "|") {
   return parts;
 }
 
+function cleanTemplateName(rawName) {
+  return rawName
+    .replace(/<!--[\\s\\S]*?-->/g, " ")
+    .replace(/[\\r\\n\\t]+/g, " ")
+    .replace(/\\s+/g, " ")
+    .trim();
+}
+
 function templatesIn(wikitext) {
   const found = [];
   for (let i = 0; i < wikitext.length - 1; i++) {
@@ -36,7 +44,7 @@ function templatesIn(wikitext) {
     if (depth === 0) {
       const body = wikitext.slice(i + 2, j - 2);
       const parts = splitTopLevel(body);
-      const name = (parts.shift() ?? "").trim();
+      const name = cleanTemplateName(parts.shift() ?? "");
       const fields = {};
       for (const part of parts) {
         const equals = part.indexOf("=");
