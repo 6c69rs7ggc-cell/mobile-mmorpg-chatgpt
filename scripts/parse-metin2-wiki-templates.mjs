@@ -97,9 +97,41 @@ function extractItemProperties(templates) {
   return Object.keys(properties).length ? properties : null;
 }
 
+function extractWikiTables(wikitext) {
+  const tables = [];
+  const blocks = wikitext.match(/\\{\\|[\\s\\S]*?\\|\\}/g) ?? [];
+  for (const block of blocks) {
+    const rows = [];
+    let row = [];
+    const pushRow = () => {
+      const cleaned = row.map(cell => cell.replace(/<!--[\\s\\S]*?-->/g, "").trim()).filter(Boolean);
+      if (cleaned.length) rows.push(cleaned);
+      row = [];
+    };
+    for (const rawLine of block.split(/\\r?\\n/)) {
+      const line = rawLine.trim();
+      if (line.startsWith("|}")) { pushRow(); break; }
+      if (line.startsWith("|-")) { pushRow(); continue; }
+      if (!(line.startsWith("|") || line.startsWith("!"))) continue;
+      if (line.startsWith("|+") || line.startsWith("|-")) continue;
+      const marker = line[0];
+      const separator = marker === "!" ? "!!" : "||";
+      let cells = splitTopLevel(line.slice(1), separator);
+      if (cells.length === 1) {
+        const pipe = cells[0].indexOf("|");
+        if (pipe >= 0 && /^[^|=]+\\s*=/.test(cells[0].slice(0, pipe))) cells = [cells[0].slice(pipe + 1)];
+      }
+      row.push(...cells.map(cell => cell.replace(/^\\s*[^|]*?\\s\\|\\s*/, "").trim()));
+    }
+    pushRow();
+    if (rows.length) tables.push({ rowCount: rows.length, rows });
+  }
+  return tables;
+}
+
 const pages = details.pages.map(page => {
   const wikitext = page.rawWikitext ?? "";
-  const templates = templatesIn(wikitext);
+  const templates = templatesIn(wikitext);\n  const wikiTables = extractWikiTables(wikitext);
   const allKeys = [...new Set(templates.flatMap(template => Object.keys(template.fields)))];
   const lowerText = wikitext.toLocaleLowerCase("en");
   const statKeys = allKeys.filter(key => /attack|defen[cs]e|level|hp|hit points|bonus|strength|dexterity|intelligence|vitality|speed|magic|value|price|sell|duration|class|type/i.test(key));
@@ -138,7 +170,7 @@ const output = {
     inputPages: pages.length,
     pagesWithRawWikitext: pages.filter(page => page.rawWikitextLength > 0).length,
     pagesWithTemplates: pages.filter(page => page.templateCount > 0).length,
-    pagesWithItemProperties: pages.filter(page => page.itemProperties !== null).length,
+    pagesWithItemProperties: pages.filter(page => page.itemProperties !== null).length,\n    pagesWithWikiTables: pages.filter(page => page.wikiTables.length > 0).length,\n    totalWikiTables: pages.reduce((sum, page) => sum + page.wikiTables.length, 0),
     pagesWithPotentialStatFields: pages.filter(page => page.signals.hasPotentialStatFields).length,
     pagesWithPotentialDropFields: pages.filter(page => page.signals.hasPotentialDropFields).length,
     pagesWithPotentialUpgradeFields: pages.filter(page => page.signals.hasPotentialUpgradeFields).length,
