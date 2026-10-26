@@ -44,8 +44,14 @@ async function fetchBatch(titles, attempt = 0) {
   const data = await response.json();
   if (data.error) throw new Error(JSON.stringify(data.error));
   const pages = data.query?.pages ?? [];
-  if (pages.length && !pages.some(page => page.revisions?.length || (page.extract ?? "").trim())) {
-    throw new Error(`Wiki API returned pages without extracts or revisions. Sample response: ${JSON.stringify(pages[0]).slice(0, 1600)}`);
+  const hasUsableContent = page => {
+    const revision = page.revisions?.[0];
+    const slot = revision?.slots?.main;
+    const wikitext = slot?.content ?? slot?.["*"] ?? revision?.content ?? revision?.["*"] ?? "";
+    return Boolean((page.extract ?? "").trim() || String(wikitext).trim());
+  };
+  if (pages.length && !pages.some(hasUsableContent)) {
+    throw new Error(`Wiki API returned pages without usable extracts or revision content. Sample response: ${JSON.stringify(pages[0]).slice(0, 3000)}`);
   }
   return pages;
 }
