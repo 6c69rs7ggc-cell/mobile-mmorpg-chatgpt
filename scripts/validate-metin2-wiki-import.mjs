@@ -54,9 +54,11 @@ for (const page of pages) {
   if (detailTitles.has(key)) duplicateDetailTitles.push(page.title);
   detailTitles.add(key);
   if (typeof page.pageText !== "string") fail(`pageText is not a string: ${page.title}`);
-  else if (page.pageText.trim()) pagesWithText++;
+  const hasPlainText = typeof page.pageText === "string" && page.pageText.trim().length > 0;
+  const hasRawWikitext = typeof page.rawWikitext === "string" && page.rawWikitext.trim().length > 0;
+  if (hasPlainText || hasRawWikitext) pagesWithText++;
   else pagesWithoutText++;
-  if ((page.rawWikitext ?? "").trim()) pagesWithRawWikitext++;
+  if (hasRawWikitext) pagesWithRawWikitext++;
   if (!page.sourceStatus) fail(`sourceStatus is missing: ${page.title}`);
 }
 if (duplicateDetailTitles.length) {
