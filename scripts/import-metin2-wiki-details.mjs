@@ -44,6 +44,14 @@ async function fetchBatch(titles, attempt = 0) {
   const data = await response.json();
   if (data.error) throw new Error(JSON.stringify(data.error));
   const pages = data.query?.pages ?? [];
+  if (attempt === 0 && titles[0] && pages.length) {
+    console.log("WIKI_API_DIAGNOSTIC " + JSON.stringify({
+      requestedTitle: titles[0],
+      pageKeys: Object.keys(pages[0]),
+      samplePage: pages[0],
+      queryKeys: Object.keys(data.query ?? {}),
+    }).slice(0, 5000));
+  }
   const hasUsableContent = page => {
     const revision = page.revisions?.[0];
     const slot = revision?.slots?.main;
