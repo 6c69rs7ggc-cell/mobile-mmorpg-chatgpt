@@ -104,7 +104,6 @@ function extractAcquisitionSources(originRawValue) {
     const heading = line.match(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/);
     if (/^:?\*+/.test(line) && heading && /'''/.test(line)) {
       section = heading[1].trim();
-      continue;
     }
     const templatePattern = /\{\{(Ti2?|Tm)\|([^}|]+)(?:\|([^}]*))?\}\}/gi;
     for (const match of line.matchAll(templatePattern)) {
