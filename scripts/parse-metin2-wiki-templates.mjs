@@ -102,6 +102,57 @@ function extractItemProperties(templates) {
   return Object.keys(properties).length ? properties : null;
 }
 
+function extractLinkedReferences(templates, layout) {
+  const sourceFields = ["Origin", "Content-items", "Content-other", "Content-weapons", "Content-armours", "Content-accessories", "Content-helmshield", "Function", "Other"];
+  const references = [];
+  for (const template of templates) {
+    const name = template.name.toLocaleLowerCase("en");
+    if (!["ti", "ti2", "tm"].includes(name)) continue;
+    const target = (template.positional?.[0] ?? template.fields.name ?? "").trim();
+    if (!target) continue;
+    let contextField = null;
+    if (layout) {
+      for (const field of sourceFields) {
+        if (typeof layout.fields[field] === "string" && layout.fields[field].includes("{{" + template.name + "|")) {
+          contextField = field;
+          break;
+        }
+      }
+    }
+    references.push({
+      template: template.name,
+      target,
+      kind: name === "tm" ? "monster_or_npc" : "item",
+      quantityOrNote: (template.positional ?? []).slice(1).join("|") || null,
+      contextField,
+      source: "nested Wiki template"
+    });
+  }
+  const seen = new Set();
+  return references.filter(ref => {
+    const key = [ref.template.toLowerCase(), ref.target.toLowerCase(), ref.contextField ?? "", ref.quantityOrNote ?? ""].join("|");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function extractUpgradeSignals(itemProperties, linkedReferences) {
+  const functionText = itemProperties?.function?.rawValue ?? "";
+  const originText = itemProperties?.origin?.rawValue ?? "";
+  const upgradeTerms = /upgrade|refin|smith|enhanc|improv|craft|success rate|refinement/i;
+  return {
+    mentionedInFunction: upgradeTerms.test(functionText),
+    originMentionsCrafting: /crafted|crafting|smith|upgrade|refin/i.test(originText),
+    materialReferences: linkedReferences.filter(ref => ref.kind === "item" && ["Origin", "Function"].includes(ref.contextField)),
+    sourceFields: ["Function", "Origin"].filter(field => {
+      const key = field === "Function" ? "function" : "origin";
+      return Boolean(itemProperties?.[key]?.rawValue);
+    }),
+    note: "Signals and references are extracted from Wiki source fields; they do not establish a complete upgrade recipe or success probability."
+  };
+}
+
 function extractWikiTables(wikitext) {
   const tables = [];
   const blocks = wikitext.match(/\{\|[\s\S]*?\|\}/g) ?? [];
@@ -158,6 +209,7 @@ const pages = details.pages.map(page => {
     templates,
     wikiTables,
     itemProperties: extractItemProperties(templates),
+    linkedReferences: extractLinkedReferences(templates, templates.find(template => template.name.toLocaleLowerCase("en") === "item/layoutv2") ?? templates.find(template => template.name.toLocaleLowerCase("en") === "item/layout")),
     detectedFieldNames: allKeys,
     candidateStatFieldNames: statKeys,
     candidateDropFieldNames: dropKeys,
@@ -173,6 +225,10 @@ const pages = details.pages.map(page => {
   };
 });
 
+for (const page of pages) {
+  page.upgradeSignals = extractUpgradeSignals(page.itemProperties, page.linkedReferences);
+}
+
 const output = {
   _meta: {
     title: "ASHEN REALM — parsed official Metin2 Wiki template index",
@@ -187,6 +243,10 @@ const output = {
     pagesWithPotentialStatFields: pages.filter(page => page.signals.hasPotentialStatFields).length,
     pagesWithPotentialDropFields: pages.filter(page => page.signals.hasPotentialDropFields).length,
     pagesWithPotentialUpgradeFields: pages.filter(page => page.signals.hasPotentialUpgradeFields).length,
+    pagesWithLinkedReferences: pages.filter(page => page.linkedReferences.length > 0).length,
+    totalLinkedReferences: pages.reduce((sum, page) => sum + page.linkedReferences.length, 0),
+    pagesWithUpgradeSignals: pages.filter(page => page.upgradeSignals.mentionedInFunction || page.upgradeSignals.originMentionsCrafting).length,
+    sampleLinkedReferences: pages.filter(page => page.linkedReferences.length > 0).slice(0, 8).map(page => ({ title: page.title, references: page.linkedReferences.slice(0, 8) })),
     commonTemplateNames: [...pages.flatMap(page => page.templates.map(template => template.name))].reduce((counts, name) => { counts[name] = (counts[name] ?? 0) + 1; return counts; }, {}),
     templatesWithPositionalArguments: pages.reduce((sum, page) => sum + page.templates.filter(template => template.positional?.length).length, 0),
     commonTemplatesWithPositionalArgs: [...pages.flatMap(page => page.templates.filter(template => template.positional?.length).map(template => template.name))].reduce((counts, name) => { counts[name] = (counts[name] ?? 0) + 1; return counts; }, {}),
