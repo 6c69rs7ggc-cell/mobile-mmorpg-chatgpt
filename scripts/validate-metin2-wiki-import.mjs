@@ -65,6 +65,18 @@ if (duplicateDetailTitles.length) {
 if (pagesWithText === 0 && pagesWithRawWikitext === 0) fail("no imported page contains plain text or raw wikitext");
 if (!Array.isArray(structured.pages) || structured.pages.length === 0) fail("structured index has no pages");
 if (Array.isArray(structured.pages) && structured.pages.length < catalogItems.length * 0.8) fail("structured index covers less than 80% of the catalog");
+
+const structuredTitles = new Set((structured.pages ?? []).map(page => normalize(page.title)).filter(Boolean));
+const structuredMissingTitles = [...detailTitles].filter(title => !structuredTitles.has(title));
+if (structuredTitles.size !== (structured.pages ?? []).length) fail("structured index has duplicate or blank page titles");
+if (structuredMissingTitles.length) {
+  fail(`structured index is missing ${structuredMissingTitles.length} detail-page titles; examples: ${structuredMissingTitles.slice(0, 5).join(", ")}`);
+}
+const structuredRawPages = (structured.pages ?? []).filter(page => Number(page.rawWikitextLength) > 0).length;
+if (pagesWithRawWikitext > 0 && structuredRawPages === 0) fail("raw wikitext exists in details but parser found no raw wikitext on any structured page");
+if (pagesWithRawWikitext > 0 && structuredRawPages < pagesWithRawWikitext * 0.8) {
+  fail(`structured parser retained raw wikitext for only ${structuredRawPages}/${pagesWithRawWikitext} pages (below 80% threshold)`);
+}
 if (detailTitles.size < catalogTitles.size * 0.8) {
   fail(`only ${detailTitles.size}/${catalogTitles.size} catalog titles have detail records (below 80% threshold)`);
 }
@@ -80,6 +92,8 @@ console.log(JSON.stringify({
   pagesWithoutText,
   pagesWithRawWikitext,
   structuredPages: structured.pages?.length ?? 0,
+  structuredPagesWithRawWikitext: structuredRawPages,
+  structuredPagesMissingDetailTitles: structuredMissingTitles.length,
   catalogTitlesWithoutDetailRecord: missingDetailTitles.length,
   note: "Text extraction is not the same as structured stat, recipe, or drop-rate extraction."
 }, null, 2));
