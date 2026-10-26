@@ -168,24 +168,24 @@ function extractCraftingRecipes(originRawValue) {
 }
 
 function extractAcquisitionSources(originRawValue) {
-  const source = String(originRawValue ?? "").replace(/<!--[\\s\\S]*?-->/g, "");
-  const lines = source.split(/\\r?\\n/);
+  const source = String(originRawValue ?? "").replace(/<!--[\s\S]*?-->/g, "");
+  const lines = source.split(/\r?\n/);
   let section = "Unclassified";
   const sources = [];
   for (const rawLine of lines) {
     const line = rawLine.trim();
     if (!line) continue;
-    const heading = line.match(/\\[\\[([^\\]|]+)(?:\\|[^\\]]+)?\\]\\]/);
-    if (/^:?\\*+/.test(line) && heading && /'''/.test(line)) {
+    const heading = line.match(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/);
+    if (/^:?\*+/.test(line) && heading && /'''/.test(line)) {
       section = heading[1].trim();
       continue;
     }
-    const templatePattern = /\\{\\{(Ti2?|Tm)\\|([^}|]+)(?:\\|([^}]*))?\\}\\}/gi;
+    const templatePattern = /\{\{(Ti2?|Tm)\|([^}|]+)(?:\|([^}]*))?\}\}/gi;
     for (const match of line.matchAll(templatePattern)) {
       const template = match[1].toLocaleLowerCase("en");
       const target = match[2].trim();
       if (!target) continue;
-      const annotation = line.replace(match[0], "").replace(/^[:*\\s]+/, "").trim();
+      const annotation = line.replace(match[0], "").replace(/^[:*\s]+/, "").trim();
       const crafting = /crafted|crafting/i.test(line);
       sources.push({
         section: crafting ? "Crafting" : section,
