@@ -26,6 +26,7 @@ async function fetchBatch(titles, attempt = 0) {
     inprop: "url",
     rvprop: "content|ids|timestamp",
     rvslots: "main",
+    rvlimit: "max",
     redirects: "1",
     format: "json",
     formatversion: "2",
@@ -43,7 +44,11 @@ async function fetchBatch(titles, attempt = 0) {
   }
   const data = await response.json();
   if (data.error) throw new Error(JSON.stringify(data.error));
-  return data.query?.pages ?? [];
+  const pages = data.query?.pages ?? [];
+  if (pages.length && !pages.some(page => page.revisions?.length || (page.extract ?? "").trim())) {
+    throw new Error(`Wiki API returned pages without extracts or revisions. Sample response: ${JSON.stringify(pages[0]).slice(0, 1600)}`);
+  }
+  return pages;
 }
 
 const details = [];
