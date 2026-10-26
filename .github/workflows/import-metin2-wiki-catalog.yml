@@ -2,6 +2,14 @@ name: Import official Metin2 Wiki catalog
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/import-metin2-wiki-catalog.mjs"
+      - "scripts/import-metin2-wiki-details.mjs"
+      - "scripts/parse-metin2-wiki-templates.mjs"
+      - "scripts/test-metin2-wiki-template-parser.mjs"
+      - "scripts/validate-metin2-wiki-import.mjs"
+      - ".github/workflows/import-metin2-wiki-catalog.yml"
   schedule:
     - cron: "17 4 * * 1"
 
