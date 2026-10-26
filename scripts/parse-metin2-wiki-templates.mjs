@@ -151,6 +151,7 @@ const pages = details.pages.map(page => {
     rawWikitextLength: wikitext.length,
     templateCount: templates.length,
     templates,
+    wikiTables,
     itemProperties: extractItemProperties(templates),
     detectedFieldNames: allKeys,
     candidateStatFieldNames: statKeys,
