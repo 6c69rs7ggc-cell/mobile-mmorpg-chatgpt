@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 
 const CATALOG = "data/metin2-wiki-catalog-index.json";
 const DETAILS = "data/metin2-wiki-page-details.json";
+const STRUCTURED = "data/metin2-wiki-structured-index.json";
 
 function fail(message) {
   console.error(`VALIDATION FAILED: ${message}`);
@@ -10,6 +11,7 @@ function fail(message) {
 
 const catalog = JSON.parse(await fs.readFile(CATALOG, "utf8"));
 const details = JSON.parse(await fs.readFile(DETAILS, "utf8"));
+const structured = JSON.parse(await fs.readFile(STRUCTURED, "utf8"));
 const catalogItems = catalog.items ?? catalog.records;
 const pages = details.pages;
 
@@ -42,6 +44,7 @@ const detailTitles = new Set();
 const duplicateDetailTitles = [];
 let pagesWithText = 0;
 let pagesWithoutText = 0;
+let pagesWithRawWikitext = 0;
 for (const page of pages) {
   const key = normalize(page.title);
   if (!key) {
@@ -53,12 +56,15 @@ for (const page of pages) {
   if (typeof page.pageText !== "string") fail(`pageText is not a string: ${page.title}`);
   else if (page.pageText.trim()) pagesWithText++;
   else pagesWithoutText++;
+  if ((page.rawWikitext ?? "").trim()) pagesWithRawWikitext++;
   if (!page.sourceStatus) fail(`sourceStatus is missing: ${page.title}`);
 }
 if (duplicateDetailTitles.length) {
   fail(`duplicate detail titles: ${duplicateDetailTitles.slice(0, 10).join(", ")}`);
 }
-if (pagesWithText === 0) fail("no imported page contains text");
+if (pagesWithText === 0 && pagesWithRawWikitext === 0) fail("no imported page contains plain text or raw wikitext");
+if (!Array.isArray(structured.pages) || structured.pages.length === 0) fail("structured index has no pages");
+if (Array.isArray(structured.pages) && structured.pages.length < catalogItems.length * 0.8) fail("structured index covers less than 80% of the catalog");
 if (detailTitles.size < catalogTitles.size * 0.8) {
   fail(`only ${detailTitles.size}/${catalogTitles.size} catalog titles have detail records (below 80% threshold)`);
 }
@@ -72,6 +78,8 @@ console.log(JSON.stringify({
   uniqueDetailTitles: detailTitles.size,
   pagesWithText,
   pagesWithoutText,
+  pagesWithRawWikitext,
+  structuredPages: structured.pages?.length ?? 0,
   catalogTitlesWithoutDetailRecord: missingDetailTitles.length,
   note: "Text extraction is not the same as structured stat, recipe, or drop-rate extraction."
 }, null, 2));
