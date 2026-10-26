@@ -59,6 +59,40 @@ function templatesIn(wikitext) {
   return found;
 }
 
+const ITEM_PROPERTY_FIELDS = {
+  description: ["Description"],
+  function: ["Function"],
+  quest: ["Quest"],
+  origin: ["Origin"],
+  tradableNpc: ["Tradable NPC"],
+  tradableWindow: ["Tradable Window"],
+  privateShop: ["Private Shop"],
+  mailbox: ["Mailbox"],
+  storable: ["Storable"],
+  dropable: ["Dropable", "Droppable"],
+  stackable: ["Stackable"],
+  category: ["Category"],
+  category2: ["Category2"],
+  other: ["Other"]
+};
+
+function extractItemProperties(templates) {
+  const layout = templates.find(template => template.name.toLocaleLowerCase("en") === "item/layoutv2")
+    ?? templates.find(template => template.name.toLocaleLowerCase("en") === "item/layout");
+  if (!layout) return null;
+  const properties = {};
+  for (const [normalizedName, sourceNames] of Object.entries(ITEM_PROPERTY_FIELDS)) {
+    for (const sourceName of sourceNames) {
+      const value = layout.fields[sourceName];
+      if (typeof value === "string" && value.trim()) {
+        properties[normalizedName] = { sourceField: sourceName, rawValue: value.trim() };
+        break;
+      }
+    }
+  }
+  return Object.keys(properties).length ? properties : null;
+}
+
 const sample = `{{Item
 |name=Moon Blade
 |description=Power = mystery
@@ -84,6 +118,20 @@ assert.equal(
   "Test item",
   "fields after an HTML comment should still parse"
 );
+
+const layoutProperties = extractItemProperties(templatesIn(`{{Item/LayoutV2
+|Description = Test blade
+|Function = Increases attack
+|Origin = Monster drop
+|Dropable = Yes
+|Stackable = No
+}}`));
+assert.equal(layoutProperties.description.rawValue, "Test blade");
+assert.equal(layoutProperties.function.rawValue, "Increases attack");
+assert.equal(layoutProperties.origin.rawValue, "Monster drop");
+assert.equal(layoutProperties.dropable.sourceField, "Dropable");
+assert.equal(layoutProperties.stackable.rawValue, "No");
+assert.equal(extractItemProperties(templatesIn("No item layout here")), null);
 
 assert.ok(parsed.some(t => t.name === "Item"), "outer Item template should be found");
 assert.ok(parsed.some(t => t.name === "Icon"), "nested Icon template should be found");
