@@ -25,6 +25,16 @@ function splitTopLevel(source, delimiter = "|") {
   return parts;
 }
 
+function cleanTemplateName(rawName) {
+  // Wiki pages commonly place HTML comments between a template name and its first field.
+  // Those comments are not part of the MediaWiki template name.
+  return rawName
+    .replace(/<!--[\\s\\S]*?-->/g, " ")
+    .replace(/[\\r\\n\\t]+/g, " ")
+    .replace(/\\s+/g, " ")
+    .trim();
+}
+
 function templatesIn(wikitext) {
   const found = [];
   for (let i = 0; i < wikitext.length - 1; i++) {
@@ -38,7 +48,7 @@ function templatesIn(wikitext) {
     if (depth === 0) {
       const body = wikitext.slice(i + 2, j - 2);
       const parts = splitTopLevel(body);
-      const name = (parts.shift() ?? "").trim();
+      const name = cleanTemplateName(parts.shift() ?? "");
       const fields = {};
       for (const part of parts) {
         const equals = part.indexOf("=");
