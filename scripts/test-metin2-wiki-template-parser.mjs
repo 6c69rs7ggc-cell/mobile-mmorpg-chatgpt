@@ -25,9 +25,9 @@ function splitTopLevel(source, delimiter = "|") {
 
 function cleanTemplateName(rawName) {
   return rawName
-    .replace(/<!--[\\s\\S]*?-->/g, " ")
-    .replace(/[\\r\\n\\t]+/g, " ")
-    .replace(/\\s+/g, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
