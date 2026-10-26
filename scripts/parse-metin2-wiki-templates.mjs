@@ -99,16 +99,18 @@ function extractItemProperties(templates) {
 
 function extractWikiTables(wikitext) {
   const tables = [];
-  const blocks = wikitext.match(/\\{\\|[\\s\\S]*?\\|\\}/g) ?? [];
+  const blocks = wikitext.match(/\{\|[\s\S]*?\|\}/g) ?? [];
   for (const block of blocks) {
     const rows = [];
     let row = [];
     const pushRow = () => {
-      const cleaned = row.map(cell => cell.replace(/<!--[\\s\\S]*?-->/g, "").trim()).filter(Boolean);
+      const cleaned = row
+        .map(cell => cell.replace(/<!--[\s\S]*?-->/g, "").trim())
+        .filter(Boolean);
       if (cleaned.length) rows.push(cleaned);
       row = [];
     };
-    for (const rawLine of block.split(/\\r?\\n/)) {
+    for (const rawLine of block.split(/\r?\n/)) {
       const line = rawLine.trim();
       if (line.startsWith("|}")) { pushRow(); break; }
       if (line.startsWith("|-")) { pushRow(); continue; }
@@ -119,9 +121,11 @@ function extractWikiTables(wikitext) {
       let cells = line.slice(1).split(separator);
       if (cells.length === 1) {
         const pipe = cells[0].indexOf("|");
-        if (pipe >= 0 && /^[^|=]+\\s*=/.test(cells[0].slice(0, pipe))) cells = [cells[0].slice(pipe + 1)];
+        if (pipe >= 0 && /^[^|=]+\s*=/.test(cells[0].slice(0, pipe))) {
+          cells = [cells[0].slice(pipe + 1)];
+        }
       }
-      row.push(...cells.map(cell => cell.replace(/^\\s*[^|]*?\\s\\|\\s*/, "").trim()));
+      row.push(...cells.map(cell => cell.replace(/^\s*[^|]*?\s\|\s*/, "").trim()));
     }
     pushRow();
     if (rows.length) tables.push({ rowCount: rows.length, rows });
