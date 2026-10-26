@@ -22,13 +22,15 @@ jobs:
         run: node scripts/import-metin2-wiki-catalog.mjs
       - name: Extract introductory details for indexed pages
         run: node scripts/import-metin2-wiki-details.mjs
+      - name: Parse raw Wiki templates into structured index
+        run: node scripts/parse-metin2-wiki-templates.mjs
       - name: Validate imported catalog and page details
         run: node scripts/validate-metin2-wiki-import.mjs
       - name: Commit catalog and details
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/metin2-wiki-catalog-index.json data/metin2-wiki-page-details.json
+          git add data/metin2-wiki-catalog-index.json data/metin2-wiki-page-details.json data/metin2-wiki-structured-index.json
           if git diff --cached --quiet; then
             echo "No catalog changes."
           else
