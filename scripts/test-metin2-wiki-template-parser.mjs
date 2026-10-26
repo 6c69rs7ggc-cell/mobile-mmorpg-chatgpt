@@ -193,4 +193,48 @@ assert.equal(item.fields.description, "Power = mystery", "equals inside values m
 assert.equal(item.fields.link, "[[Moon Blade|blade|rare]]", "pipes inside links must not split fields");
 assert.match(item.fields.upgrade, /material={{Item link\|Moon Shard}}/);
 
+
+function extractCraftingRecipes(originRawValue) {
+  const source = String(originRawValue ?? "").replace(/<!--[\\s\\S]*?-->/g, "");
+  const recipes = [];
+  const pattern = /\\{\\{Tm\\|([^}|]+)(?:\\|[^}]*)?\\}\\}\\s*\\(Crafted\\s*-\\s*([\\d.,]+)\\s*%\\)\\s*:([\\s\\S]*?)(?=\\n\\s*:\\*'''|\\n\\s*\\*'''|$)/gi;
+  for (const match of source.matchAll(pattern)) {
+    const ingredients = [];
+    const ingredientPattern = /\\{\\{Ti\\|([^}|]+)(?:\\|([^}]*))?\\}\\}([^\\n]*)/gi;
+    for (const item of match[3].matchAll(ingredientPattern)) {
+      const note = (item[2] ?? "").trim();
+      const trailing = item[3].trim().replace(/^[*: ]+/, "");
+      const quantityMatch = (note + " " + trailing).match(/(?:^|\\b)([\\d][\\d.,]*)\\s*(x|times|yang|gaya)?\\b/i);
+      ingredients.push({
+        item: item[1].trim(),
+        quantityOrCost: note || trailing || null,
+        parsedQuantity: quantityMatch ? quantityMatch[1].replace(/,/g, "") : null,
+        sourceText: item[0].trim()
+      });
+    }
+    recipes.push({
+      npc: match[1].trim(),
+      successRatePercent: Number(match[2].replace(",", ".")),
+      ingredients,
+      sourceText: match[0].trim()
+    });
+  }
+  return recipes;
+}
+
+const crafting = extractCraftingRecipes(`{{Tm|Yu-Hwan}} (Crafted - 40%):
+::*{{Ti|1* Catalyst}} 2x
+::*{{Ti|Gaya|2 Gaya}}
+::*{{Ti|Yang|200.000 Yang}}`);
+assert.equal(crafting.length, 1, "explicit crafting annotation should produce one recipe");
+assert.equal(crafting[0].npc, "Yu-Hwan");
+assert.equal(crafting[0].successRatePercent, 40);
+assert.equal(crafting[0].ingredients.length, 3);
+assert.equal(crafting[0].ingredients[0].item, "1* Catalyst");
+assert.equal(crafting[0].ingredients[0].parsedQuantity, "2");
+assert.equal(crafting[0].ingredients[1].item, "Gaya");
+assert.equal(crafting[0].ingredients[1].parsedQuantity, "2");
+assert.equal(crafting[0].ingredients[2].item, "Yang");
+assert.equal(crafting[0].ingredients[2].parsedQuantity, "200.000");
+
 console.log("Wiki template parser regression tests passed.");
