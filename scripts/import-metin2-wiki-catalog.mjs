@@ -1,6 +1,11 @@
 const API = "https://en-wiki.metin2.gameforge.com/api.php";
 const ROOT_CATEGORIES = ["Items"];
 
+const SUPPLEMENTAL_PAGE_TITLES = [
+  "Warrior/weapons", "Ninja/weapons", "Sura/weapons", "Shaman/weapons", "Lycan/weapons",
+  "Warrior/armour", "Ninja/armour", "Sura/armour", "Shaman/armour", "Lycan/armour",
+];
+
 async function api(params) {
   const url = new URL(API);
   for (const [key, value] of Object.entries({ ...params, format: "json", formatversion: "2" })) url.searchParams.set(key, value);
@@ -57,6 +62,48 @@ while (queue.length) {
     all.set(key, current);
   }
   console.log(`Category:${category}: ${result.pages.length} pages; discovered ${result.subcategories.length} subcategories`);
+}
+
+// The item-category tree mostly indexes item descriptions. These official class overview pages
+// contain weapon/armour progression tables (attack/defence and upgrade costs) needed by the game.
+{
+  const url = new URL(API);
+  for (const [key, value] of Object.entries({
+    action: "query",
+    prop: "info|categories",
+    titles: SUPPLEMENTAL_PAGE_TITLES.join("|"),
+    cllimit: "max",
+    inprop: "url",
+    redirects: "1",
+    format: "json",
+    formatversion: "2",
+  })) url.searchParams.set(key, value);
+  const response = await fetch(url, { headers: { "User-Agent": "ASHEN-REALM-Wiki-Catalog/1.0 (GitHub Actions)" } });
+  if (!response.ok) throw new Error(`Wiki API HTTP ${response.status}: ${url}`);
+  const json = await response.json();
+  if (json.error) throw new Error(`Wiki API error: ${JSON.stringify(json.error)}`);
+  for (const page of json.query?.pages ?? []) {
+    if (page.missing) {
+      console.warn(`Supplemental Wiki page missing: ${page.title}`);
+      continue;
+    }
+    const key = page.title.toLocaleLowerCase("en");
+    const current = all.get(key) ?? {
+      title: page.title,
+      pageId: page.pageid,
+      url: page.fullurl ?? `https://en-wiki.metin2.gameforge.com/index.php/${encodeURIComponent(page.title.replaceAll(" ", "_"))}`,
+      categories: [],
+      titleListedOnOfficialWiki: true,
+      detailStatus: "supplemental_progression_page",
+    };
+    current.categories = [...new Set([
+      ...current.categories,
+      "Supplemental:Equipment progression",
+      ...(page.categories ?? []).map(category => category.title.replace(/^Category:/, "")),
+    ])].sort();
+    all.set(key, current);
+  }
+  console.log(`Added official equipment progression pages: ${SUPPLEMENTAL_PAGE_TITLES.length}`);
 }
 
 const categoryList = [...categories].sort();
