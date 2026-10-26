@@ -210,11 +210,11 @@ const acquisition = extractAcquisitionSources(`:*'''[[Boxes]]:'''
 ::*{{Ti|Balathor's Frost Chest}}
 :*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):
 ::*{{Ti|Catalyst}} 2x`);
-assert.equal(acquisition.length, 2, "origin sources should be grouped and extracted");
+assert.equal(acquisition.length, 3, "origin sources should be grouped and extracted");
 assert.equal(acquisition[0].section, "Boxes");
 assert.equal(acquisition[0].target, "Balathor's Frost Chest");
 assert.equal(acquisition[1].section, "Crafting", "crafted NPC sources should be marked as crafting");
-assert.equal(acquisition[1].target, "Yu-Hwan");
+assert.equal(acquisition[1].target, "Yu-Hwan");\nassert.equal(acquisition[2].section, "Crafting");\nassert.equal(acquisition[2].target, "Catalyst");
 
 
 const progressionTables = extractWikiTables(`{| class="wikitable"
