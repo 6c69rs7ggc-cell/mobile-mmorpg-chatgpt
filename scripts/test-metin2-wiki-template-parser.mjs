@@ -215,7 +215,7 @@ assert.equal(acquisition[0].section, "Boxes");
 assert.equal(acquisition[0].target, "Balathor's Frost Chest");
 assert.equal(acquisition[1].section, "Crafting", "crafted NPC sources should be marked as crafting");
 assert.equal(acquisition[1].target, "Yu-Hwan");
-assert.equal(acquisition[2].section, "Crafting");
+assert.equal(acquisition[2].section, "NPC");
 assert.equal(acquisition[2].target, "Catalyst");
 
 
