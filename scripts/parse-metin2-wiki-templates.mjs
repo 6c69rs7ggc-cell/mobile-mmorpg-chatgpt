@@ -50,14 +50,19 @@ function templatesIn(wikitext) {
       const parts = splitTopLevel(body);
       const name = cleanTemplateName(parts.shift() ?? "");
       const fields = {};
+      const positional = [];
       for (const part of parts) {
         const equals = part.indexOf("=");
-        if (equals < 1) continue;
+        if (equals < 1) {
+          const value = part.trim();
+          if (value) positional.push(value);
+          continue;
+        }
         const key = part.slice(0, equals).trim();
         const value = part.slice(equals + 1).trim();
         if (key && value) fields[key] = value;
       }
-      if (name) found.push({ name, fields });
+      if (name) found.push({ name, fields, positional });
     }
   }
   return found;
@@ -183,6 +188,10 @@ const output = {
     pagesWithPotentialDropFields: pages.filter(page => page.signals.hasPotentialDropFields).length,
     pagesWithPotentialUpgradeFields: pages.filter(page => page.signals.hasPotentialUpgradeFields).length,
     commonTemplateNames: [...pages.flatMap(page => page.templates.map(template => template.name))].reduce((counts, name) => { counts[name] = (counts[name] ?? 0) + 1; return counts; }, {}),
+    templatesWithPositionalArguments: pages.reduce((sum, page) => sum + page.templates.filter(template => template.positional?.length).length, 0),
+    commonTemplatesWithPositionalArgs: [...pages.flatMap(page => page.templates.filter(template => template.positional?.length).map(template => template.name))].reduce((counts, name) => { counts[name] = (counts[name] ?? 0) + 1; return counts; }, {}),
+    samplePositionalTemplates: pages.flatMap(page => page.templates.filter(template => template.positional?.length).map(template => ({ page: page.title, template: template.name, positional: template.positional.slice(0, 8) }))).slice(0, 12),
+    sampleItemLayoutTemplates: pages.flatMap(page => page.templates.filter(template => /item\\/layoutv?2?/i.test(template.name)).map(template => ({ page: page.title, template: template.name, fields: template.fields, positional: template.positional }))).slice(0, 8),
     sampleFieldNames: [...new Set(pages.flatMap(page => page.detectedFieldNames))].sort((a, b) => a.localeCompare(b, "en")).slice(0, 300),
     scope: "Generic template/field extraction. Field names and values remain source-native; no drop chances or game mechanics are inferred."
   },
