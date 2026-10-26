@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0909">
+  <meta name="description" content="ASHEN REALM — temný fantasy svet, tri ríše a vojna, ktorá sa ešte len začína. Metin2 projekt vo vývoji.">
+  <title>ASHEN REALM — Vojna sa prebúdza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0909;--panel:#141010;--paper:#eee5d5;--muted:#a59a8c;--red:#a7352d;--gold:#c5a36a;--line:#3b2924}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--paper);font-family:Manrope,system-ui,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .grain{position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+    .nav{position:absolute;top:0;left:0;width:100%;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px clamp(20px,6vw,90px);border-bottom:1px solid #ffffff15}
+    .brand{font-family:Cinzel,serif;font-size:18px;font-weight:800;letter-spacing:.19em}.brand span{color:var(--red)}
+    .navlinks{display:flex;gap:30px;align-items:center;color:#d0c4b3;font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .navlinks a:hover{color:var(--gold)}
+    .nav-cta{border:1px solid #a7352d;padding:12px 17px;color:#f2dfc3}
+    .hero{min-height:760px;height:100svh;max-height:1100px;position:relative;display:flex;align-items:center;overflow:hidden;padding:125px clamp(22px,10vw,150px) 80px;background:radial-gradient(ellipse at 74% 45%,#70291e55 0%,transparent 36%),radial-gradient(ellipse at 50% 100%,#4e211c33,transparent 45%),linear-gradient(110deg,#0b0909 8%,#160e0d 56%,#090808 100%)}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0909 0%,#0b0909e8 33%,#0b090970 62%,#0b0909aa 100%),linear-gradient(0deg,var(--bg),transparent 25%);z-index:1}
+    .moon{position:absolute;right:12%;top:18%;width:min(34vw,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 36% 33%,#c4a18b 0%,#6d443b 34%,#281a1a 65%,#0d0b0b 72%);box-shadow:0 0 100px #b33b2730,0 0 240px #b33b2714;opacity:.83}
+    .moon:after{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(ellipse at 60% 50%,transparent 0 17px,#1c1110 19px 21px,transparent 23px 38px);opacity:.38}
+    .blade{position:absolute;right:18%;bottom:-20%;height:100%;width:1px;background:linear-gradient(transparent,#c5a36a88,transparent);transform:rotate(36deg);z-index:0}
+    .hero-content{position:relative;z-index:2;max-width:780px}
+    .eyebrow{display:flex;align-items:center;gap:13px;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.3em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:1px;background:var(--red)}
+    h1{font-family:Cinzel,serif;font-size:clamp(54px,9.3vw,126px);line-height:.92;letter-spacing:-.045em;margin:27px 0 22px;font-weight:500;text-shadow:0 5px 40px #000}
+    h1 span{display:block;color:#b74435}
+    .subtitle{font-family:Cinzel,serif;color:#d6c6b0;font-size:clamp(15px,2vw,22px);letter-spacing:.18em;text-transform:uppercase}
+    .hero-copy{max-width:510px;color:#b4a99b;line-height:1.85;font-size:14px;margin:24px 0 34px}
+    .actions{display:flex;flex-wrap:wrap;gap:13px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 23px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;border:1px solid var(--red);background:linear-gradient(135deg,#a7352d,#76251f);box-shadow:0 10px 35px #0005;transition:transform .2s,filter .2s}
+    .button:hover{transform:translateY(-3px);filter:brightness(1.15)}
+    .button.secondary{background:#ffffff05;border-color:#a99a883f;box-shadow:none}
+    .scroll-note{position:absolute;z-index:2;right:clamp(20px,6vw,90px);bottom:55px;writing-mode:vertical-rl;color:#8c8073;font-size:9px;letter-spacing:.25em;text-transform:uppercase}
+    .scroll-note:after{content:"";height:55px;width:1px;background:var(--red);display:inline-block;margin-top:16px;align-self:center}
+    .hero-index{position:absolute;left:clamp(20px,6vw,90px);bottom:60px;color:#7e7166;font-size:10px;letter-spacing:.2em;z-index:2}
+    .section{padding:110px clamp(22px,9vw,130px)}
+    .section-head{max-width:700px;margin-bottom:48px}
+    .kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:800}
+    h2{font-family:Cinzel,serif;font-size:clamp(32px,5vw,62px);line-height:1.08;font-weight:500;margin:16px 0 18px}
+    .section-intro{color:var(--muted);line-height:1.9;max-width:620px;font-size:14px}
+    .factions{background:#100d0c;border-top:1px solid #ffffff0a;border-bottom:1px solid #ffffff0a}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .card{position:relative;min-height:330px;padding:30px 27px;border:1px solid #ffffff12;background:linear-gradient(150deg,#1b1412,#100d0c 70%);overflow:hidden;transition:border-color .25s,transform .25s}
+    .card:hover{border-color:#a7352d88;transform:translateY(-5px)}
+    .card-number{font-family:Cinzel,serif;color:#b74435;font-size:12px;letter-spacing:.2em}
+    .sigil{width:74px;height:74px;margin:30px 0 25px;border:1px solid #a7352d88;transform:rotate(45deg);display:grid;place-items:center;color:var(--gold);font-family:Cinzel,serif;font-size:27px}
+    .sigil span{transform:rotate(-45deg)}
+    .card h3{font-family:Cinzel,serif;font-size:23px;font-weight:500;margin:0 0 12px}
+    .card p{font-size:12px;line-height:1.8;color:#a99c8e;margin:0;max-width:300px}
+    .card:after{content:attr(data-mark);position:absolute;right:15px;bottom:-70px;font-family:Cinzel,serif;font-size:200px;color:#ffffff04;line-height:1}
+    .manifesto{display:grid;grid-template-columns:1fr 1fr;gap:9vw;align-items:center;background:radial-gradient(ellipse at 15% 50%,#64251c22,transparent 50%),var(--bg)}
+    .quote{font-family:Cinzel,serif;font-size:clamp(25px,3.5vw,43px);line-height:1.35;color:#e5d6c2;border-left:2px solid var(--red);padding-left:28px}
+    .quote small{display:block;font:800 10px Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:25px}
+    .pillars{display:grid;gap:23px}
+    .pillar{display:grid;grid-template-columns:40px 1fr;gap:17px;border-bottom:1px solid #ffffff13;padding-bottom:20px}
+    .pillar b{font-family:Cinzel,serif;color:var(--red);font-size:19px;font-weight:500}
+    .pillar h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:2px 0 8px}
+    .pillar p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
+    .status{background:#130e0d;border-block:1px solid #ffffff0b;text-align:center}
+    .status .section-head{margin:0 auto 36px}
+    .status-panel{max-width:790px;margin:auto;padding:30px;border:1px solid #7b3026;background:linear-gradient(120deg,#221310,#110d0c);display:flex;justify-content:space-between;align-items:center;gap:24px;text-align:left}
+    .status-label{font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+    .status-panel h3{font-family:Cinzel,serif;font-size:23px;font-weight:500;margin:8px 0}
+    .status-panel p{font-size:12px;color:var(--muted);margin:0;line-height:1.7}
+    .status-badge{white-space:nowrap;border:1px solid #8f6b40;color:#d6b77d;padding:11px 13px;font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+    footer{padding:30px clamp(22px,6vw,90px);display:flex;justify-content:space-between;align-items:center;gap:18px;color:#75695e;font-size:10px;letter-spacing:.08em}
+    footer .brand{font-size:13px;color:#b9aa98}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:760px){.nav{padding:20px}.navlinks a:not(.nav-cta){display:none}.navlinks{gap:0}.hero{min-height:730px;padding:125px 23px 100px}.moon{width:65vw;right:-8%;top:18%;opacity:.55}.hero:before{background:linear-gradient(90deg,#0b0909f2,#0b0909a6),linear-gradient(0deg,var(--bg),transparent 35%)}.scroll-note{display:none}.hero-index{left:23px;bottom:32px}.section{padding:78px 23px}.cards{grid-template-columns:1fr}.card{min-height:280px}.sigil{margin:22px 0}.manifesto{grid-template-columns:1fr;gap:45px}.status-panel{align-items:flex-start;flex-direction:column}footer{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Ashen Realm domov">ASHEN<span>/</span>REALM</a>
+    <nav class="navlinks" aria-label="Hlavná navigácia">
+      <a href="#svet">Svet</a><a href="#prisaha">Prísaha</a><a href="#stav">Vývoj</a><a class="nav-cta" href="#stav">Pridaj sa neskôr ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="top">
+      <div class="moon" aria-hidden="true"></div><div class="blade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="eyebrow">Nová legenda sa píše</div>
+        <h1>ASHEN <span>REALM</span></h1>
+        <div class="subtitle">Tri ríše. Jedna osudová vojna.</div>
+        <p class="hero-copy">Krajina roztrhnutá mocou Metinov. Staré spojenectvá sa rozpadajú a z popola povstáva nová éra. Priprav sa na svet, v ktorom si svoju legendu musíš vybojovať.</p>
+        <div class="actions"><a class="button" href="#svet">Objav svet <span aria-hidden="true">↘</span></a><a class="button secondary" href="#stav">Sleduj vývoj</a></div>
+      </div>
+      <div class="hero-index">Projekt vo vývoji / 001</div><div class="scroll-note">Vstúp do legendy</div>
+    </section>
+    <section class="section factions" id="svet">
+      <div class="section-head reveal"><div class="kicker">Vyber si, za čo bojuješ</div><h2>Tri ríše.<br>Žiadna istota.</h2><p class="section-intro">Moc sa nikdy nerozdelí spravodlivo. Každá ríša má vlastnú česť, vlastné ambície a dôvod, prečo sa nevzdá. Ktorá bude tvoja? Detaily sveta a herné systémy sa ešte pripravujú.</p></div>
+      <div class="cards">
+        <article class="card reveal" data-mark="I"><div class="card-number">RÍŠA / 01</div><div class="sigil"><span>火</span></div><h3>Shinsoo</h3><p>Vôľa ohňa. Bojovníci, ktorí veria, že silu si treba vziať — nie o ňu prosiť.</p></article>
+        <article class="card reveal" data-mark="II"><div class="card-number">RÍŠA / 02</div><div class="sigil"><span>月</span></div><h3>Chunjo</h3><p>Vôľa ducha. Ríša, ktorá hľadá rovnováhu vo svete, ktorý sa už dávno vymkol spod kontroly.</p></article>
+        <article class="card reveal" data-mark="III"><div class="card-number">RÍŠA / 03</div><div class="sigil"><span>刃</span></div><h3>Jinno</h3><p>Vôľa ocele. Disciplína, ambícia a presvedčenie, že budúcnosť patrí tým, ktorí sa jej odvážia postaviť.</p></article>
+      </div>
+    </section>
+    <section class="section manifesto" id="prisaha">
+      <div class="reveal"><div class="kicker">Toto je len začiatok</div><h2>Nie ďalší svet.<br>Tvoja legenda.</h2><p class="section-intro">ASHEN REALM vzniká ako nezávislý projekt inšpirovaný svetom Metin2. Najprv budujeme technické základy, potom budeme postupne odhaľovať ďalšie časti sveta. Žiadne falošné sľuby o funkciách, ktoré ešte nie sú pripravené.</p></div>
+      <div class="pillars">
+        <div class="pillar reveal"><b>01</b><div><h3>Starý svet. Nová kapitola.</h3><p>Temná fantasy atmosféra a známy konflikt troch ríš — s vlastnou identitou projektu.</p></div></div>
+        <div class="pillar reveal"><b>02</b><div><h3>Najprv stabilné základy</h3><p>Pracujeme na serveri a kompatibilite klienta skôr, než otvoríme brány hráčom.</p></div></div>
+        <div class="pillar reveal"><b>03</b><div><h3>Komunita bude súčasťou príbehu</h3><p>Informácie o testovaní, registrácii a spustení zverejníme, keď budú potvrdené.</p></div></div>
+      </div>
+    </section>
+    <section class="section status" id="stav">
+      <div class="section-head reveal"><div class="kicker">Brány sa ešte pripravujú</div><h2>Legenda sa tvorí.</h2><p class="section-intro">Server je vo vývoji. Prihlásenie cez originálneho klienta ešte nie je potvrdené, preto zatiaľ nie je dostupná registrácia ani stiahnutie hry. Radšej poctivý progres než prázdne sľuby.</p></div>
+      <div class="status-panel reveal"><div><div class="status-label">Aktuálny stav projektu</div><h3>Uzavretý vývoj</h3><p>Ďalší cieľ: overiť pripojenie originálneho klienta a opraviť chyby podľa reálnych testov.</p></div><div class="status-badge">● Vývoj prebieha</div></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#top">ASHEN<span>/</span>REALM</a><span>Nezávislý fanúšikovský projekt · Nie je oficiálnym produktom Webzen.</span><span>© <span id="year"></span> ASHEN REALM</span></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, {threshold: 0.12}) : null;
+    document.querySelectorAll('.reveal').forEach(el => observer ? observer.observe(el) : el.classList.add('visible'));
+  </script>
+</body>
+</html>
