@@ -79,13 +79,18 @@ for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
   }
   for (const page of pages) {
     const indexed = indexedByTitle.get(page.title.toLocaleLowerCase("en"));
+    const revision = page.revisions?.[0] ?? {};
+    const slots = revision.slots ?? {};
+    const mainSlot = slots.main ?? slots[Object.keys(slots)[0]] ?? {};
+    const rawWikitext = String(mainSlot.content ?? mainSlot["*"] ?? revision.content ?? revision["*"] ?? page.wikitext ?? "");
+    const plainText = String(page.extract ?? "");
     details.push({
       title: page.title,
       pageId: page.pageid ?? indexed?.pageId ?? null,
       sourceUrl: page.fullurl ?? indexed?.url ?? null,
       categories: (page.categories ?? []).map(c => c.title.replace(/^Category:/, "")),
-      pageText: page.extract ?? "",
-      rawWikitext: page.revisions?.[0]?.slots?.main?.content ?? page.revisions?.[0]?.slots?.main?.["*"] ?? page.revisions?.[0]?.content ?? page.revisions?.[0]?.["*"] ?? "",
+      pageText: plainText,
+      rawWikitext,
       pageProperties: page.pageprops ?? {},
       sourceStatus: page.missing ? "source_page_missing" : "official_wiki_page_fetched",
       extractStatus: (page.extract ?? "").trim() ? "plain_text_available" : "plain_text_empty_check_raw_wikitext",
@@ -93,6 +98,7 @@ for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
       dropRatesStatus: "not_extracted",
     });
   }
+  if (offset === 0) console.log("FIRST_BATCH_CONTENT_CHECK " + JSON.stringify({pages: pages.length, sampleTitle: details[0]?.title, sampleTextLength: details[0]?.pageText?.length ?? 0, sampleRawWikitextLength: details[0]?.rawWikitext?.length ?? 0, sampleRawWikitextStart: details[0]?.rawWikitext?.slice(0, 100) ?? ""}));
   console.log(`Processed ${Math.min(offset + batch.length, catalogItems.length)} / ${catalogItems.length} pages`);
   if (offset + BATCH_SIZE < catalogItems.length) await new Promise(resolve => setTimeout(resolve, PAUSE_MS));
 }
