@@ -357,11 +357,9 @@ const compactItems = pages.map(page => {
       dropable: raw("dropable"),
       stackable: raw("stackable")
     },
-    acquisitionSources: page.upgradeSignals.acquisitionSources,
-    craftingRecipes: page.upgradeSignals.craftingRecipes,
-    linkedReferences: page.linkedReferences.filter(ref =>
-      ["Origin", "Function", "Content-items", "Content-other", "Content-weapons", "Content-armours", "Content-accessories", "Content-helmshield"].includes(ref.contextField)
-    ),
+    acquisitionSources: page.upgradeSignals.acquisitionSources.map(source => ({ section: source.section, target: source.target, kind: source.kind, annotation: source.annotation })),
+    craftingRecipes: page.upgradeSignals.craftingRecipes.map(recipe => ({ npc: recipe.npc, successRatePercent: recipe.successRatePercent, ingredients: recipe.ingredients.map(ingredient => ({ item: ingredient.item, quantityOrCost: ingredient.quantityOrCost, parsedQuantity: ingredient.parsedQuantity })) })),
+    linkedReferences: page.linkedReferences.filter(ref => ["Origin", "Function", "Content-items", "Content-other", "Content-weapons", "Content-armours", "Content-accessories", "Content-helmshield"].includes(ref.contextField)).map(ref => ({ target: ref.target, kind: ref.kind, quantityOrNote: ref.quantityOrNote, contextField: ref.contextField })),
     wikiTables: page.wikiTables
   };
 });
