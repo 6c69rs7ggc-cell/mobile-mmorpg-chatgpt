@@ -44,14 +44,6 @@ async function fetchBatch(titles, attempt = 0) {
   const data = await response.json();
   if (data.error) throw new Error(JSON.stringify(data.error));
   const pages = data.query?.pages ?? [];
-  if (attempt === 0 && titles[0] && pages.length) {
-    console.log("WIKI_API_DIAGNOSTIC " + JSON.stringify({
-      requestedTitle: titles[0],
-      pageKeys: Object.keys(pages[0]),
-      samplePage: pages[0],
-      queryKeys: Object.keys(data.query ?? {}),
-    }).slice(0, 5000));
-  }
   const hasUsableContent = page => {
     const revision = page.revisions?.[0];
     const slot = revision?.slots?.main;
@@ -93,7 +85,7 @@ for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
       sourceUrl: page.fullurl ?? indexed?.url ?? null,
       categories: (page.categories ?? []).map(c => c.title.replace(/^Category:/, "")),
       pageText: page.extract ?? "",
-      rawWikitext: page.revisions?.[0]?.slots?.main?.content ?? page.revisions?.[0]?.slots?.main?.["*"] ?? "",
+      rawWikitext: page.revisions?.[0]?.slots?.main?.content ?? page.revisions?.[0]?.slots?.main?.["*"] ?? page.revisions?.[0]?.content ?? page.revisions?.[0]?.["*"] ?? "",
       pageProperties: page.pageprops ?? {},
       sourceStatus: page.missing ? "source_page_missing" : "official_wiki_page_fetched",
       extractStatus: (page.extract ?? "").trim() ? "plain_text_available" : "plain_text_empty_check_raw_wikitext",
