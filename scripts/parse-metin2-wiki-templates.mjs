@@ -96,6 +96,8 @@ const output = {
     pagesWithPotentialStatFields: pages.filter(page => page.signals.hasPotentialStatFields).length,
     pagesWithPotentialDropFields: pages.filter(page => page.signals.hasPotentialDropFields).length,
     pagesWithPotentialUpgradeFields: pages.filter(page => page.signals.hasPotentialUpgradeFields).length,
+    commonTemplateNames: [...pages.flatMap(page => page.templates.map(template => template.name))].reduce((counts, name) => { counts[name] = (counts[name] ?? 0) + 1; return counts; }, {}),
+    sampleFieldNames: [...new Set(pages.slice(0, 20).flatMap(page => page.detectedFieldNames))].slice(0, 80),
     scope: "Generic template/field extraction. Field names and values remain source-native; no drop chances or game mechanics are inferred."
   },
   pages
