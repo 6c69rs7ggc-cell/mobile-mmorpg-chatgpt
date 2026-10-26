@@ -93,6 +93,44 @@ function extractItemProperties(templates) {
   return Object.keys(properties).length ? properties : null;
 }
 
+function extractAcquisitionSources(originRawValue) {
+  const source = String(originRawValue ?? "").replace(/<!--[\\s\\S]*?-->/g, "");
+  const lines = source.split(/\\r?\\n/);
+  let section = "Unclassified";
+  const sources = [];
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    const heading = line.match(/\\[\\[([^\\]|]+)(?:\\|[^\\]]+)?\\]\\]/);
+    if (/^:?\\*+/.test(line) && heading && /'''/.test(line)) {
+      section = heading[1].trim();
+      continue;
+    }
+    const templatePattern = /\\{\\{(Ti2?|Tm)\\|([^}|]+)(?:\\|([^}]*))?\\}\\}/gi;
+    for (const match of line.matchAll(templatePattern)) {
+      const template = match[1].toLocaleLowerCase("en");
+      const target = match[2].trim();
+      if (!target) continue;
+      const annotation = line.replace(match[0], "").replace(/^[:*\\s]+/, "").trim();
+      const crafting = /crafted|crafting/i.test(line);
+      sources.push({
+        section: crafting ? "Crafting" : section,
+        target,
+        kind: template === "tm" ? "npc_or_monster" : "item_or_container",
+        annotation: annotation || null,
+        sourceText: line
+      });
+    }
+  }
+  const seen = new Set();
+  return sources.filter(entry => {
+    const key = [entry.section, entry.target.toLocaleLowerCase("en"), entry.annotation ?? ""].join("|");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function extractWikiTables(wikitext) {
   const tables = [];
   const blocks = wikitext.match(/\{\|[\s\S]*?\|\}/g) ?? [];
@@ -168,6 +206,17 @@ assert.equal(layoutProperties.origin.rawValue, "Monster drop");
 assert.equal(layoutProperties.dropable.sourceField, "Dropable");
 assert.equal(layoutProperties.stackable.rawValue, "No");
 assert.equal(extractItemProperties(templatesIn("No item layout here")), null);
+
+const acquisition = extractAcquisitionSources(`:*'''[[Boxes]]:'''
+::*{{Ti|Balathor's Frost Chest}}
+:*'''[[NPC]]:''' {{Tm|Yu-Hwan}} (Crafted - 40%):
+::*{{Ti|Catalyst}} 2x`);
+assert.equal(acquisition.length, 2, "origin sources should be grouped and extracted");
+assert.equal(acquisition[0].section, "Boxes");
+assert.equal(acquisition[0].target, "Balathor's Frost Chest");
+assert.equal(acquisition[1].section, "Crafting", "crafted NPC sources should be marked as crafting");
+assert.equal(acquisition[1].target, "Yu-Hwan");
+
 
 const progressionTables = extractWikiTables(`{| class="wikitable"
 ! Upgrade !! +0 !! +1 !! +2
