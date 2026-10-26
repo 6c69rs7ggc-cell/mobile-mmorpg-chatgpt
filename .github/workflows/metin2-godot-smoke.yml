@@ -5,6 +5,10 @@ on:
   push:
     paths:
       - ".github/workflows/metin2-godot-smoke.yml"
+      - "docs/METIN2_MOBILE_ROADMAP.md"
+      - "docs/METIN2_CLIENT_COMPATIBILITY.md"
+      - "docs/GODOT_CANDIDATE_AUDIT.md"
+      - "docs/NEXT_EXECUTION_STEPS.md"
 
 permissions:
   contents: read
