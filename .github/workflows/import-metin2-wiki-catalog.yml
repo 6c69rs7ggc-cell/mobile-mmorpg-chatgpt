@@ -45,5 +45,6 @@ jobs:
             echo "No catalog changes."
           else
             git commit -m "Import official Metin2 Wiki item catalog index"
+            git pull --rebase origin main
             git push
           fi
