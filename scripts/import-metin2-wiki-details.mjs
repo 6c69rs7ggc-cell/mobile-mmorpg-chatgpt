@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 const API = "https://en-wiki.metin2.gameforge.com/api.php";
 const INPUT = "data/metin2-wiki-catalog-index.json";
 const OUTPUT = "data/metin2-wiki-page-details.json";
-const BATCH_SIZE = 40;
+const BATCH_SIZE = 10;
 const PAUSE_MS = 250;
 const MAX_RETRIES = 4;
 
@@ -17,13 +17,16 @@ async function fetchBatch(titles, attempt = 0) {
   const url = new URL(API);
   const params = {
     action: "query",
-    prop: "extracts|categories|info|pageprops",
+    prop: "extracts|categories|info|pageprops|revisions",
     titles: titles.join("|"),
     exintro: "0",
     explaintext: "1",
     exchars: "12000",
     cllimit: "max",
     inprop: "url",
+    rvprop: "content",
+    rvslots: "main",
+    rvlimit: "1",
     redirects: "1",
     format: "json",
     formatversion: "2",
@@ -73,8 +76,10 @@ for (let offset = 0; offset < catalogItems.length; offset += BATCH_SIZE) {
       sourceUrl: page.fullurl ?? indexed?.url ?? null,
       categories: (page.categories ?? []).map(c => c.title.replace(/^Category:/, "")),
       pageText: page.extract ?? "",
+      rawWikitext: page.revisions?.[0]?.slots?.main?.content ?? page.revisions?.[0]?.slots?.main?.["*"] ?? "",
       pageProperties: page.pageprops ?? {},
-      sourceStatus: page.missing ? "source_page_missing" : "official_wiki_page_text_extracted",
+      sourceStatus: page.missing ? "source_page_missing" : "official_wiki_page_fetched",
+      extractStatus: (page.extract ?? "").trim() ? "plain_text_available" : "plain_text_empty_check_raw_wikitext",
       structuredStatsStatus: "needs_infobox_parser_validation",
       dropRatesStatus: "not_extracted",
     });
@@ -92,9 +97,11 @@ const output = {
     generatedAt: new Date().toISOString(),
     requestedPages: catalogItems.length,
     returnedPages: unique.size,
-    pagesWithText: [...unique.values()].filter(row => row.pageText.length > 0).length,
-    pagesWithoutText: [...unique.values()].filter(row => row.pageText.length === 0).length,
-    scope: "Extracted page text and categories for catalogued pages, with explicit records for requested titles not returned by the API. This does not claim complete infobox/stat/recipe/drop extraction.",
+    pagesWithText: [...unique.values()].filter(row => row.pageText.trim().length > 0).length,
+    pagesWithoutText: [...unique.values()].filter(row => row.pageText.trim().length === 0).length,
+    pagesWithRawWikitext: [...unique.values()].filter(row => (row.rawWikitext ?? "").trim().length > 0).length,
+    pagesWithoutRawWikitext: [...unique.values()].filter(row => !(row.rawWikitext ?? "").trim()).length,
+    scope: "Extracted page text, raw MediaWiki wikitext, categories, and page properties for catalogued pages. Raw templates still require structured parsing and validation; this does not claim complete stat/recipe/drop extraction.",
   },
   pages: [...unique.values()].sort((a, b) => a.title.localeCompare(b.title, "en")),
 };
