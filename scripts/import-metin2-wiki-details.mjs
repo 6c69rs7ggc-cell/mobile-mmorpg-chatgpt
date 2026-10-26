@@ -26,7 +26,6 @@ async function fetchBatch(titles, attempt = 0) {
     inprop: "url",
     rvprop: "content|ids|timestamp",
     rvslots: "main",
-    rvlimit: "max",
     redirects: "1",
     format: "json",
     formatversion: "2",
