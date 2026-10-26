@@ -3,9 +3,9 @@
     "title": "ASHEN REALM — official Metin2 Wiki catalog index",
     "source": "Gameforge Metin2 Wiki",
     "sourceApi": "https://en-wiki.metin2.gameforge.com/api.php",
-    "generatedAt": "2026-10-26T07:34:40.935Z",
+    "generatedAt": "2026-10-26T07:53:33.920Z",
     "categoryCount": 17,
-    "uniquePageCount": 2081,
+    "uniquePageCount": 2091,
     "scope": "Bulk index of item page titles and official source links. This is not a claim that detailed stats, recipes, or drop rates have been extracted.",
     "dataPolicy": "Only title, page ID, category membership, and source URL are imported here. Detailed properties must be extracted from individual source pages; unknown values stay null/unset."
   },
@@ -11823,6 +11823,30 @@
       "detailStatus": "title_and_category_indexed_only"
     },
     {
+      "title": "Lycan/armour",
+      "pageId": 11649,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Lycan/armour",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
+      "title": "Lycan/weapons",
+      "pageId": 11681,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Lycan/weapons",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
       "title": "Lycaninho (seal)",
       "pageId": 16064,
       "url": "https://en-wiki.metin2.gameforge.com/index.php/Lycaninho_(seal)",
@@ -13757,6 +13781,30 @@
       ],
       "titleListedOnOfficialWiki": true,
       "detailStatus": "title_and_category_indexed_only"
+    },
+    {
+      "title": "Ninja/armour",
+      "pageId": 333,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Ninja/armour",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
+      "title": "Ninja/weapons",
+      "pageId": 741,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Ninja/weapons",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
     },
     {
       "title": "Nirvana Dragon (seal)",
@@ -18353,6 +18401,30 @@
       "detailStatus": "title_and_category_indexed_only"
     },
     {
+      "title": "Shaman/armour",
+      "pageId": 336,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Shaman/armour",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
+      "title": "Shaman/weapons",
+      "pageId": 744,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Shaman/weapons",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
       "title": "Shard",
       "pageId": 13293,
       "url": "https://en-wiki.metin2.gameforge.com/index.php/Shard",
@@ -20520,6 +20592,30 @@
       "detailStatus": "title_and_category_indexed_only"
     },
     {
+      "title": "Sura/armour",
+      "pageId": 331,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Sura/armour",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
+      "title": "Sura/weapons",
+      "pageId": 743,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Sura/weapons",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
       "title": "Sweetfish",
       "pageId": 20966,
       "url": "https://en-wiki.metin2.gameforge.com/index.php/Sweetfish",
@@ -21889,6 +21985,30 @@
       ],
       "titleListedOnOfficialWiki": true,
       "detailStatus": "title_and_category_indexed_only"
+    },
+    {
+      "title": "Warrior/armour",
+      "pageId": 195,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Warrior/armour",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
+    },
+    {
+      "title": "Warrior/weapons",
+      "pageId": 534,
+      "url": "https://en-wiki.metin2.gameforge.com/index.php/Warrior/weapons",
+      "categories": [
+        "Equipment",
+        "Infos",
+        "Supplemental:Equipment progression"
+      ],
+      "titleListedOnOfficialWiki": true,
+      "detailStatus": "supplemental_progression_page"
     },
     {
       "title": "Watchtower Reward Chest",
